@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AquaSprint | Sign Up</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="signup.css" />
+    <script defer src="signup.js"></script>
+  </head>
+  <body>
+    <main class="auth-shell">
+      <section class="brand-panel" aria-label="AquaSprint sign up story">
+        <div class="particles" id="particleLayer" aria-hidden="true"></div>
+        <div class="brand-glow" aria-hidden="true"></div>
+
+        <div class="brand-copy">
+          <p class="location">MADE FOR EVERY STROKE.</p>
+
+          <h1 class="editorial-title">
+            <span class="y-line">JOIN</span>
+            <span class="n-line">THE</span>
+            <span class="g-line">WAVE</span>
+            <span class="a-line">TODAY</span>
+          </h1>
+
+          <p class="description">
+            Create your AquaSprint account to explore premium swimwear, save
+            favorites, track orders, and get early access to new collections.
+          </p>
+
+          <div class="stats" id="stats">
+            <article class="stat">
+              <strong data-count="120">0</strong>
+              <span>SWIMWEAR DESIGNS</span>
+            </article>
+            <article class="stat">
+              <strong data-count="8500">0</strong>
+              <span>HAPPY CUSTOMERS</span>
+            </article>
+            <article class="stat">
+              <strong data-count="49">0</strong>
+              <span>CUSTOMER RATING</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="login-panel" aria-label="Sign up form">
+        <div class="panel-inner">
+          <div class="page-actions">
+            <button
+              type="button"
+              class="utility-btn"
+              id="rtlToggle"
+              aria-label="Toggle RTL"
+            >
+              RTL
+            </button>
+            <button
+              type="button"
+              class="utility-btn"
+              id="themeToggle"
+              aria-label="Toggle dark mode"
+            >
+              <i class="fa-solid fa-moon" aria-hidden="true"></i>
+            </button>
+          </div>
+
+          <div class="login-card">
+            <div class="logo">
+              <a href="/homepages/home1.html">
+                <img
+                  src="/images/logo-white.png"
+                  alt="AquaSprint Logo"
+                  data-theme-logo
+                />
+              </a>
+
+              <div class="logo-text">
+                <h1>AQUA<span>SPRINT</span></h1>
+                <p>BORN FOR EVERY STROKE.</p>
+              </div>
+            </div>
+
+            <header class="card-heading">
+              <h3>Create <span>Account</span></h3>
+              <p>Join AquaSprint and start your next wave.</p>
+            </header>
+
+            <form class="login-form" action="#" method="post">
+              <div class="field">
+                <label for="firstName">First Name</label>
+                <div class="input-wrap">
+                  <i class="fa-solid fa-user" aria-hidden="true"></i>
+                  <input
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    placeholder="First name"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="lastName">Last Name</label>
+                <div class="input-wrap">
+                  <i class="fa-solid fa-user" aria-hidden="true"></i>
+                  <input
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    placeholder="Last name"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="field full">
+                <label for="email">Email Address</label>
+                <div class="input-wrap">
+                  <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="password">Password</label>
+                <div class="input-wrap">
+                  <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                  <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Create password"
+                    required
+                  />
+                  <button
+                    type="button"
+                    class="eye-btn"
+                    id="togglePassword"
+                    aria-label="Show password"
+                  >
+                    <i class="fa-solid fa-eye" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="confirmPassword">Confirm Password</label>
+                <div class="input-wrap">
+                  <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                  <input
+                    type="password"
+                    id="confirmPassword"
+                    name="confirmPassword"
+                    placeholder="Confirm password"
+                    required
+                  />
+                  <button
+                    type="button"
+                    class="eye-btn"
+                    id="toggleConfirmPassword"
+                    aria-label="Show confirm password"
+                  >
+                    <i class="fa-solid fa-eye" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+
+              <button type="submit" class="signin-btn">
+                SIGN UP <span>→</span>
+              </button>
+            </form>
+
+            <div class="divider">
+              <span></span>
+              <p>OR SIGN UP WITH</p>
+              <span></span>
+            </div>
+
+            <div class="social-stack" aria-label="Other sign-up options">
+              <button type="button" class="social-btn google">
+                <i class="fa-brands fa-google" aria-hidden="true"></i>
+                <span>Google</span>
+              </button>
+
+              <button type="button" class="social-btn apple">
+                <i class="fa-brands fa-apple" aria-hidden="true"></i>
+                <span>Apple</span>
+              </button>
+            </div>
+
+            <div class="auth-switch">
+              <p>
+                Already have an account?
+                <a href="login.html" class="create-link"
+                  >Sign In <span aria-hidden="true">→</span></a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

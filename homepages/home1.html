@@ -1,0 +1,894 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AquaSprint-Home1</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="/images/logo-white.png" />
+    <link rel="stylesheet" href="/global/global.css" />
+    <link rel="stylesheet" href="home1.css" />
+
+    <script src="home1.js" defer></script>
+  </head>
+  <body>
+    <div id="navbar"></div>
+
+    <section
+      class="hero-slider"
+      id="heroSlider"
+      aria-label="AquaSprint hero slider"
+    >
+      <div class="hero-slide active"></div>
+      <div class="hero-slide"></div>
+      <div class="hero-slide"></div>
+      <div class="hero-slide"></div>
+      <div class="hero-slide"></div>
+
+      <div class="hero-mask"></div>
+
+      <div class="hero-content reveal">
+        <span class="hero-tag">AquaSprint Elite Performance</span>
+
+        <h1>
+          <span class="heading-light">Crafted for Speed,</span>
+          <span class="heading-accent">Designed for Confidence.</span>
+        </h1>
+
+        <p>
+          Premium swimwear and training essentials built with refined materials,
+          dynamic comfort, and performance-focused design for athletes who
+          demand excellence in every session.
+        </p>
+
+        <div class="hero-actions">
+          <a
+            href="/collectionpage/collectiondetailing.html"
+            class="hero-btn primary-btn"
+            >Shop Men</a
+          >
+          <a
+            href="/collectionpage/collectiondetailing.html"
+            class="hero-btn secondary-btn"
+            >Shop Women</a
+          >
+        </div>
+      </div>
+
+      <div class="hero-controls">
+        <button
+          class="hero-arrow prev"
+          id="prevSlide"
+          aria-label="Previous slide"
+        >
+          &#10094;
+        </button>
+
+        <div class="hero-dots" id="heroDots" aria-label="Slider navigation">
+          <button class="dot active" aria-label="Go to slide 1"></button>
+          <button class="dot" aria-label="Go to slide 2"></button>
+          <button class="dot" aria-label="Go to slide 3"></button>
+          <button class="dot" aria-label="Go to slide 4"></button>
+          <button class="dot" aria-label="Go to slide 5"></button>
+        </div>
+
+        <button class="hero-arrow next" id="nextSlide" aria-label="Next slide">
+          &#10095;
+        </button>
+      </div>
+    </section>
+
+    <section class="shop-sport-section reveal" id="shopBySport">
+      <div class="shop-sport-container">
+        <div class="shop-sport-heading reveal">
+          <span class="section-tag">Shop by Sport</span>
+          <h2>
+            Discover Performance Wear for
+            <span>Every Sport</span>
+          </h2>
+          <p>
+            Explore premium swimwear, activewear, and sports essentials curated
+            for every movement, every training routine, and every athlete.
+          </p>
+        </div>
+
+        <div class="shop-sport-grid">
+          <a
+            href="/collectionpage/collection.html"
+            class="sport-card reveal-left"
+          >
+            <div class="sport-card-image">
+              <img src="/images/hero2.png" alt="Swimming category" />
+              <span class="sport-badge">Swim</span>
+            </div>
+            <div class="sport-card-content">
+              <h3>Swimming</h3>
+              <p>
+                Premium swimwear, goggles, caps, and training gear built for
+                speed, comfort, and peak performance.
+              </p>
+              <span class="sport-link">Explore Collection</span>
+            </div>
+          </a>
+
+          <a
+            href="/collectionpage/collection.html"
+            class="sport-card reveal-right"
+          >
+            <div class="sport-card-image">
+              <img src="/images/running.avif" alt="Running category" />
+              <span class="sport-badge">Run</span>
+            </div>
+            <div class="sport-card-content">
+              <h3>Running</h3>
+              <p>
+                Lightweight activewear and breathable layers designed for pace,
+                endurance, and motion.
+              </p>
+              <span class="sport-link">Explore Collection</span>
+            </div>
+          </a>
+
+          <a
+            href="/collectionpage/collection.html"
+            class="sport-card reveal-left"
+          >
+            <div class="sport-card-image">
+              <img src="/images/training.avif" alt="Training category" />
+              <span class="sport-badge">Train</span>
+            </div>
+            <div class="sport-card-content">
+              <h3>Training</h3>
+              <p>
+                Flexible performance sets, gym essentials, and support wear for
+                every workout session.
+              </p>
+              <span class="sport-link">Explore Collection</span>
+            </div>
+          </a>
+
+          <a
+            href="/collectionpage/collection.html"
+            class="sport-card reveal-right"
+          >
+            <div class="sport-card-image">
+              <img src="/images/team.avif" alt="Team sports category" />
+              <span class="sport-badge">Teamwear</span>
+            </div>
+            <div class="sport-card-content">
+              <h3>Team Sports</h3>
+              <p>
+                Elevate your team's identity with premium jerseys, coordinated
+                kits, and performance.
+              </p>
+              <span class="sport-link">Explore Collection</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="shop-gender-section section-padding reveal-left"
+      id="shopByGender"
+    >
+      <div class="shop-gender-container">
+        <div class="shop-gender-heading reveal">
+          <span class="gender-section-tag">Shop by Gender</span>
+          <h2>Find the Right Fit for <span>Every Athlete</span></h2>
+          <p>
+            Browse premium swimwear, activewear, and sports essentials designed
+            for men, women, and young champions.
+          </p>
+        </div>
+
+        <div class="gender-layout">
+          <a
+            href="/collectionpage/collection.html"
+            class="gender-panel men-panel reveal-left"
+          >
+            <div class="gender-overlay"></div>
+            <div class="gender-content">
+              <span class="gender-mini-tag">Men</span>
+              <h3>Performance for Him</h3>
+              <p>
+                Explore swimwear, training apparel, and sports essentials built
+                for movement, endurance, and confidence.
+              </p>
+              <span class="gender-link">Shop Men</span>
+            </div>
+          </a>
+
+          <a
+            href="/collectionpage/collection.html"
+            class="gender-panel women-panel reveal-right"
+          >
+            <div class="gender-overlay"></div>
+            <div class="gender-content">
+              <span class="gender-mini-tag">Women</span>
+              <h3>Designed for Her</h3>
+              <p>
+                Discover flattering fits, premium swim styles, and activewear
+                tailored for strength, comfort, and style.
+              </p>
+              <span class="gender-link">Shop Women</span>
+            </div>
+          </a>
+
+          <a
+            href="/collectionpage/collection.html"
+            class="gender-strip kids-panel reveal"
+          >
+            <div class="gender-overlay"></div>
+            <div class="gender-content">
+              <span class="gender-mini-tag">Kids</span>
+              <h3>Built for Young Champions</h3>
+              <p>
+                Comfortable swimwear and sports clothing made for active kids,
+                lessons, training, and fun.
+              </p>
+              <span class="gender-link">Shop Kids</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="featured-collections-section section-padding reveal-right"
+      id="featuredCollections"
+    >
+      <div class="featured-collections-container">
+        <div class="featured-collections-heading reveal">
+          <span class="featured-tag">Featured Collections</span>
+          <h2>Explore Signature Styles for <span>Every Move</span></h2>
+          <p>
+            Discover premium swimwear, activewear, and accessories designed to
+            bring together performance, comfort, and modern athletic style.
+          </p>
+        </div>
+
+        <div class="collection-band swimwear-band reveal-left">
+          <div class="collection-band-image">
+            <img src="/images/swimwear.avif" alt="Swimwear collection" />
+          </div>
+          <div class="collection-band-content">
+            <span class="collection-mini-tag">Swimwear</span>
+            <h3>Precision Swimwear for Training and Competition</h3>
+            <p>
+              Explore premium swimsuits, jammers, rash guards, and training
+              essentials crafted for performance in every lane.
+            </p>
+            <a
+              href="/collectionpage/collectiondetailing.html"
+              class="collection-link"
+              >Shop Swimwear</a
+            >
+          </div>
+        </div>
+
+        <div class="collection-band activewear-band reverse-band reveal-right">
+          <div class="collection-band-image">
+            <img src="/images/active.webp" alt="Activewear collection" />
+          </div>
+          <div class="collection-band-content">
+            <span class="collection-mini-tag">Activewear</span>
+            <h3>Elevated Apparel for Training, Running, and Recovery</h3>
+            <p>
+              Discover flexible layers, breathable performance sets, and
+              gym-ready pieces built to support movement all day.
+            </p>
+            <a
+              href="/collectionpage/collectiondetailing.html"
+              class="collection-link"
+              >Shop Activewear</a
+            >
+          </div>
+        </div>
+
+        <div class="collection-band accessories-band compact-band reveal-left">
+          <div class="collection-band-image">
+            <img src="/images/accessories.avif" alt="Accessories collection" />
+          </div>
+          <div class="collection-band-content">
+            <span class="collection-mini-tag">Accessories</span>
+            <h3>Finish the Look with Sport Essentials</h3>
+            <p>
+              Shop goggles, caps, bags, towels, and accessories made to complete
+              your training and travel kit.
+            </p>
+            <a
+              href="/collectionpage/collectiondetailing.html"
+              class="collection-link"
+              >Shop Accessories</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="toggle-showcase-section section-padding reveal"
+      id="toggleShowcase"
+    >
+      <div class="toggle-showcase-container">
+        <div class="toggle-showcase-heading reveal">
+          <span class="toggle-showcase-tag">Shop the Highlights</span>
+          <h2>New Arrivals, Best Sellers & <span>More</span></h2>
+          <p>
+            Switch between curated product stories and discover standout
+            collections built for swim, training, and active lifestyles.
+          </p>
+        </div>
+
+        <div class="showcase-toggle-nav">
+          <button
+            class="showcase-toggle-btn active"
+            data-target="arrivalPanel"
+            type="button"
+          >
+            New Arrivals
+          </button>
+          <button
+            class="showcase-toggle-btn"
+            data-target="bestsellerPanel"
+            type="button"
+          >
+            Best Sellers
+          </button>
+          <button
+            class="showcase-toggle-btn"
+            data-target="trendingPanel"
+            type="button"
+          >
+            Trending Now
+          </button>
+          <button
+            class="showcase-toggle-btn"
+            data-target="editorsPanel"
+            type="button"
+          >
+            Editor’s Picks
+          </button>
+        </div>
+
+        <div class="showcase-panels">
+          <div class="showcase-panel active reveal-left" id="arrivalPanel">
+            <div class="showcase-media">
+              <img
+                src="/images/hero2.png"
+                alt="New arrivals sportswear collection"
+              />
+            </div>
+            <div class="showcase-content">
+              <span class="showcase-label">Fresh Drop</span>
+              <h3>Discover the Latest Performance Arrivals</h3>
+              <p>
+                Explore newly launched swimwear, lightweight training apparel,
+                and modern essentials created for athletes who want style and
+                function in every session.
+              </p>
+
+              <div class="showcase-points">
+                <div class="showcase-point">
+                  <h4>Hydro Pro Swim Set</h4>
+                  <p>
+                    Sleek support, competition-ready fit, and quick-dry comfort.
+                  </p>
+                </div>
+                <div class="showcase-point">
+                  <h4>Motion Flex Tee</h4>
+                  <p>
+                    Breathable performance top for gym work, running, and
+                    layering.
+                  </p>
+                </div>
+                <div class="showcase-point">
+                  <h4>Core Active Shorts</h4>
+                  <p>
+                    Lightweight design with flexible movement and everyday ease.
+                  </p>
+                </div>
+              </div>
+
+              <a href="/collectionpage/collection.html" class="showcase-cta"
+                >Shop New Arrivals</a
+              >
+            </div>
+          </div>
+
+          <div class="showcase-panel reveal-right" id="bestsellerPanel">
+            <div class="showcase-media">
+              <img
+                src="/images/hero3.png"
+                alt="Best sellers activewear collection"
+              />
+            </div>
+            <div class="showcase-content">
+              <span class="showcase-label">Most Loved</span>
+              <h3>Best Sellers Chosen by Our Community</h3>
+              <p>
+                These customer favorites lead the way with dependable fit,
+                premium materials, and all-day performance across swim and
+                activewear.
+              </p>
+
+              <div class="showcase-points">
+                <div class="showcase-point">
+                  <h4>Elite Jammer</h4>
+                  <p>
+                    Streamlined swimwear built for speed, endurance, and
+                    comfort.
+                  </p>
+                </div>
+                <div class="showcase-point">
+                  <h4>Performance Training Tee</h4>
+                  <p>
+                    A go-to active staple with a clean fit and breathable feel.
+                  </p>
+                </div>
+                <div class="showcase-point">
+                  <h4>Sport Duffle Bag</h4>
+                  <p>
+                    Spacious carry solution for pool sessions, gym days, and
+                    travel.
+                  </p>
+                </div>
+              </div>
+
+              <a href="/collectionpage/collection.html" class="showcase-cta"
+                >Shop Best Sellers</a
+              >
+            </div>
+          </div>
+
+          <div class="showcase-panel reveal-left" id="trendingPanel">
+            <div class="showcase-media">
+              <img src="/images/jacket.jpg" alt="Trending sports essentials" />
+            </div>
+            <div class="showcase-content">
+              <span class="showcase-label">Trending Now</span>
+              <h3>What Athletes Are Shopping Right Now</h3>
+              <p>
+                Stay current with rising favorites across seasonal swimwear,
+                versatile training layers, and accessories made for active
+                routines.
+              </p>
+
+              <div class="showcase-points">
+                <div class="showcase-point">
+                  <h4>Streamline Women’s Set</h4>
+                  <p>
+                    Elegant performance design with secure support and movement.
+                  </p>
+                </div>
+                <div class="showcase-point">
+                  <h4>Velocity Zip Jacket</h4>
+                  <p>
+                    Layer-friendly outerwear with lightweight warmth and
+                    stretch.
+                  </p>
+                </div>
+                <div class="showcase-point">
+                  <h4>Hydro Utility Kit</h4>
+                  <p>
+                    Training accessories selected for daily pool and gym use.
+                  </p>
+                </div>
+              </div>
+
+              <a href="/collectionpage/collection.html" class="showcase-cta"
+                >Shop Trending</a
+              >
+            </div>
+          </div>
+
+          <div class="showcase-panel reveal-right" id="editorsPanel">
+            <div class="showcase-media">
+              <img
+                src="/images/swimjackets2.jpg"
+                alt="Editor's picks fashion sportswear"
+              />
+            </div>
+            <div class="showcase-content">
+              <span class="showcase-label">Editor’s Picks</span>
+              <h3>Curated Pieces with Signature Style</h3>
+              <p>
+                Handpicked favorites that blend premium performance with refined
+                athletic aesthetics for a confident and polished look.
+              </p>
+
+              <div class="showcase-points">
+                <div class="showcase-point">
+                  <h4>Signature Swim Jacket</h4>
+                  <p>
+                    Modern layering essential for training transitions and
+                    travel.
+                  </p>
+                </div>
+                <div class="showcase-point">
+                  <h4>Contour Active Leggings</h4>
+                  <p>
+                    Supportive, sleek, and designed to move through every
+                    workout.
+                  </p>
+                </div>
+                <div class="showcase-point">
+                  <h4>Performance Essentials Bag</h4>
+                  <p>Minimal storage solution with a clean athletic finish.</p>
+                </div>
+              </div>
+
+              <a href="/collectionpage/collection.html" class="showcase-cta"
+                >Explore Editor’s Picks</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="team-enquiry-section section-padding reveal-left"
+      id="teamEnquiry"
+    >
+      <div class="team-enquiry-container">
+        <div class="team-enquiry-layout">
+          <div class="team-enquiry-content reveal">
+            <span class="team-enquiry-tag">Bulk & Team Orders</span>
+            <h2>Team Kit Enquiry <span>for Clubs, Schools & Groups</span></h2>
+            <p>
+              Planning a team order? Share your requirements and our team will
+              help you with kit options, pricing, customization, and delivery
+              guidance.
+            </p>
+
+            <div class="team-enquiry-highlights">
+              <div class="team-highlight-item reveal-left">
+                <h3>Custom Teamwear</h3>
+                <p>
+                  Request swim kits, activewear sets, warm-up layers, and
+                  accessories for your full squad.
+                </p>
+              </div>
+              <div class="team-highlight-item reveal-right">
+                <h3>Bulk Pricing Support</h3>
+                <p>
+                  Get help with quantity-based recommendations for schools,
+                  academies, and clubs.
+                </p>
+              </div>
+              <div class="team-highlight-item reveal-left">
+                <h3>Logo & Branding</h3>
+                <p>
+                  Ask about club colors, sponsor branding, and crest placement
+                  for a polished team look.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-enquiry-form-wrap reveal-right">
+            <form class="team-enquiry-form">
+              <div class="form-grid two-col">
+                <div class="form-field">
+                  <label for="teamName">Full Name</label>
+                  <input
+                    type="text"
+                    id="teamName"
+                    name="teamName"
+                    placeholder="Enter your full name"
+                  />
+                </div>
+
+                <div class="form-field">
+                  <label for="teamEmail">Email Address</label>
+                  <input
+                    type="email"
+                    id="teamEmail"
+                    name="teamEmail"
+                    placeholder="Enter your email"
+                  />
+                </div>
+              </div>
+
+              <div class="form-grid two-col">
+                <div class="form-field">
+                  <label for="teamPhone">Phone Number</label>
+                  <input
+                    type="tel"
+                    id="teamPhone"
+                    name="teamPhone"
+                    placeholder="Enter phone number"
+                  />
+                </div>
+
+                <div class="form-field">
+                  <label for="organization">Club / School / Organization</label>
+                  <input
+                    type="text"
+                    id="organization"
+                    name="organization"
+                    placeholder="Enter organization name"
+                  />
+                </div>
+              </div>
+
+              <div class="form-grid two-col">
+                <div class="form-field">
+                  <label for="enquiryType">Area of Enquiry</label>
+                  <select id="enquiryType" name="enquiryType">
+                    <option value="">Select enquiry type</option>
+                    <option value="playing-kit">Playing Kit</option>
+                    <option value="leisurewear">Leisurewear</option>
+                    <option value="equipment">Equipment</option>
+                    <option value="custom-branding">Custom Branding</option>
+                    <option value="other">Other / General</option>
+                  </select>
+                </div>
+
+                <div class="form-field">
+                  <label for="quantity">Estimated Quantity</label>
+                  <input
+                    type="number"
+                    id="quantity"
+                    name="quantity"
+                    placeholder="e.g. 50"
+                  />
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label for="requirements">Requirements</label>
+                <textarea
+                  id="requirements"
+                  name="requirements"
+                  rows="5"
+                  placeholder="Tell us about sizes, products, branding, deadlines, and any special requirements"
+                ></textarea>
+              </div>
+
+              <button type="submit" class="team-enquiry-submit">
+                Submit Enquiry
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="premium-testimonials-section section-padding reveal-right"
+      id="premiumTestimonials"
+    >
+      <div class="premium-testimonials-container">
+        <div class="premium-testimonials-header reveal">
+          <span class="premium-testimonials-tag">Testimonials & Trust</span>
+          <h2>Trusted by Athletes, Teams & <span>Everyday Performers</span></h2>
+          <p>
+            Discover why customers choose our swimwear, activewear, and
+            accessories for training, competition, and teamwear needs.
+          </p>
+        </div>
+
+        <div class="premium-testimonials-stage">
+          <div class="testimonial-main-display">
+            <div
+              class="testimonial-panel active reveal-left"
+              id="testimonial-1"
+            >
+              <div class="testimonial-rating" aria-label="5 out of 5 stars">
+                <i data-lucide="star"></i>
+                <i data-lucide="star"></i>
+                <i data-lucide="star"></i>
+                <i data-lucide="star"></i>
+                <i data-lucide="star"></i>
+              </div>
+              <blockquote>
+                “The quality of the team kit was outstanding. The fit, fabric,
+                and finish felt premium, and the ordering support made the whole
+                process smooth for our club.”
+              </blockquote>
+              <div class="testimonial-author">
+                <h3>Daniel Foster</h3>
+                <p>Head Coach, City Swim Club</p>
+              </div>
+            </div>
+
+            <div class="testimonial-panel reveal-right" id="testimonial-2">
+              <div class="testimonial-rating" aria-label="5 out of 5 stars">
+                <i data-lucide="star"></i>
+                <i data-lucide="star"></i>
+                <i data-lucide="star"></i>
+                <i data-lucide="star"></i>
+                <i data-lucide="star"></i>
+              </div>
+              <blockquote>
+                “Their activewear collection has become my weekly go-to. It
+                feels lightweight, performs well during training, and still
+                looks polished outside the gym.”
+              </blockquote>
+              <div class="testimonial-author">
+                <h3>Sophia Reed</h3>
+                <p>Fitness Member & Repeat Customer</p>
+              </div>
+            </div>
+
+            <div class="testimonial-panel reveal-left" id="testimonial-3">
+              <div class="testimonial-rating" aria-label="5 out of 5 stars">
+                <i data-lucide="star"></i>
+                <i data-lucide="star"></i>
+                <i data-lucide="star"></i>
+                <i data-lucide="star"></i>
+                <i data-lucide="star"></i>
+              </div>
+              <blockquote>
+                “We needed branded apparel for a school sports group, and the
+                team handled the enquiry quickly. The final result looked
+                professional and arrived right on schedule.”
+              </blockquote>
+              <div class="testimonial-author">
+                <h3>James Walker</h3>
+                <p>Sports Coordinator, Northfield Academy</p>
+              </div>
+            </div>
+
+            <div class="testimonial-panel reveal-right" id="testimonial-4">
+              <div class="testimonial-rating" aria-label="5 out of 5 stars">
+                <i data-lucide="star"></i>
+                <i data-lucide="star"></i>
+                <i data-lucide="star"></i>
+                <i data-lucide="star"></i>
+                <i data-lucide="star"></i>
+              </div>
+              <blockquote>
+                “From swim essentials to accessories, everything feels carefully
+                designed. It’s rare to find a store that combines performance
+                and elevated style this well.”
+              </blockquote>
+              <div class="testimonial-author">
+                <h3>Emily Carter</h3>
+                <p>Competitive Swimmer</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-selector-list">
+            <button
+              class="testimonial-selector active"
+              data-testimonial="testimonial-1"
+              type="button"
+            >
+              <span class="selector-number">01</span>
+              <div class="selector-copy">
+                <strong>Daniel Foster</strong>
+                <span>Team Kit Experience</span>
+              </div>
+            </button>
+
+            <button
+              class="testimonial-selector"
+              data-testimonial="testimonial-2"
+              type="button"
+            >
+              <span class="selector-number">02</span>
+              <div class="selector-copy">
+                <strong>Sophia Reed</strong>
+                <span>Activewear Review</span>
+              </div>
+            </button>
+
+            <button
+              class="testimonial-selector"
+              data-testimonial="testimonial-3"
+              type="button"
+            >
+              <span class="selector-number">03</span>
+              <div class="selector-copy">
+                <strong>James Walker</strong>
+                <span>Bulk Order Feedback</span>
+              </div>
+            </button>
+
+            <button
+              class="testimonial-selector"
+              data-testimonial="testimonial-4"
+              type="button"
+            >
+              <span class="selector-number">04</span>
+              <div class="selector-copy">
+                <strong>Emily Carter</strong>
+                <span>Product Quality Review</span>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <div class="trust-highlights-bar reveal">
+          <div class="trust-highlight-item">
+            <h3>500+</h3>
+            <p>Happy customers served across swim and active categories</p>
+          </div>
+          <div class="trust-highlight-item">
+            <h3>4.9/5</h3>
+            <p>Average satisfaction rating from verified buyers</p>
+          </div>
+          <div class="trust-highlight-item">
+            <h3>Fast Support</h3>
+            <p>Responsive help for sizing, teamwear, and bulk enquiries</p>
+          </div>
+          <div class="trust-highlight-item">
+            <h3>Premium Quality</h3>
+            <p>
+              Performance-driven materials selected for training and everyday
+              use
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter-gallery-section reveal" id="newsletterGallery">
+      <div class="newsletter-gallery-container">
+        <div class="gallery-block">
+          <div class="gallery-heading reveal-left">
+            <span class="gallery-tag">Brand Lifestyle</span>
+            <h2>Inside the World of <span>Your Brand</span></h2>
+            <p>
+              A visual gallery of swimwear, activewear, team moments, and
+              behind-the-scenes content that reflects the energy of the brand.
+            </p>
+          </div>
+
+          <div class="gallery-grid">
+            <a href="#" class="gallery-item large reveal">
+              <img src="/images/gallery1.jpg" alt="Lifestyle gallery image 1" />
+            </a>
+            <a href="#" class="gallery-item reveal-right">
+              <img src="/images/gallery2.jpg" alt="Lifestyle gallery image 2" />
+            </a>
+            <a href="#" class="gallery-item reveal-left">
+              <img src="/images/cricket.jpg" alt="Lifestyle gallery image 3" />
+            </a>
+            <a href="#" class="gallery-item wide reveal-right">
+              <img src="/images/store.jpeg" alt="Lifestyle gallery image 4" />
+            </a>
+          </div>
+        </div>
+
+        <div class="cta-block reveal-up">
+          <div class="cta-copy">
+            <span class="cta-tag">Ready to Explore?</span>
+            <h2>Shop the Collection</h2>
+            <p>
+              Discover the latest swimwear, activewear, and accessories designed
+              for performance, comfort, and style.
+            </p>
+          </div>
+
+          <div class="cta-actions">
+            <a href="/collectionpage/collection.html" class="primary-cta"
+              >Shop Now</a
+            >
+            <a
+              href="/collectionpage/collectiondetailing.html"
+              class="secondary-cta"
+              >View Collections</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="footer"></div>
+
+    <script src="https://unpkg.com/lucide@0.542.0/dist/umd/lucide.min.js"></script>
+    <script src="/global/component.js"></script>
+  </body>
+</html>
