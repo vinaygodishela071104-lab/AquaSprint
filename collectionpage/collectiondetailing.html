@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AquaSprint-Home2</title>
+    <title>AquaSprint-Collection-detailing</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -28,6 +28,53 @@
           </p>
         </div>
       </div>
+      <div class="top-cart-bar">
+        <div class="cart-wrapper">
+          <button
+            id="cartToggleBtn"
+            class="cart-toggle-btn"
+            type="button"
+            aria-controls="cartPanel"
+            aria-expanded="false"
+          >
+            <i data-lucide="shopping-cart"></i>
+            <span id="cartBadge">0</span>
+          </button>
+
+          <div class="cart-panel" id="cartPanel" hidden>
+            <div class="cart-panel__head">
+              <div>
+                <h2>Your Cart</h2>
+                <p>Selected products grouped by category.</p>
+              </div>
+            </div>
+
+            <div class="cart-group">
+              <div class="cart-group__title">
+                <h3>Men</h3>
+                <span id="menCount">0</span>
+              </div>
+              <div class="cart-items" id="cartMen"></div>
+            </div>
+
+            <div class="cart-group">
+              <div class="cart-group__title">
+                <h3>Women</h3>
+                <span id="womenCount">0</span>
+              </div>
+              <div class="cart-items" id="cartWomen"></div>
+            </div>
+
+            <div class="cart-group">
+              <div class="cart-group__title">
+                <h3>Kids</h3>
+                <span id="kidsCount">0</span>
+              </div>
+              <div class="cart-items" id="cartKids"></div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div class="collection-center">
         <div class="collection-filters">
@@ -47,195 +94,387 @@
       </div>
 
       <div class="collection-grid" id="collectionGrid">
-        <article class="collection-card" data-category="men" data-age="all">
+        <article
+          class="collection-card"
+          data-category="men"
+          data-age="all"
+          data-name="Hydro Flex Pro Brief"
+          data-price="1299"
+        >
           <div class="collection-card__image image-men-1"></div>
           <div class="collection-card__body">
             <span>Men • Swimwear</span>
             <h3>Hydro Flex Pro Brief</h3>
+            <p class="price">₹1,299</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
           </div>
         </article>
 
-        <article class="collection-card" data-category="men" data-age="all">
+        <article
+          class="collection-card"
+          data-category="men"
+          data-age="all"
+          data-name="DryFit Training Tee"
+          data-price="999"
+        >
           <div class="collection-card__image image-men-2"></div>
           <div class="collection-card__body">
             <span>Men • Sports Wear</span>
             <h3>DryFit Training Tee</h3>
+            <p class="price">₹999</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
           </div>
         </article>
 
-        <article class="collection-card" data-category="men" data-age="all">
+        <article
+          class="collection-card"
+          data-category="men"
+          data-age="all"
+          data-name="Pro Grip Water Bottle"
+          data-price="599"
+        >
           <div class="collection-card__image image-men-3"></div>
           <div class="collection-card__body">
             <span>Men • Sports Accessories</span>
             <h3>Pro Grip Water Bottle</h3>
+            <p class="price">₹599</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
           </div>
         </article>
 
-        <article class="collection-card" data-category="men" data-age="all">
+        <article
+          class="collection-card"
+          data-category="men"
+          data-age="all"
+          data-name="Aqua Stream Jammer"
+          data-price="1499"
+        >
           <div class="collection-card__image image-men-4"></div>
           <div class="collection-card__body">
             <span>Men • Swimwear</span>
             <h3>Aqua Stream Jammer</h3>
+            <p class="price">₹1,499</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
           </div>
         </article>
 
-        <article class="collection-card" data-category="men" data-age="all">
+        <article
+          class="collection-card"
+          data-category="men"
+          data-age="all"
+          data-name="Velocity Track Shorts"
+          data-price="1199"
+        >
           <div class="collection-card__image image-men-5"></div>
           <div class="collection-card__body">
             <span>Men • Sports Wear</span>
             <h3>Velocity Track Shorts</h3>
+            <p class="price">₹1,199</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
           </div>
         </article>
 
-        <article class="collection-card" data-category="men" data-age="all">
+        <article
+          class="collection-card"
+          data-category="men"
+          data-age="all"
+          data-name="Performance Cap"
+          data-price="749"
+        >
           <div class="collection-card__image image-men-6"></div>
           <div class="collection-card__body">
             <span>Men • Sports Accessories</span>
             <h3>Performance Cap</h3>
+            <p class="price">₹749</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
           </div>
         </article>
 
-        <article class="collection-card" data-category="men" data-age="all">
+        <article
+          class="collection-card"
+          data-category="men"
+          data-age="all"
+          data-name="Blue Tide Racer"
+          data-price="1599"
+        >
           <div class="collection-card__image image-men-7"></div>
           <div class="collection-card__body">
             <span>Men • Swimwear</span>
             <h3>Blue Tide Racer</h3>
+            <p class="price">₹1,599</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
           </div>
         </article>
 
-        <article class="collection-card" data-category="men" data-age="all">
+        <article
+          class="collection-card"
+          data-category="men"
+          data-age="all"
+          data-name="CoreFit Sleeveless Top"
+          data-price="899"
+        >
           <div class="collection-card__image image-men-8"></div>
           <div class="collection-card__body">
             <span>Men • Sports Wear</span>
             <h3>CoreFit Sleeveless Top</h3>
+            <p class="price">₹899</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
           </div>
         </article>
 
-        <article class="collection-card" data-category="women" data-age="all">
+        <article
+          class="collection-card"
+          data-category="women"
+          data-age="all"
+          data-name="Ocean Curve One Piece"
+          data-price="1799"
+        >
           <div class="collection-card__image image-women-1"></div>
           <div class="collection-card__body">
             <span>Women • Swimwear</span>
             <h3>Ocean Curve One Piece</h3>
+            <p class="price">₹1,799</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
           </div>
         </article>
 
-        <article class="collection-card" data-category="women" data-age="all">
+        <article
+          class="collection-card"
+          data-category="women"
+          data-age="all"
+          data-name="Motion Flex Set"
+          data-price="1999"
+        >
           <div class="collection-card__image image-women-2"></div>
           <div class="collection-card__body">
             <span>Women • Sports Wear</span>
             <h3>Motion Flex Set</h3>
+            <p class="price">₹1,999</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
           </div>
         </article>
 
-        <article class="collection-card" data-category="women" data-age="all">
+        <article
+          class="collection-card"
+          data-category="women"
+          data-age="all"
+          data-name="GripFit Active Cap"
+          data-price="699"
+        >
           <div class="collection-card__image image-women-3"></div>
           <div class="collection-card__body">
             <span>Women • Sports Accessories</span>
             <h3>GripFit Active Cap</h3>
+            <p class="price">₹699</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
           </div>
         </article>
 
-        <article class="collection-card" data-category="women" data-age="all">
+        <article
+          class="collection-card"
+          data-category="women"
+          data-age="all"
+          data-name="Wave Form Monokini"
+          data-price="2299"
+        >
           <div class="collection-card__image image-women-4"></div>
           <div class="collection-card__body">
             <span>Women • Swimwear</span>
             <h3>Wave Form Monokini</h3>
+            <p class="price">₹2,299</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
           </div>
         </article>
 
-        <article class="collection-card" data-category="women" data-age="all">
+        <article
+          class="collection-card"
+          data-category="women"
+          data-age="all"
+          data-name="Stride Luxe Leggings"
+          data-price="1399"
+        >
           <div class="collection-card__image image-women-5"></div>
           <div class="collection-card__body">
             <span>Women • Sports Wear</span>
             <h3>Stride Luxe Leggings</h3>
+            <p class="price">₹1,399</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
           </div>
         </article>
 
-        <article class="collection-card" data-category="women" data-age="all">
+        <article
+          class="collection-card"
+          data-category="women"
+          data-age="all"
+          data-name="Aero Sport Bottle"
+          data-price="549"
+        >
           <div class="collection-card__image image-women-6"></div>
           <div class="collection-card__body">
             <span>Women • Sports Accessories</span>
             <h3>Aero Sport Bottle</h3>
+            <p class="price">₹549</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
           </div>
         </article>
 
-        <article class="collection-card" data-category="women" data-age="all">
+        <article
+          class="collection-card"
+          data-category="women"
+          data-age="all"
+          data-name="Coral Edge Swimsuit"
+          data-price="1899"
+        >
           <div class="collection-card__image image-women-7"></div>
           <div class="collection-card__body">
             <span>Women • Swimwear</span>
             <h3>Coral Edge Swimsuit</h3>
+            <p class="price">₹1,899</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
           </div>
         </article>
 
-        <article class="collection-card" data-category="women" data-age="all">
+        <article
+          class="collection-card"
+          data-category="women"
+          data-age="all"
+          data-name="Active Seam Top"
+          data-price="1099"
+        >
           <div class="collection-card__image image-women-8"></div>
           <div class="collection-card__body">
             <span>Women • Sports Wear</span>
             <h3>Active Seam Top</h3>
+            <p class="price">₹1,099</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
           </div>
         </article>
 
-        <article class="collection-card" data-category="kids" data-age="2-4">
+        <article
+          class="collection-card"
+          data-category="kids"
+          data-age="2-4"
+          data-name="Mini Splash Suit"
+          data-price="899"
+        >
           <div class="collection-card__image image-kids-1"></div>
           <div class="collection-card__body">
             <span>Kids • Swimwear</span>
             <h3>Mini Splash Suit</h3>
+            <p class="price">₹899</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
           </div>
         </article>
 
-        <article class="collection-card" data-category="kids" data-age="2-4">
+        <article
+          class="collection-card"
+          data-category="kids"
+          data-age="2-4"
+          data-name="Junior Move Tee"
+          data-price="699"
+        >
           <div class="collection-card__image image-kids-2"></div>
           <div class="collection-card__body">
             <span>Kids • Sports Wear</span>
             <h3>Junior Move Tee</h3>
+            <p class="price">₹699</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
           </div>
         </article>
 
-        <article class="collection-card" data-category="kids" data-age="2-4">
+        <article
+          class="collection-card"
+          data-category="kids"
+          data-age="2-4"
+          data-name="PlayPro Bottle"
+          data-price="399"
+        >
           <div class="collection-card__image image-kids-3"></div>
           <div class="collection-card__body">
             <span>Kids • Sports Accessories</span>
             <h3>PlayPro Bottle</h3>
+            <p class="price">₹399</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
           </div>
         </article>
 
-        <article class="collection-card" data-category="kids" data-age="5-7">
+        <article
+          class="collection-card"
+          data-category="kids"
+          data-age="5-7"
+          data-name="Wave Runner Kid Set"
+          data-price="999"
+        >
           <div class="collection-card__image image-kids-4"></div>
           <div class="collection-card__body">
             <span>Kids • Swimwear</span>
             <h3>Wave Runner Kid Set</h3>
+            <p class="price">₹999</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
           </div>
         </article>
 
-        <article class="collection-card" data-category="kids" data-age="5-7">
+        <article
+          class="collection-card"
+          data-category="kids"
+          data-age="5-7"
+          data-name="Little Sprint Shorts"
+          data-price="749"
+        >
           <div class="collection-card__image image-kids-5"></div>
           <div class="collection-card__body">
             <span>Kids • Sports Wear</span>
             <h3>Little Sprint Shorts</h3>
+            <p class="price">₹749</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
           </div>
         </article>
 
-        <article class="collection-card" data-category="kids" data-age="5-7">
+        <article
+          class="collection-card"
+          data-category="kids"
+          data-age="5-7"
+          data-name="Junior Cap"
+          data-price="449"
+        >
           <div class="collection-card__image image-kids-6"></div>
           <div class="collection-card__body">
             <span>Kids • Sports Accessories</span>
             <h3>Junior Cap</h3>
+            <p class="price">₹449</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
           </div>
         </article>
 
-        <article class="collection-card" data-category="kids" data-age="8-10">
+        <article
+          class="collection-card"
+          data-category="kids"
+          data-age="8-10"
+          data-name="Pool Dash Suit"
+          data-price="1099"
+        >
           <div class="collection-card__image image-kids-7"></div>
           <div class="collection-card__body">
             <span>Kids • Swimwear</span>
             <h3>Pool Dash Suit</h3>
+            <p class="price">₹1,099</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
           </div>
         </article>
 
-        <article class="collection-card" data-category="kids" data-age="11-13">
+        <article
+          class="collection-card"
+          data-category="kids"
+          data-age="11-13"
+          data-name="Teen Flex Tee"
+          data-price="799"
+        >
           <div class="collection-card__image image-kids-8"></div>
           <div class="collection-card__body">
             <span>Kids • Sports Wear</span>
             <h3>Teen Flex Tee</h3>
+            <p class="price">₹799</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
           </div>
         </article>
       </div>
