@@ -1,0 +1,503 @@
+/* ==========================
+   GOOGLE FONTS IMPORT
+========================== */
+@import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap");
+
+/* ==========================
+   TYPOGRAPHY SETTINGS
+========================== */
+:root {
+  --heading-font: "Oxanium", sans-serif;
+  --body-font: "Poppins", sans-serif;
+
+  --primary: #0f2740;
+  --secondary: #2bb7d6;
+  --secondary-dark: #1287a8;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --border: #dbe7ee;
+  --white: #ffffff;
+}
+
+/* ==========================
+   GLOBAL RESET
+========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: #ffffff;
+  color: var(--text);
+  font-family: var(--body-font);
+  font-size: 14px;
+  line-height: 1.6;
+  transition: background 0.4s, color 0.4s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+body.rtl {
+  direction: rtl;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =========================
+   CONTROLS (RTL & Dark Mode)
+========================= */
+.controls {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 100;
+}
+
+.control-btn {
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  color: var(--primary);
+  transition: 0.35s;
+}
+
+.control-btn svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 2.1;
+}
+
+.control-btn:hover {
+  background: var(--secondary);
+  color: #ffffff;
+  border-color: var(--secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(43, 183, 214, 0.2);
+}
+
+/* =========================
+   UPCOMING PAGE CONTENT
+========================= */
+.upcoming-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px 20px;
+  max-width: 550px;
+  width: 100%;
+  gap: 14px;
+}
+
+.upcoming-icon {
+  width: 60px;
+  height: 60px;
+  color: var(--secondary);
+  flex-shrink: 0;
+}
+
+.upcoming-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.upcoming-page h1 {
+  font-family: var(--heading-font);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1.1;
+  margin: 0;
+}
+
+.upcoming-page h2 {
+  font-family: var(--heading-font);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+}
+
+.upcoming-page p {
+  font-size: 0.85rem;
+  color: var(--muted);
+  max-width: 400px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* =========================
+   COUNTDOWN TIMER
+========================= */
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  border-radius: 12px;
+  border: 1px solid rgba(43, 183, 214, 0.2);
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 50px;
+}
+
+.countdown-number {
+  font-family: var(--heading-font);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--secondary);
+  background: #ffffff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(43, 183, 214, 0.12);
+  min-width: 45px;
+  display: block;
+  text-align: center;
+}
+
+.countdown-label {
+  font-size: 0.6rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.countdown-separator {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--secondary);
+  margin-top: 8px;
+}
+
+/* =========================
+   NOTIFY FORM
+========================= */
+.notify-form {
+  width: 100%;
+  max-width: 400px;
+  margin: 0;
+}
+
+.form-group {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.form-group input {
+  flex: 1;
+  padding: 11px 16px;
+  border: 1px solid var(--border);
+  border-radius: 40px;
+  font-family: var(--body-font);
+  font-size: 0.85rem;
+  color: var(--text);
+  background: #ffffff;
+  transition: 0.35s;
+  outline: none;
+}
+
+.form-group input:focus {
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 3px rgba(43, 183, 214, 0.1);
+}
+
+.notify-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 11px 22px;
+  border-radius: 40px;
+  background: var(--secondary);
+  color: #ffffff;
+  font-family: var(--body-font);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: 0.35s;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.notify-btn svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 2.1;
+}
+
+.notify-btn:hover {
+  background: var(--secondary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(43, 183, 214, 0.2);
+}
+
+.form-message {
+  font-size: 0.75rem;
+  margin-top: 6px;
+  min-height: 16px;
+}
+
+.form-message.success {
+  color: #10b981;
+}
+
+.form-message.error {
+  color: #ef4444;
+}
+
+/* =========================
+   HOME BUTTON
+========================= */
+.home-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 22px;
+  border-radius: 40px;
+  background: var(--secondary);
+  color: #ffffff;
+  font-family: var(--body-font);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: 0.35s;
+  border: none;
+}
+
+.home-btn svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 2.1;
+}
+
+.home-btn:hover {
+  background: var(--secondary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(43, 183, 214, 0.2);
+}
+
+/* =========================
+   DARK MODE
+========================= */
+body.dark-mode {
+  background: #101820;
+  color: #ffffff;
+}
+
+body.dark-mode .upcoming-page p {
+  color: #b6c2cf;
+}
+
+body.dark-mode .control-btn {
+  background: #132130;
+  border-color: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+body.dark-mode .upcoming-page h1,
+body.dark-mode .upcoming-page h2 {
+  color: #ffffff;
+}
+
+body.dark-mode .countdown-container {
+  background: linear-gradient(135deg, #132130 0%, #0d1721 100%);
+  border-color: rgba(43, 183, 214, 0.15);
+}
+
+body.dark-mode .countdown-number {
+  background: #0d1721;
+  color: var(--secondary);
+  box-shadow: 0 3px 8px rgba(43, 183, 214, 0.1);
+}
+
+body.dark-mode .countdown-label {
+  color: #b6c2cf;
+}
+
+body.dark-mode .form-group input {
+  background: #0d1721;
+  border-color: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+body.dark-mode .form-group input:focus {
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 3px rgba(43, 183, 214, 0.15);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .upcoming-page {
+    padding: 25px 15px;
+    gap: 12px;
+  }
+
+  .upcoming-page h1 {
+    font-size: 1.8rem;
+  }
+
+  .upcoming-page h2 {
+    font-size: 0.9rem;
+  }
+
+  .upcoming-page p {
+    font-size: 0.8rem;
+  }
+
+  .countdown-container {
+    padding: 10px 15px;
+    gap: 8px;
+  }
+
+  .countdown-item {
+    min-width: 42px;
+  }
+
+  .countdown-number {
+    font-size: 1.1rem;
+    padding: 7px 10px;
+    min-width: 40px;
+  }
+
+  .countdown-label {
+    font-size: 0.55rem;
+  }
+
+  .countdown-separator {
+    font-size: 0.9rem;
+  }
+
+  .form-group {
+    flex-direction: column;
+  }
+
+  .notify-btn {
+    width: 100%;
+  }
+
+  .home-btn {
+    font-size: 0.8rem;
+    padding: 9px 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 13px;
+  }
+
+  .controls {
+    top: 12px;
+    right: 12px;
+  }
+
+  .control-btn {
+    width: 34px;
+    height: 34px;
+  }
+
+  .control-btn svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .upcoming-page {
+    padding: 20px 12px;
+    gap: 10px;
+  }
+
+  .upcoming-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .upcoming-page h1 {
+    font-size: 1.5rem;
+  }
+
+  .upcoming-page h2 {
+    font-size: 0.85rem;
+  }
+
+  .upcoming-page p {
+    font-size: 0.75rem;
+  }
+
+  .countdown-container {
+    padding: 8px 12px;
+    gap: 6px;
+  }
+
+  .countdown-item {
+    min-width: 36px;
+    gap: 3px;
+  }
+
+  .countdown-number {
+    font-size: 1rem;
+    padding: 6px 8px;
+    min-width: 34px;
+  }
+
+  .countdown-label {
+    font-size: 0.5rem;
+  }
+
+  .countdown-separator {
+    font-size: 0.8rem;
+    margin-top: 6px;
+  }
+
+  .form-group input {
+    padding: 10px 14px;
+    font-size: 0.8rem;
+  }
+
+  .notify-btn {
+    padding: 10px 18px;
+    font-size: 0.8rem;
+  }
+
+  .home-btn {
+    font-size: 0.75rem;
+    padding: 8px 16px;
+  }
+
+  .home-btn svg {
+    width: 14px;
+    height: 14px;
+  }
+}

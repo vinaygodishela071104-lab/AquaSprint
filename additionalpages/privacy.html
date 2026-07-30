@@ -12,37 +12,54 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="privacy.css" />
   </head>
   <body>
+    <!-- Controls: RTL & Dark Mode -->
+    <div class="controls">
+      <button class="control-btn" id="rtlToggle" aria-label="Toggle RTL">
+        <i data-lucide="arrow-left-right"></i>
+      </button>
+      <button
+        class="control-btn"
+        id="darkModeToggle"
+        aria-label="Toggle Dark Mode"
+      >
+        <i data-lucide="moon"></i>
+      </button>
+    </div>
+
     <div class="privacy-page">
       <header class="privacy-header">
-        <div class="logo">
-          <a href="/homepages/home1.html" aria-label="AquaSprint Home">
-            <img
-              src="/images/logo-white.png"
-              alt="AquaSprint Logo"
-              data-theme-logo
-            />
-          </a>
+        <div class="terms-hero">
+          <div class="logo">
+            <a href="/homepages/home1.html" aria-label="AquaSprint Home">
+              <img
+                src="/images/logo-dark.png"
+                alt="AquaSprint Logo"
+                data-theme-logo
+              />
+            </a>
 
-          <div class="logo-text">
-            <h1>AQUA<span>SPRINT</span></h1>
-            <p>BORN FOR EVERY STROKE.</p>
+            <div class="logo-text">
+              <h1>AQUA<span>SPRINT</span></h1>
+              <p>BORN FOR EVERY STROKE.</p>
+            </div>
           </div>
-        </div>
 
-        <div class="hero-copy">
-          <span class="page-kicker">Legal Information</span>
-          <h2>Privacy Policy</h2>
-          <p>
-            This Privacy Policy explains how AquaSprint collects, uses, stores,
-            and protects your personal information when you visit or shop on our
-            website.
-          </p>
-          <div class="policy-meta">
-            <span>Last updated: July 27, 2026</span>
-            <span>Effective for AquaSprint website users</span>
+          <div class="hero-copy">
+            <span class="legal-badge">Legal Information</span>
+            <h2>Privacy Policy</h2>
+            <p>
+              This Privacy Policy explains how AquaSprint collects, uses,
+              stores, and protects your personal information when you visit or
+              shop on our website.
+            </p>
+            <div class="policy-meta">
+              <span>Last updated: July 27, 2026</span>
+              <span>Effective for AquaSprint website users</span>
+            </div>
           </div>
         </div>
       </header>
@@ -55,7 +72,7 @@
         <a href="#share">5. Sharing Information</a>
         <a href="#security">6. Data Security</a>
         <a href="#rights">7. Your Rights</a>
-        <a href="#children">8. Children’s Privacy</a>
+        <a href="#children">8. Children's Privacy</a>
         <a href="#changes">9. Policy Changes</a>
         <a href="#contact">10. Contact Us</a>
       </nav>
@@ -156,7 +173,7 @@
         </section>
 
         <section class="policy-card" id="children">
-          <h3>8. Children’s Privacy</h3>
+          <h3>8. Children's Privacy</h3>
           <p>
             AquaSprint does not knowingly collect personal information from
             children without appropriate consent. If we learn that such
@@ -195,5 +212,73 @@
         </p>
       </aside>
     </div>
+
+    <!-- Scripts -->
+    <script>
+      // Initialize Lucide Icons
+      lucide.createIcons();
+
+      // =========================
+      // Logo Swap for Dark Mode
+      // =========================
+      const logoImg = document.querySelector("img[data-theme-logo]");
+      const lightLogo = "/images/logo-white.png";
+      const darkLogo = "/images/logo-dark.png";
+
+      // =========================
+      // Dark Mode Toggle
+      // =========================
+      const darkModeToggle = document.getElementById("darkModeToggle");
+      const darkModeIcon = darkModeToggle.querySelector("i");
+
+      // Check saved preference and apply
+      if (localStorage.getItem("darkMode") === "enabled") {
+        document.body.classList.add("dark-mode");
+        darkModeIcon.setAttribute("data-lucide", "sun");
+        if (logoImg) {
+          logoImg.src = darkLogo;
+        }
+        lucide.createIcons();
+      }
+
+      darkModeToggle.addEventListener("click", () => {
+        const isDark = document.body.classList.toggle("dark-mode");
+
+        if (isDark) {
+          localStorage.setItem("darkMode", "enabled");
+          darkModeIcon.setAttribute("data-lucide", "sun");
+          if (logoImg) {
+            logoImg.src = darkLogo;
+          }
+        } else {
+          localStorage.setItem("darkMode", "disabled");
+          darkModeIcon.setAttribute("data-lucide", "moon");
+          if (logoImg) {
+            logoImg.src = lightLogo;
+          }
+        }
+
+        lucide.createIcons();
+      });
+
+      // =========================
+      // RTL Toggle
+      // =========================
+      const rtlToggle = document.getElementById("rtlToggle");
+
+      if (localStorage.getItem("rtl") === "enabled") {
+        document.body.classList.add("rtl");
+      }
+
+      rtlToggle.addEventListener("click", () => {
+        document.body.classList.toggle("rtl");
+
+        if (document.body.classList.contains("rtl")) {
+          localStorage.setItem("rtl", "enabled");
+        } else {
+          localStorage.setItem("rtl", "disabled");
+        }
+      });
+    </script>
   </body>
 </html>

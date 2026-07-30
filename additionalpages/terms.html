@@ -12,9 +12,21 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="terms.css" />
   </head>
   <body>
+    <!-- Controls: RTL & Dark Mode -->
+    <div class="controls">
+      <button class="control-btn" id="rtlToggle" aria-label="Toggle RTL">
+        <i data-lucide="arrow-left-right"></i>
+      </button>
+      <button class="control-btn" id="darkModeToggle" aria-label="Toggle Dark Mode">
+        <i data-lucide="moon"></i>
+      </button>
+    </div>
+
     <div class="terms-page">
       <header class="terms-header">
         <div class="terms-hero">
@@ -190,5 +202,56 @@
         </ul>
       </aside>
     </div>
+
+    <!-- Scripts -->
+    <script>
+      // Initialize Lucide Icons
+      lucide.createIcons();
+
+      // =========================
+      // Dark Mode Toggle
+      // =========================
+      const darkModeToggle = document.getElementById('darkModeToggle');
+      const darkModeIcon = darkModeToggle.querySelector('i');
+      
+      if (localStorage.getItem('darkMode') === 'enabled') {
+        document.body.classList.add('dark-mode');
+        darkModeIcon.setAttribute('data-lucide', 'sun');
+        lucide.createIcons();
+      }
+
+      darkModeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        
+        if (document.body.classList.contains('dark-mode')) {
+          localStorage.setItem('darkMode', 'enabled');
+          darkModeIcon.setAttribute('data-lucide', 'sun');
+        } else {
+          localStorage.setItem('darkMode', 'disabled');
+          darkModeIcon.setAttribute('data-lucide', 'moon');
+        }
+        
+        lucide.createIcons();
+      });
+
+      // =========================
+      // RTL Toggle
+      // =========================
+      const rtlToggle = document.getElementById('rtlToggle');
+      
+      if (localStorage.getItem('rtl') === 'enabled') {
+        document.body.classList.add('rtl');
+      }
+
+      rtlToggle.addEventListener('click', () => {
+        document.body.classList.toggle('rtl');
+        
+        if (document.body.classList.contains('rtl')) {
+          localStorage.setItem('rtl', 'enabled');
+        } else {
+          localStorage.setItem('rtl', 'disabled');
+        }
+      });
+    </script>
   </body>
 </html>

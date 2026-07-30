@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AquaSprint-Blog-detailing</title>
+    <title>AquaSprint - Premium Sportswear Guide</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="icon" href="/images/logo-white.png" />
@@ -16,426 +16,975 @@
   </head>
   <body>
     <div id="navbar"></div>
-    <main>
-      <section class="blog-hero">
-        <div class="blog-hero__content reveal reveal-left">
-          <span class="blog-badge">AquaSprint Journal</span>
 
-          <div class="blog-crumbs" aria-label="Breadcrumb">
-            <span>Journal</span>
+    <!-- Full Width Hero Banner (No Sidebar) -->
+    <div class="blog-hero-fullwidth">
+      <article class="blog-hero-banner">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <div class="breadcrumb-nav">
+            <a href="#">Home</a>
+            <span>/</span>
+            <a href="#">Journal</a>
             <span>/</span>
             <span>Training & Lifestyle</span>
           </div>
-
+          <span class="category-badge">Training & Lifestyle</span>
           <h1>
-            <span class="head">Why premium sportswear</span> should feel as good
-            in motion as it does in everyday life
+            Why Premium Sportswear Should Feel as Good in Motion as in Everyday
+            Life
           </h1>
-
-          <p class="blog-hero__lead">
+          <p class="hero-excerpt">
             The right sportswear does more than support movement. It brings
             comfort, confidence, and versatility together so training pieces
             feel just as natural outside the session as they do during it.
           </p>
-
-          <div class="blog-meta">
-            <span>By AquaSprint Editorial Team</span>
-            <span>July 24, 2026</span>
-            <span>6 min read</span>
+          <div class="author-meta">
+            <div class="author-info">
+              <img
+                src="/images/coopertae.avif"
+                alt="Author"
+                class="author-avatar"
+              />
+              <div class="author-details">
+                <span class="author-name">AquaSprint Editorial Team</span>
+                <span class="publish-date">July 24, 2026</span>
+              </div>
+            </div>
+            <div class="meta-stats">
+              <span class="read-time">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                6 min read
+              </span>
+            </div>
           </div>
         </div>
-      </section>
+      </article>
+    </div>
 
-      <section class="blog-featured-visual" aria-label="Featured story image">
-        <div class="blog-featured-visual__frame reveal reveal-up">
+    <!-- Two Column Layout: Left Sidebar + Right Article -->
+    <div class="blog-content-wrapper">
+      <!-- Left Sticky Sidebar -->
+      <aside class="blog-sidebar-left">
+        <div class="sidebar-sticky-wrapper">
+          <!-- Card 1: Search -->
+          <div class="sidebar-card search-card">
+            <h3 class="card-title">Search</h3>
+            <form class="search-form">
+              <input
+                type="search"
+                placeholder="Search articles..."
+                class="search-input"
+              />
+              <button type="submit" class="search-btn">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+              </button>
+            </form>
+          </div>
+
+          <!-- Card 2: Table of Contents -->
+          <div class="sidebar-card toc-card">
+            <h3 class="card-title">Table of Contents</h3>
+            <nav class="toc-nav">
+              <a href="#introduction" class="toc-link active">Introduction</a>
+              <a href="#choosing-swimwear" class="toc-link"
+                >Choosing the Right Swimwear</a
+              >
+              <a href="#materials" class="toc-link">Sportswear Materials</a>
+              <a href="#performance" class="toc-link">Performance Features</a>
+              <a href="#maintenance" class="toc-link">Care & Maintenance</a>
+              <a href="#faqs" class="toc-link">FAQs</a>
+              <a href="#conclusion" class="toc-link">Conclusion</a>
+            </nav>
+          </div>
+
+          <!-- Card 3: Categories -->
+          <div class="sidebar-card categories-card">
+            <h3 class="card-title">Categories</h3>
+            <div class="categories-badges">
+              <a href="#" class="category-badge-small">Swimwear</a>
+              <a href="#" class="category-badge-small">Sportswear</a>
+              <a href="#" class="category-badge-small">Fitness</a>
+              <a href="#" class="category-badge-small">Training Tips</a>
+              <a href="#" class="category-badge-small">Lifestyle</a>
+              <a href="#" class="category-badge-small">Accessories</a>
+            </div>
+          </div>
+
+          <!-- Card 4: Recent Posts -->
+          <div class="sidebar-card recent-posts-card">
+            <h3 class="card-title">Recent Posts</h3>
+            <div class="recent-posts-list">
+              <article class="recent-post-item">
+                <img
+                  src="/images/training.avif"
+                  alt="Post"
+                  class="recent-thumb"
+                />
+                <div class="recent-post-info">
+                  <h4>How to Choose Performance Gear</h4>
+                  <div class="recent-meta">
+                    <span>Jul 24, 2026</span>
+                    <span>6 min</span>
+                  </div>
+                </div>
+              </article>
+              <article class="recent-post-item">
+                <img
+                  src="/images/sports2.png"
+                  alt="Post"
+                  class="recent-thumb"
+                />
+                <div class="recent-post-info">
+                  <h4>Premium Sportswear Guide</h4>
+                  <div class="recent-meta">
+                    <span>Jul 23, 2026</span>
+                    <span>8 min</span>
+                  </div>
+                </div>
+              </article>
+              <article class="recent-post-item">
+                <img
+                  src="/images/accessories.avif"
+                  alt="Post"
+                  class="recent-thumb"
+                />
+                <div class="recent-post-info">
+                  <h4>Essential Training Accessories</h4>
+                  <div class="recent-meta">
+                    <span>Jul 22, 2026</span>
+                    <span>5 min</span>
+                  </div>
+                </div>
+              </article>
+              <article class="recent-post-item">
+                <img
+                  src="/images/gallery1.jpg"
+                  alt="Post"
+                  class="recent-thumb"
+                />
+                <div class="recent-post-info">
+                  <h4>Beginner's Sportswear Guide</h4>
+                  <div class="recent-meta">
+                    <span>Jul 21, 2026</span>
+                    <span>7 min</span>
+                  </div>
+                </div>
+              </article>
+              <article class="recent-post-item">
+                <img src="/images/hero4.png" alt="Post" class="recent-thumb" />
+                <div class="recent-post-info">
+                  <h4>Care Tips for Activewear</h4>
+                  <div class="recent-meta">
+                    <span>Jul 20, 2026</span>
+                    <span>6 min</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- Card 5: Popular Articles -->
+          <div class="sidebar-card popular-articles-card">
+            <h3 class="card-title">Popular Articles</h3>
+            <div class="popular-list">
+              <div class="popular-item">
+                <span class="popular-number">1</span>
+                <a href="#" class="popular-link"
+                  >How to Choose Performance Gear for Daily Workouts</a
+                >
+              </div>
+              <div class="popular-item">
+                <span class="popular-number">2</span>
+                <a href="#" class="popular-link"
+                  >Best Sportswear Essentials for Beginners in 2026</a
+                >
+              </div>
+              <div class="popular-item">
+                <span class="popular-number">3</span>
+                <a href="#" class="popular-link"
+                  >Why Hydration Matters Before and After Training</a
+                >
+              </div>
+              <div class="popular-item">
+                <span class="popular-number">4</span>
+                <a href="#" class="popular-link"
+                  >How to Wash Activewear Without Damaging Fabric</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6: Featured Products -->
+          <div class="sidebar-card featured-products-card">
+            <h3 class="card-title">Featured Products</h3>
+            <div class="products-list">
+              <div class="product-item">
+                <img
+                  src="/images/trunks1.jpg"
+                  alt="Product"
+                  class="product-image"
+                />
+                <div class="product-info">
+                  <h4>Performance Shorts</h4>
+                  <p class="product-desc">
+                    Lightweight, moisture-wicking fabric
+                  </p>
+                  <a
+                    href="/collectionpage/collectiondetailing.html"
+                    class="view-product-btn"
+                    >View Product</a
+                  >
+                </div>
+              </div>
+              <div class="product-item">
+                <img
+                  src="/images/TrainingTop.avif"
+                  alt="Product"
+                  class="product-image"
+                />
+                <div class="product-info">
+                  <h4>Training Tank</h4>
+                  <p class="product-desc">Breathable, athletic fit</p>
+                  <a
+                    href="/collectionpage/collectiondetailing.html"
+                    class="view-product-btn"
+                    >View Product</a
+                  >
+                </div>
+              </div>
+              <div class="product-item">
+                <img
+                  src="/images/AthleticLeggings.avif"
+                  alt="Product"
+                  class="product-image"
+                />
+                <div class="product-info">
+                  <h4>Compression Leggings</h4>
+                  <p class="product-desc">Support and flexibility combined</p>
+                  <a
+                    href="/collectionpage/collectiondetailing.html"
+                    class="view-product-btn"
+                    >View Product</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 7: Newsletter -->
+          <div class="sidebar-card newsletter-card">
+            <h3 class="card-title">Stay Updated</h3>
+            <p class="newsletter-desc">
+              Get the latest training tips and product insights delivered to
+              your inbox.
+            </p>
+            <form class="newsletter-form">
+              <input
+                type="email"
+                placeholder="Your email"
+                class="newsletter-input"
+                required
+              />
+              <button type="submit" class="newsletter-btn">Subscribe</button>
+            </form>
+          </div>
+
+          <!-- Card 8: Promotional Banner -->
+          <div class="sidebar-card promo-banner-card">
+            <div class="promo-image">
+              <img src="/images/collection.png" alt="Promotion" />
+            </div>
+            <div class="promo-content">
+              <h4>New Collection</h4>
+              <p>Discover our latest premium sportswear line</p>
+              <a
+                href="/collectionpage/collectiondetailing.html"
+                class="shop-now-btn"
+                >Shop Now →</a
+              >
+            </div>
+          </div>
+
+          <!-- Card 9: Social Media -->
+          <div class="sidebar-card social-card">
+            <h3 class="card-title">Follow Us</h3>
+            <div class="social-icons">
+              <a href="#" class="social-icon" aria-label="Facebook">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                  ></path>
+                </svg>
+              </a>
+              <a href="#" class="social-icon" aria-label="Instagram">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path
+                    d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                  ></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </a>
+              <a href="#" class="social-icon" aria-label="LinkedIn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                  ></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="social-icon" aria-label="YouTube">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"
+                  ></path>
+                  <polygon
+                    points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"
+                  ></polygon>
+                </svg>
+              </a>
+              <a href="#" class="social-icon" aria-label="X (Twitter)">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+                  <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 10: Tags -->
+          <div class="sidebar-card tags-card">
+            <h3 class="card-title">Tags</h3>
+            <div class="tags-cloud">
+              <a href="#" class="tag">Swimming</a>
+              <a href="#" class="tag">Performance</a>
+              <a href="#" class="tag">Training</a>
+              <a href="#" class="tag">Sportswear</a>
+              <a href="#" class="tag">Water Sports</a>
+              <a href="#" class="tag">Comfort</a>
+              <a href="#" class="tag">Fitness</a>
+              <a href="#" class="tag">Competition</a>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Right Article Content -->
+      <main class="blog-article-content">
+        <!-- Featured Image -->
+        <div class="featured-image-wrapper">
           <img
             src="/images/training.avif"
-            alt="Athletic gear setup for premium training wear"
-            loading="lazy"
-            decoding="async"
+            alt="Premium athletic gear setup"
+            class="featured-image"
           />
-        </div>
-      </section>
-
-      <section class="blog-story-copy">
-        <div class="blog-reading-wrap reveal reveal-up">
-          <p>
-            There is a clear difference between activewear that simply looks
-            good and activewear that feels right from the first movement. The
-            best performance pieces create ease. They support the body without
-            distraction, stay comfortable through long sessions, and make each
-            part of the routine feel more natural.
-          </p>
-
-          <p>
-            At AquaSprint, performance gear is not just about technical promise.
-            It is also about how naturally a piece fits into real routines.
-            Training, commuting, recovery, and casual wear often overlap, so the
-            strongest designs are the ones that adapt across those moments
-            without losing shape, comfort, or clarity of style.
-          </p>
-
-          <p>
-            Good sportswear starts with thoughtful structure. Fabric should move
-            without resistance. Fit should feel supportive rather than tight.
-            Details like waistband stability, breathable panels, and soft
-            finishing can quietly change the full experience of training.
-          </p>
-
-          <p>
-            What makes a piece feel premium is often subtle. It appears in the
-            way seams sit smoothly, the way fabric recovers after movement, and
-            the way a silhouette remains polished beyond the workout. These are
-            the details that turn ordinary sportswear into something people
-            choose again and again.
-          </p>
-
-          <p>
-            Once those qualities come together, sportswear becomes more than a
-            practical layer. It becomes part of a lifestyle rhythm, supporting
-            confidence, movement, and comfort with the same consistency from the
-            first warm-up to the end of the day.
-          </p>
-        </div>
-      </section>
-
-      <section class="detail-flow">
-        <div class="detail-flow__intro reveal reveal-up">
-          <span class="blog-eyebrow">Performance Details</span>
-          <h2>The details that make activewear feel elevated every day</h2>
-          <p>
-            Premium sportswear earns attention through fit, fabric, movement,
-            and finish. Each quality shapes how confident, comfortable, and
-            versatile a piece feels in real use.
+          <p class="image-caption">
+            Premium sportswear combines performance with everyday comfort
           </p>
         </div>
 
-        <div class="detail-flow__grid">
-          <article class="detail-step reveal reveal-left">
-            <div class="detail-step__media">
-              <img
-                src="/images/sports2.png"
-                alt="Lifestyle sportswear and movement"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <div class="detail-step__body">
-              <h3>Fit should support movement without pressure</h3>
-              <p>
-                The best training pieces feel secure without becoming
-                restrictive. A strong fit supports the body, helps every motion
-                feel cleaner, and removes the need for constant adjustment
-                during a session. That balance is what creates confidence in
-                motion and comfort over time.
-              </p>
-            </div>
-          </article>
+        <!-- Article Content -->
+        <div class="article-content">
+          <!-- Introduction -->
+          <section class="content-section" id="introduction">
+            <h2>Introduction</h2>
+            <p class="lead-paragraph">
+              There is a clear difference between activewear that simply looks
+              good and activewear that feels right from the first movement. The
+              best performance pieces create ease. They support the body without
+              distraction, stay comfortable through long sessions, and make each
+              part of the routine feel more natural.
+            </p>
+            <p>
+              At AquaSprint, performance gear is not just about technical
+              promise. It is also about how naturally a piece fits into real
+              routines. Training, commuting, recovery, and casual wear often
+              overlap, so the strongest designs are the ones that adapt across
+              those moments without losing shape, comfort, or clarity of style.
+            </p>
+          </section>
 
-          <article class="detail-step reveal reveal-right">
-            <div class="detail-step__media">
-              <img
-                src="/images/accessories.avif"
-                alt="Layered sportswear outfit"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <div class="detail-step__body">
-              <h3>Fabric shapes comfort more than people expect</h3>
-              <p>
-                Texture, stretch, breathability, and weight all affect how
-                premium a garment feels. Soft yet structured fabric improves the
-                experience from the first touch, while also helping the piece
-                hold its form after repeated wear, washing, and movement.
-              </p>
-            </div>
-          </article>
+          <!-- Section 1 -->
+          <section class="content-section" id="choosing-swimwear">
+            <h2>Choosing the Right Swimwear for Performance</h2>
+            <p>
+              Good sportswear starts with thoughtful structure. Fabric should
+              move without resistance. Fit should feel supportive rather than
+              tight. Details like waistband stability, breathable panels, and
+              soft finishing can quietly change the full experience of training.
+            </p>
 
-          <article class="detail-step reveal reveal-left">
-            <div class="detail-step__media">
-              <img
-                src="/images/gallery2.jpg"
-                alt="Sports accessories and product guide"
-                loading="lazy"
-                decoding="async"
-              />
+            <div class="highlighted-quote">
+              <blockquote>
+                "What makes a piece feel premium is often subtle. It appears in
+                the way seams sit smoothly, the way fabric recovers after
+                movement, and the way a silhouette remains polished beyond the
+                workout."
+              </blockquote>
             </div>
-            <div class="detail-step__body">
-              <h3>Versatility is part of modern performance design</h3>
-              <p>
-                Today’s routines move between exercise and everyday life without
-                a clear break. Sportswear feels more valuable when it
-                transitions naturally between those moments, staying polished
-                enough for travel, errands, or casual wear while still
-                performing during training.
-              </p>
-            </div>
-          </article>
 
-          <article class="detail-step reveal reveal-right">
-            <div class="detail-step__media">
-              <img
-                src="/images/hero4.png"
-                alt="Sportswear care and washing setup"
-                loading="lazy"
-                decoding="async"
-              />
+            <h3>Key Considerations for Selection</h3>
+            <ul class="bullet-list">
+              <li>Fabric composition and stretch recovery</li>
+              <li>Seam placement and construction quality</li>
+              <li>Moisture-wicking and breathability features</li>
+              <li>Fit that supports without restricting movement</li>
+              <li>Durability through repeated wear and washing</li>
+            </ul>
+
+            <div class="info-card">
+              <div class="info-card-icon">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="16" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+              </div>
+              <div class="info-card-content">
+                <h4>Pro Tip</h4>
+                <p>
+                  Always try on sportswear while moving, not just standing
+                  still. Perform the movements you'll actually do during
+                  training to ensure the fit works in action.
+                </p>
+              </div>
             </div>
-            <div class="detail-step__body">
-              <h3>Finish and care preserve the premium impression</h3>
-              <p>
-                Premium sportswear is also defined by how well it lasts. Durable
-                stitching, stable stretch, and proper care habits help garments
-                remain dependable over time. When those qualities stay intact,
-                the full experience continues to feel intentional and refined.
-              </p>
+          </section>
+
+          <!-- Section 2 -->
+          <section class="content-section" id="materials">
+            <h2>Sportswear Materials and Fabric Technology</h2>
+            <p>
+              Premium sportswear is also defined by how well it lasts. Durable
+              stitching, stable stretch, and proper care habits help garments
+              remain dependable over time. When those qualities stay intact, the
+              full experience continues to feel intentional and refined.
+            </p>
+
+            <div class="stats-cards-grid">
+              <div class="stat-card">
+                <div class="stat-number">85%</div>
+                <div class="stat-label">
+                  Customers report better performance
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number">3x</div>
+                <div class="stat-label">Longer garment lifespan</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number">92%</div>
+                <div class="stat-label">Satisfaction with fabric quality</div>
+              </div>
             </div>
-          </article>
+
+            <h3>Fabric Comparison</h3>
+            <div class="comparison-table-wrapper">
+              <table class="comparison-table">
+                <thead>
+                  <tr>
+                    <th>Fabric Type</th>
+                    <th>Breathability</th>
+                    <th>Durability</th>
+                    <th>Best For</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Polyester Blend</td>
+                    <td>High</td>
+                    <td>Excellent</td>
+                    <td>High-intensity training</td>
+                  </tr>
+                  <tr>
+                    <td>Nylon</td>
+                    <td>Medium</td>
+                    <td>Very Good</td>
+                    <td>Swimming & water sports</td>
+                  </tr>
+                  <tr>
+                    <td>Spandex</td>
+                    <td>Medium</td>
+                    <td>Good</td>
+                    <td>Flexibility & stretch</td>
+                  </tr>
+                  <tr>
+                    <td>Cotton Blend</td>
+                    <td>Low</td>
+                    <td>Good</td>
+                    <td>Casual wear</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- Section 3: Performance -->
+          <section class="content-section" id="performance">
+            <h2>Performance Features That Matter</h2>
+            <p>
+              Once those qualities come together, sportswear becomes more than a
+              practical layer. It becomes part of a lifestyle rhythm, supporting
+              confidence, movement, and comfort with the same consistency from
+              the first warm-up to the end of the day.
+            </p>
+
+            <div class="callout-box callout-tip">
+              <div class="callout-icon">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="callout-content">
+                <h4>Expert Tip</h4>
+                <p>
+                  Turn your sportswear inside out before washing to protect the
+                  outer surface and maintain color vibrancy for longer.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Section 4: Maintenance -->
+          <section class="content-section" id="maintenance">
+            <h2>Care & Maintenance for Longevity</h2>
+            <p>
+              Investing in premium sportswear is an investment in your
+              performance, comfort, and confidence. The right pieces will
+              support you through every workout, every training session, and
+              every moment in between.
+            </p>
+
+            <h3>Washing Guidelines</h3>
+            <ol class="numbered-list">
+              <li>Always check the care label for specific instructions</li>
+              <li>Use cold or lukewarm water to preserve elasticity</li>
+              <li>Choose gentle, sports-specific detergents</li>
+              <li>Avoid fabric softeners that can damage technical fabrics</li>
+              <li>Air dry when possible to extend garment life</li>
+              <li>Store in a cool, dry place away from direct sunlight</li>
+            </ol>
+          </section>
         </div>
-      </section>
+      </main>
+    </div>
 
-      <section class="blog-faq">
-        <div class="blog-faq__head reveal reveal-up">
-          <span class="blog-eyebrow">FAQ</span>
-          <h2>Common questions about premium sportswear</h2>
-          <p>
-            A few quick answers about fit, fabric, care, and choosing pieces
-            that work for both training and everyday use.
-          </p>
-        </div>
+    <!-- Full Width FAQs Section -->
+    <section class="faq-full-section" id="faqs">
+      <div class="faq-container">
+        <h2>Frequently Asked Questions</h2>
 
-        <div class="blog-faq__list">
-          <details class="blog-faq__item reveal reveal-up">
-            <summary>
-              How should premium sportswear fit during workouts?
-            </summary>
+        <details class="faq-item">
+          <summary class="faq-question">
+            How should premium sportswear fit during workouts?
+            <span class="faq-toggle">+</span>
+          </summary>
+          <div class="faq-answer">
             <p>
               It should feel supportive without becoming restrictive. Good
               activewear allows natural movement, stays in place, and avoids
               pressure points during longer sessions.
             </p>
-          </details>
+          </div>
+        </details>
 
-          <details class="blog-faq__item reveal reveal-up">
-            <summary>What makes sportswear fabric feel premium?</summary>
+        <details class="faq-item">
+          <summary class="faq-question">
+            What makes sportswear fabric feel premium?
+            <span class="faq-toggle">+</span>
+          </summary>
+          <div class="faq-answer">
             <p>
               Premium fabric usually combines softness, stretch recovery,
               breathability, and durability. It should feel smooth on the body
               while keeping its structure through repeated wear and washing.
             </p>
-          </details>
+          </div>
+        </details>
 
-          <details class="blog-faq__item reveal reveal-up">
-            <summary>Can sportswear be used outside training too?</summary>
+        <details class="faq-item">
+          <summary class="faq-question">
+            Can sportswear be used outside training too?
+            <span class="faq-toggle">+</span>
+          </summary>
+          <div class="faq-answer">
             <p>
               Yes. The most versatile pieces transition easily into travel,
               recovery, and casual routines. That is one of the strongest signs
               of modern, well-designed sportswear.
             </p>
-          </details>
+          </div>
+        </details>
 
-          <details class="blog-faq__item reveal reveal-up">
-            <summary>
-              How do I protect performance fabric when washing it?
-            </summary>
+        <details class="faq-item">
+          <summary class="faq-question">
+            How do I protect performance fabric when washing it?
+            <span class="faq-toggle">+</span>
+          </summary>
+          <div class="faq-answer">
             <p>
               Use gentle cycles, avoid harsh heat, and skip heavy fabric
               softeners. Proper washing helps preserve stretch, shape, and
               overall garment performance for longer.
             </p>
-          </details>
-        </div>
-      </section>
+          </div>
+        </details>
+      </div>
+    </section>
 
-      <section class="similar-articles">
-        <div class="similar-articles__head reveal reveal-up">
-          <span class="blog-eyebrow">Similar Articles</span>
-          <h2>More stories from the AquaSprint journal</h2>
+    <!-- Full Width Conclusion Section -->
+    <section class="conclusion-full-section" id="conclusion">
+      <div class="conclusion-container">
+        <h2>Conclusion</h2>
+        <p>
+          Investing in premium sportswear is an investment in your performance,
+          comfort, and confidence. The right pieces will support you through
+          every workout, every training session, and every moment in between. By
+          understanding what makes sportswear truly premium, you can make
+          informed choices that enhance your athletic journey.
+        </p>
+      </div>
+    </section>
+
+    <!-- Full Width About the Author Section -->
+    <section class="author-bio-full-section">
+      <div class="author-bio-card">
+        <div class="author-bio-image">
+          <img src="/images/author.avif" alt="Author" />
+        </div>
+        <div class="author-bio-content">
+          <h3>About the Author</h3>
+          <h4>AquaSprint Editorial Team</h4>
           <p>
-            Explore more training, lifestyle, recovery, and care stories
-            designed to keep your routine informed, comfortable, and
-            performance-ready.
+            Our editorial team brings together years of experience in athletic
+            performance, sportswear technology, and fitness lifestyle. We're
+            dedicated to helping athletes at every level find gear that performs
+            as hard as they do.
           </p>
+          <div class="author-social">
+            <a href="#" class="social-link">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"
+                ></path>
+              </svg>
+            </a>
+            <a href="#" class="social-link">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path
+                  d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                ></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="#" class="social-link">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                ></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Full Width Comments + Leave Comment Section (Side by Side - Equal Width & Height) -->
+    <section class="comments-full-section">
+      <div class="comments-full-container">
+        <!-- Comments List (Left) -->
+        <div class="comments-list-wrapper">
+          <h2>Comments (3)</h2>
+
+          <div class="comments-list">
+            <div class="comment-card">
+              <div class="comment-avatar">
+                <img src="/images/p1.avif" alt="User" />
+              </div>
+              <div class="comment-content">
+                <div class="comment-header">
+                  <h4>Sarah Mitchell</h4>
+                  <span class="comment-date">July 25, 2026</span>
+                </div>
+                <p class="comment-text">
+                  This article perfectly explains what I've been looking for!
+                  The fabric comparison table was especially helpful. I've been
+                  struggling to find the right balance between performance and
+                  comfort.
+                </p>
+                <button class="reply-btn">Reply</button>
+              </div>
+            </div>
+
+            <div class="comment-card">
+              <div class="comment-avatar">
+                <img src="/images/p2.avif" alt="User" />
+              </div>
+              <div class="comment-content">
+                <div class="comment-header">
+                  <h4>Marcus Johnson</h4>
+                  <span class="comment-date">July 26, 2026</span>
+                </div>
+                <p class="comment-text">
+                  Great insights on maintenance! I've been washing my gear wrong
+                  this whole time. The tip about turning clothes inside out is a
+                  game-changer. Thanks for sharing!
+                </p>
+                <button class="reply-btn">Reply</button>
+              </div>
+            </div>
+
+            <div class="comment-card">
+              <div class="comment-avatar">
+                <img src="/images/p3.avif" alt="User" />
+              </div>
+              <div class="comment-content">
+                <div class="comment-header">
+                  <h4>Emma Chen</h4>
+                  <span class="comment-date">July 27, 2026</span>
+                </div>
+                <p class="comment-text">
+                  As a personal trainer, I recommend AquaSprint to all my
+                  clients. This article articulates exactly why quality
+                  sportswear matters. The investment in good gear pays off in
+                  performance and durability.
+                </p>
+                <button class="reply-btn">Reply</button>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="similar-articles__grid">
-          <article class="similar-card reveal reveal-left">
-            <a href="#" class="similar-card__linkwrap">
-              <div class="similar-card__image">
-                <img src="/images/training.avif" alt="Athletic gear setup" />
+        <!-- Leave a Comment Form (Right) -->
+        <div class="comment-form-wrapper-side">
+          <h3>Leave a Comment</h3>
+          <form class="comment-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Name *</label>
+                <input type="text" id="name" name="name" required />
               </div>
-
-              <div class="similar-card__content">
-                <span class="similar-card__tag">Training</span>
-                <h3>How to choose performance gear for daily workouts</h3>
-                <p>
-                  Learn how fit, fabric, and flexibility affect comfort and
-                  support during training.
-                </p>
-
-                <div class="similar-card__meta">
-                  <span><i data-lucide="clock-3"></i> 6 min read</span>
-                  <span><i data-lucide="calendar"></i> Jul 24, 2026</span>
-                </div>
-
-                <div class="similar-card__action">
-                  Read More <i data-lucide="arrow-right"></i>
-                </div>
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required />
               </div>
-            </a>
-          </article>
-
-          <article class="similar-card reveal reveal-up">
-            <a href="#" class="similar-card__linkwrap">
-              <div class="similar-card__image">
-                <img
-                  src="/images/sports2.png"
-                  alt="Sportswear lifestyle and movement"
-                />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" />
               </div>
-
-              <div class="similar-card__content">
-                <span class="similar-card__tag">Lifestyle</span>
-                <h3>What makes sportswear feel premium and versatile</h3>
-                <p>
-                  From fabric texture to silhouette, discover the details that
-                  elevate everyday wear effortlessly.
-                </p>
-
-                <div class="similar-card__meta">
-                  <span><i data-lucide="clock-3"></i> 8 min read</span>
-                  <span><i data-lucide="calendar"></i> Jul 24, 2026</span>
-                </div>
-
-                <div class="similar-card__action">
-                  Read More <i data-lucide="arrow-right"></i>
-                </div>
+              <div class="form-group">
+                <label for="website">Website</label>
+                <input type="url" id="website" name="website" />
               </div>
-            </a>
-          </article>
-
-          <article class="similar-card reveal reveal-right">
-            <a href="#" class="similar-card__linkwrap">
-              <div class="similar-card__image">
-                <img
-                  src="/images/gallery1.jpg"
-                  alt="Sports accessories and product guide"
-                />
-              </div>
-
-              <div class="similar-card__content">
-                <span class="similar-card__tag">Buying Guide</span>
-                <h3>Best sportswear essentials for beginners in 2026</h3>
-                <p>
-                  A practical guide to choosing reliable gear that supports
-                  comfort, movement, and style.
-                </p>
-
-                <div class="similar-card__meta">
-                  <span><i data-lucide="clock-3"></i> 5 min read</span>
-                  <span><i data-lucide="calendar"></i> Jul 24, 2026</span>
-                </div>
-
-                <div class="similar-card__action">
-                  Read More <i data-lucide="arrow-right"></i>
-                </div>
-              </div>
-            </a>
-          </article>
-
-          <article class="similar-card reveal reveal-left">
-            <a href="#" class="similar-card__linkwrap">
-              <div class="similar-card__image">
-                <img src="/images/jerseys.png" alt="Athlete staying hydrated" />
-              </div>
-
-              <div class="similar-card__content">
-                <span class="similar-card__tag">Recovery</span>
-                <h3>Why hydration matters before and after training</h3>
-                <p>
-                  Discover how proper hydration supports endurance, energy, and
-                  faster recovery after workouts.
-                </p>
-
-                <div class="similar-card__meta">
-                  <span><i data-lucide="clock-3"></i> 7 min read</span>
-                  <span><i data-lucide="calendar"></i> Jul 24, 2026</span>
-                </div>
-
-                <div class="similar-card__action">
-                  Read More <i data-lucide="arrow-right"></i>
-                </div>
-              </div>
-            </a>
-          </article>
-
-          <article class="similar-card reveal reveal-up">
-            <a href="#" class="similar-card__linkwrap">
-              <div class="similar-card__image">
-                <img
-                  src="/images/hero4.png"
-                  alt="Sportswear care and washing setup"
-                />
-              </div>
-
-              <div class="similar-card__content">
-                <span class="similar-card__tag">Care Tips</span>
-                <h3>
-                  How to wash activewear without damaging performance fabric
-                </h3>
-                <p>
-                  Learn the right washing habits to protect stretch, and
-                  durability.
-                </p>
-
-                <div class="similar-card__meta">
-                  <span><i data-lucide="clock-3"></i> 6 min read</span>
-                  <span><i data-lucide="calendar"></i> Jul 24, 2026</span>
-                </div>
-
-                <div class="similar-card__action">
-                  Read More <i data-lucide="arrow-right"></i>
-                </div>
-              </div>
-            </a>
-          </article>
-
-          <article class="similar-card reveal reveal-right">
-            <a href="#" class="similar-card__linkwrap">
-              <div class="similar-card__image">
-                <img
-                  src="/images/accessories.avif"
-                  alt="Layered sportswear outfit"
-                />
-              </div>
-
-              <div class="similar-card__content">
-                <span class="similar-card__tag">Style Guide</span>
-                <h3>How to layer sportswear for training and travel</h3>
-                <p>
-                  Build versatile outfits that move with you from warm-up
-                  sessions to everyday wear.
-                </p>
-
-                <div class="similar-card__meta">
-                  <span><i data-lucide="clock-3"></i> 5 min read</span>
-                  <span><i data-lucide="calendar"></i> Jul 24, 2026</span>
-                </div>
-
-                <div class="similar-card__action">
-                  Read More <i data-lucide="arrow-right"></i>
-                </div>
-              </div>
-            </a>
-          </article>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                placeholder="What's your comment about?"
+              />
+            </div>
+            <div class="form-group">
+              <label for="comment">Comment *</label>
+              <textarea
+                id="comment"
+                name="comment"
+                rows="5"
+                required
+                placeholder="Share your thoughts..."
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label class="checkbox-label">
+                <input type="checkbox" name="notify" />
+                <span>Notify me of follow-up comments</span>
+              </label>
+            </div>
+            <div class="form-group">
+              <label class="checkbox-label">
+                <input type="checkbox" name="newsletter" />
+                <span>Subscribe to our newsletter</span>
+              </label>
+            </div>
+            <button type="submit" class="submit-btn">Post Comment</button>
+          </form>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
+
+    <!-- Full Width Related Articles (No Sidebar) -->
+    <section class="related-articles">
+      <div class="section-header">
+        <span class="section-badge">Related Articles</span>
+        <h2>More from the Journal</h2>
+      </div>
+      <div class="related-grid">
+        <article class="related-card">
+          <div class="related-image">
+            <img src="/images/training.avif" alt="Article" />
+          </div>
+          <div class="related-content">
+            <span class="related-category">Training</span>
+            <h3>How to Choose Performance Gear for Daily Workouts</h3>
+            <p class="related-excerpt">
+              Learn how fit, fabric, and flexibility affect comfort and support
+              during training.
+            </p>
+            <div class="related-meta">
+              <span class="related-author">By AquaSprint Team</span>
+              <span class="related-date">Jul 24, 2026</span>
+              <span class="related-read">6 min read</span>
+            </div>
+            <a href="#" class="read-more-btn">Read More →</a>
+          </div>
+        </article>
+
+        <article class="related-card">
+          <div class="related-image">
+            <img src="/images/sports2.png" alt="Article" />
+          </div>
+          <div class="related-content">
+            <span class="related-category">Lifestyle</span>
+            <h3>What Makes Sportswear Feel Premium and Versatile</h3>
+            <p class="related-excerpt">
+              From fabric texture to silhouette, discover the details that
+              elevate everyday wear.
+            </p>
+            <div class="related-meta">
+              <span class="related-author">By AquaSprint Team</span>
+              <span class="related-date">Jul 24, 2026</span>
+              <span class="related-read">8 min read</span>
+            </div>
+            <a href="#" class="read-more-btn">Read More →</a>
+          </div>
+        </article>
+
+        <article class="related-card">
+          <div class="related-image">
+            <img src="/images/gallery1.jpg" alt="Article" />
+          </div>
+          <div class="related-content">
+            <span class="related-category">Buying Guide</span>
+            <h3>Best Sportswear Essentials for Beginners in 2026</h3>
+            <p class="related-excerpt">
+              A practical guide to choosing reliable gear that supports comfort
+              and style.
+            </p>
+            <div class="related-meta">
+              <span class="related-author">By AquaSprint Team</span>
+              <span class="related-date">Jul 24, 2026</span>
+              <span class="related-read">5 min read</span>
+            </div>
+            <a href="#" class="read-more-btn">Read More →</a>
+          </div>
+        </article>
+      </div>
+    </section>
 
     <div id="footer"></div>
-    <script src="collection.js"></script>
     <script src="https://unpkg.com/lucide@0.542.0/dist/umd/lucide.min.js"></script>
+    <script src="collection.js"></script>
     <script src="/global/component.js"></script>
   </body>
 </html>

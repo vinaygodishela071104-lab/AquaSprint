@@ -1,0 +1,315 @@
+/* ==========================
+   GOOGLE FONTS IMPORT
+========================== */
+@import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap");
+
+/* ==========================
+   TYPOGRAPHY SETTINGS
+========================== */
+:root {
+  --heading-font: "Oxanium", sans-serif;
+  --body-font: "Poppins", sans-serif;
+
+  --hero-font-size: 3.5rem;
+  --heading-font-size: 2.5rem;
+  --body-font-size: 1rem;
+  --button-font-size: 0.95rem;
+
+  --hero-font-weight: 700;
+  --heading-font-weight: 600;
+  --body-font-weight: 400;
+  --button-font-weight: 500;
+  --label-font-weight: 500;
+
+  --line-height: 1.7;
+  --heading-line-height: 1.12;
+  --hero-line-height: 1.05;
+
+  --primary: #0f2740;
+  --secondary: #2bb7d6;
+  --secondary-dark: #1287a8;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --border: #dbe7ee;
+  --white: #ffffff;
+}
+
+/* ==========================
+   GLOBAL RESET
+========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: #ffffff;
+  color: var(--text);
+  font-family: var(--body-font);
+  font-size: var(--body-font-size);
+  font-weight: var(--body-font-weight);
+  line-height: var(--line-height);
+  transition:
+    background 0.4s,
+    color 0.4s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+body.rtl {
+  direction: rtl;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =========================
+   CONTROLS (RTL & Dark Mode)
+========================= */
+.controls {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  z-index: 100;
+}
+
+.control-btn {
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  color: var(--primary);
+  font-family: var(--body-font);
+  transition: 0.35s;
+}
+
+.control-btn svg {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2.1;
+}
+
+.control-btn:hover {
+  background: var(--secondary);
+  color: #ffffff;
+  border-color: var(--secondary);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(43, 183, 214, 0.22);
+}
+
+/* =========================
+   404 CONTENT
+========================= */
+.error-404 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.error-icon {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+  color: var(--secondary);
+  flex-shrink: 0;
+}
+
+.error-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.error-404 h1 {
+  font-family: var(--heading-font);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: var(--hero-font-weight);
+  color: var(--primary);
+  line-height: var(--hero-line-height);
+  margin-bottom: 10px;
+}
+
+.error-404 h2 {
+  font-family: var(--heading-font);
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: var(--heading-font-weight);
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.error-404 p {
+  font-size: 1rem;
+  color: var(--muted);
+  max-width: 450px;
+  margin-bottom: 25px;
+  line-height: 1.7;
+}
+
+.home-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 28px;
+  border-radius: 40px;
+  background: var(--secondary);
+  color: #ffffff;
+  font-family: var(--body-font);
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
+  transition: 0.35s;
+  border: none;
+  flex-shrink: 0;
+}
+
+.home-btn svg {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2.1;
+}
+
+.home-btn:hover {
+  background: var(--secondary-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 22px rgba(43, 183, 214, 0.25);
+}
+
+/* =========================
+   DARK MODE
+========================= */
+body.dark-mode {
+  background: #101820;
+  color: #ffffff;
+}
+
+body.dark-mode .logo-text h1 {
+  color: white !important;
+}
+
+body.dark-mode .logo-text h1 span {
+  color: var(--secondary-dark) !important;
+}
+
+body.dark-mode .error-404 p {
+  color: #b6c2cf;
+}
+
+body.dark-mode .control-btn {
+  background: #132130;
+  border-color: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+body.dark-mode .error-404 h1,
+body.dark-mode .error-404 h2 {
+  color: #ffffff;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .controls {
+    top: 20px;
+    right: 20px;
+  }
+
+  .control-btn {
+    width: 38px;
+    height: 38px;
+  }
+
+  .error-icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .error-404 h1 {
+    font-size: 2.5rem;
+  }
+
+  .error-404 h2 {
+    font-size: 1.25rem;
+  }
+
+  .error-404 p {
+    font-size: 0.95rem;
+  }
+
+  .home-btn {
+    padding: 11px 22px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .controls {
+    top: 15px;
+    right: 15px;
+    gap: 10px;
+  }
+
+  .control-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .error-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+  }
+
+  .error-404 {
+    padding: 30px 15px;
+  }
+
+  .error-404 h1 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+  }
+
+  .error-404 h2 {
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+  }
+
+  .error-404 p {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+
+  .home-btn {
+    padding: 10px 20px;
+    font-size: 0.88rem;
+    gap: 8px;
+  }
+
+  .home-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+}

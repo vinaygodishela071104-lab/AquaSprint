@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upcoming - AquaSprint</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="upcoming.css" />
+  </head>
+  <body>
+    <!-- Controls: RTL & Dark Mode -->
+    <div class="controls">
+      <button class="control-btn" id="rtlToggle" aria-label="Toggle RTL">
+        <i data-lucide="arrow-left-right"></i>
+      </button>
+      <button
+        class="control-btn"
+        id="darkModeToggle"
+        aria-label="Toggle Dark Mode"
+      >
+        <i data-lucide="moon"></i>
+      </button>
+    </div>
+
+    <!-- Upcoming Content -->
+    <main class="upcoming-page">
+      <div class="upcoming-icon">
+        <i data-lucide="rocket"></i>
+      </div>
+      <h1>Coming Soon</h1>
+      <h2>Something Amazing is in the Works</h2>
+      <p>
+        We're working on something special! Stay tuned for exciting updates and
+        fresh content.
+      </p>
+
+      <!-- Countdown Timer -->
+      <div class="countdown-container">
+        <div class="countdown-item">
+          <span class="countdown-number" id="days">00</span>
+          <span class="countdown-label">Days</span>
+        </div>
+        <div class="countdown-separator">:</div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="hours">00</span>
+          <span class="countdown-label">Hours</span>
+        </div>
+        <div class="countdown-separator">:</div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="minutes">00</span>
+          <span class="countdown-label">Mins</span>
+        </div>
+        <div class="countdown-separator">:</div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="seconds">00</span>
+          <span class="countdown-label">Secs</span>
+        </div>
+      </div>
+
+      <!-- Notify Me Section -->
+      <form class="notify-form" id="notifyForm">
+        <div class="form-group">
+          <input
+            type="email"
+            id="emailInput"
+            placeholder="Enter your email"
+            required
+            autocomplete="email"
+          />
+          <button type="submit" class="notify-btn">
+            <i data-lucide="send"></i>
+            Notify Me
+          </button>
+        </div>
+        <p class="form-message" id="formMessage"></p>
+      </form>
+
+      <a href="/homepages/home1.html" class="home-btn">
+        <i data-lucide="arrow-left"></i>
+        Back to Home
+      </a>
+    </main>
+
+    <!-- Scripts -->
+    <script>
+      // Initialize Lucide Icons
+      lucide.createIcons();
+
+      // =========================
+      // Dark Mode Toggle
+      // =========================
+      const darkModeToggle = document.getElementById("darkModeToggle");
+      const darkModeIcon = darkModeToggle.querySelector("i");
+
+      if (localStorage.getItem("darkMode") === "enabled") {
+        document.body.classList.add("dark-mode");
+        darkModeIcon.setAttribute("data-lucide", "sun");
+        lucide.createIcons();
+      }
+
+      darkModeToggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+
+        if (document.body.classList.contains("dark-mode")) {
+          localStorage.setItem("darkMode", "enabled");
+          darkModeIcon.setAttribute("data-lucide", "sun");
+        } else {
+          localStorage.setItem("darkMode", "disabled");
+          darkModeIcon.setAttribute("data-lucide", "moon");
+        }
+
+        lucide.createIcons();
+      });
+
+      // =========================
+      // RTL Toggle
+      // =========================
+      const rtlToggle = document.getElementById("rtlToggle");
+
+      if (localStorage.getItem("rtl") === "enabled") {
+        document.body.classList.add("rtl");
+      }
+
+      rtlToggle.addEventListener("click", () => {
+        document.body.classList.toggle("rtl");
+
+        if (document.body.classList.contains("rtl")) {
+          localStorage.setItem("rtl", "enabled");
+        } else {
+          localStorage.setItem("rtl", "disabled");
+        }
+      });
+
+      // =========================
+      // Countdown Timer
+      // =========================
+      const launchDate = new Date();
+      launchDate.setDate(launchDate.getDate() + 30);
+
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = launchDate - now;
+
+        if (distance < 0) {
+          document.getElementById("days").textContent = "00";
+          document.getElementById("hours").textContent = "00";
+          document.getElementById("minutes").textContent = "00";
+          document.getElementById("seconds").textContent = "00";
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").textContent = String(days).padStart(
+          2,
+          "0",
+        );
+        document.getElementById("hours").textContent = String(hours).padStart(
+          2,
+          "0",
+        );
+        document.getElementById("minutes").textContent = String(
+          minutes,
+        ).padStart(2, "0");
+        document.getElementById("seconds").textContent = String(
+          seconds,
+        ).padStart(2, "0");
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+
+      // =========================
+      // Notify Me Form
+      // =========================
+      const notifyForm = document.getElementById("notifyForm");
+      const emailInput = document.getElementById("emailInput");
+      const formMessage = document.getElementById("formMessage");
+
+      const savedEmail = localStorage.getItem("notifyEmail");
+      if (savedEmail) {
+        emailInput.value = savedEmail;
+        formMessage.textContent = "You're already subscribed!";
+        formMessage.className = "form-message success";
+      }
+
+      notifyForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const email = emailInput.value.trim();
+
+        if (!email || !isValidEmail(email)) {
+          formMessage.textContent = "Please enter a valid email";
+          formMessage.className = "form-message error";
+          return;
+        }
+
+        localStorage.setItem("notifyEmail", email);
+
+        formMessage.textContent = "Success! You'll be notified! 🎉";
+        formMessage.className = "form-message success";
+
+        setTimeout(() => {
+          emailInput.value = "";
+        }, 2000);
+      });
+
+      function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+      }
+    </script>
+  </body>
+</html>

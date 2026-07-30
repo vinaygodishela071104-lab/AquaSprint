@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Not Found - AquaSprint</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="404.css" />
+  </head>
+  <body>
+    <!-- Controls: RTL & Dark Mode -->
+    <div class="controls">
+      <button class="control-btn" id="rtlToggle" aria-label="Toggle RTL">
+        <i data-lucide="arrow-left-right"></i>
+      </button>
+      <button
+        class="control-btn"
+        id="darkModeToggle"
+        aria-label="Toggle Dark Mode"
+      >
+        <i data-lucide="moon"></i>
+      </button>
+    </div>
+
+    <!-- 404 Content -->
+    <main class="error-404">
+      <div class="error-icon">
+        <i data-lucide="map-pin-off"></i>
+      </div>
+      <h1>404</h1>
+      <h2>Page Not Found</h2>
+      <p>
+        Oops! The page you're looking for doesn't exist or has been moved. Let's
+        get you back on track.
+      </p>
+      <a href="/homepages/home1.html" class="home-btn">
+        <i data-lucide="home"></i>
+        Back to Home
+      </a>
+    </main>
+
+    <!-- Scripts -->
+    <script>
+      // Initialize Lucide Icons
+      lucide.createIcons();
+
+      // Dark Mode Toggle
+      const darkModeToggle = document.getElementById("darkModeToggle");
+      const darkModeIcon = darkModeToggle.querySelector("i");
+
+      // Check for saved preference
+      if (localStorage.getItem("darkMode") === "enabled") {
+        document.body.classList.add("dark-mode");
+        darkModeIcon.setAttribute("data-lucide", "sun");
+        lucide.createIcons();
+      }
+
+      darkModeToggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+
+        if (document.body.classList.contains("dark-mode")) {
+          localStorage.setItem("darkMode", "enabled");
+          darkModeIcon.setAttribute("data-lucide", "sun");
+        } else {
+          localStorage.setItem("darkMode", "disabled");
+          darkModeIcon.setAttribute("data-lucide", "moon");
+        }
+
+        lucide.createIcons();
+      });
+
+      // RTL Toggle
+      const rtlToggle = document.getElementById("rtlToggle");
+
+      // Check for saved preference
+      if (localStorage.getItem("rtl") === "enabled") {
+        document.body.classList.add("rtl");
+      }
+
+      rtlToggle.addEventListener("click", () => {
+        document.body.classList.toggle("rtl");
+
+        if (document.body.classList.contains("rtl")) {
+          localStorage.setItem("rtl", "enabled");
+        } else {
+          localStorage.setItem("rtl", "disabled");
+        }
+      });
+    </script>
+  </body>
+</html>
