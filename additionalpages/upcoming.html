@@ -36,9 +36,21 @@
 
     <!-- Upcoming Content -->
     <main class="upcoming-page">
-      <div class="upcoming-icon">
-        <i data-lucide="rocket"></i>
+      <!-- Logo Section -->
+      <div class="logo">
+        <a href="/homepages/home1.html">
+          <img
+            src="/images/logo-white.png"
+            alt="AquaSprint Logo"
+            id="themeLogo"
+          />
+        </a>
+        <div class="logo-text">
+          <h1>AQUA<span>SPRINT</span></h1>
+          <p>BORN FOR EVERY STROKE.</p>
+        </div>
       </div>
+
       <h1>Coming Soon</h1>
       <h2>Something Amazing is in the Works</h2>
       <p>
@@ -92,140 +104,130 @@
         Back to Home
       </a>
     </main>
-
-    <!-- Scripts -->
     <script>
-      // Initialize Lucide Icons
-      lucide.createIcons();
-
-      // =========================
-      // Dark Mode Toggle
-      // =========================
-      const darkModeToggle = document.getElementById("darkModeToggle");
-      const darkModeIcon = darkModeToggle.querySelector("i");
-
-      if (localStorage.getItem("darkMode") === "enabled") {
-        document.body.classList.add("dark-mode");
-        darkModeIcon.setAttribute("data-lucide", "sun");
+      document.addEventListener("DOMContentLoaded", () => {
         lucide.createIcons();
-      }
 
-      darkModeToggle.addEventListener("click", () => {
-        document.body.classList.toggle("dark-mode");
+        const lightLogo = "/images/logo-white.png";
+        const darkLogo = "/images/logo-dark.png";
+        const logoImg = document.getElementById("themeLogo");
 
-        if (document.body.classList.contains("dark-mode")) {
-          localStorage.setItem("darkMode", "enabled");
-          darkModeIcon.setAttribute("data-lucide", "sun");
-        } else {
-          localStorage.setItem("darkMode", "disabled");
-          darkModeIcon.setAttribute("data-lucide", "moon");
+        const darkModeToggle = document.getElementById("darkModeToggle");
+        const rtlToggle = document.getElementById("rtlToggle");
+        const notifyForm = document.getElementById("notifyForm");
+        const emailInput = document.getElementById("emailInput");
+        const formMessage = document.getElementById("formMessage");
+
+        function updateLogo() {
+          if (!logoImg) return;
+          logoImg.src = document.body.classList.contains("dark-mode")
+            ? darkLogo
+            : lightLogo;
         }
 
+        function updateDarkModeIcon() {
+          const isDark = document.body.classList.contains("dark-mode");
+          const icon = darkModeToggle.querySelector("i");
+          if (icon) {
+            icon.setAttribute("data-lucide", isDark ? "sun" : "moon");
+          }
+        }
+
+        if (localStorage.getItem("darkMode") === "enabled") {
+          document.body.classList.add("dark-mode");
+        }
+
+        if (localStorage.getItem("rtl") === "enabled") {
+          document.body.classList.add("rtl");
+        }
+
+        // Set initial states
+        updateLogo();
+        updateDarkModeIcon();
         lucide.createIcons();
-      });
 
-      // =========================
-      // RTL Toggle
-      // =========================
-      const rtlToggle = document.getElementById("rtlToggle");
+        darkModeToggle.addEventListener("click", () => {
+          const isDark = document.body.classList.toggle("dark-mode");
+          localStorage.setItem("darkMode", isDark ? "enabled" : "disabled");
+          updateLogo();
+          updateDarkModeIcon();
+          lucide.createIcons();
+        });
 
-      if (localStorage.getItem("rtl") === "enabled") {
-        document.body.classList.add("rtl");
-      }
+        rtlToggle.addEventListener("click", () => {
+          const isRtl = document.body.classList.toggle("rtl");
+          localStorage.setItem("rtl", isRtl ? "enabled" : "disabled");
+        });
 
-      rtlToggle.addEventListener("click", () => {
-        document.body.classList.toggle("rtl");
+        const launchDate = new Date();
+        launchDate.setDate(launchDate.getDate() + 30);
 
-        if (document.body.classList.contains("rtl")) {
-          localStorage.setItem("rtl", "enabled");
-        } else {
-          localStorage.setItem("rtl", "disabled");
-        }
-      });
+        function updateCountdown() {
+          const now = new Date().getTime();
+          const distance = launchDate - now;
 
-      // =========================
-      // Countdown Timer
-      // =========================
-      const launchDate = new Date();
-      launchDate.setDate(launchDate.getDate() + 30);
+          if (distance < 0) {
+            document.getElementById("days").textContent = "00";
+            document.getElementById("hours").textContent = "00";
+            document.getElementById("minutes").textContent = "00";
+            document.getElementById("seconds").textContent = "00";
+            return;
+          }
 
-      function updateCountdown() {
-        const now = new Date().getTime();
-        const distance = launchDate - now;
+          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const hours = Math.floor(
+            (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+          );
+          const minutes = Math.floor(
+            (distance % (1000 * 60 * 60)) / (1000 * 60),
+          );
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        if (distance < 0) {
-          document.getElementById("days").textContent = "00";
-          document.getElementById("hours").textContent = "00";
-          document.getElementById("minutes").textContent = "00";
-          document.getElementById("seconds").textContent = "00";
-          return;
-        }
-
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor(
-          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
-        );
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        document.getElementById("days").textContent = String(days).padStart(
-          2,
-          "0",
-        );
-        document.getElementById("hours").textContent = String(hours).padStart(
-          2,
-          "0",
-        );
-        document.getElementById("minutes").textContent = String(
-          minutes,
-        ).padStart(2, "0");
-        document.getElementById("seconds").textContent = String(
-          seconds,
-        ).padStart(2, "0");
-      }
-
-      updateCountdown();
-      setInterval(updateCountdown, 1000);
-
-      // =========================
-      // Notify Me Form
-      // =========================
-      const notifyForm = document.getElementById("notifyForm");
-      const emailInput = document.getElementById("emailInput");
-      const formMessage = document.getElementById("formMessage");
-
-      const savedEmail = localStorage.getItem("notifyEmail");
-      if (savedEmail) {
-        emailInput.value = savedEmail;
-        formMessage.textContent = "You're already subscribed!";
-        formMessage.className = "form-message success";
-      }
-
-      notifyForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-
-        const email = emailInput.value.trim();
-
-        if (!email || !isValidEmail(email)) {
-          formMessage.textContent = "Please enter a valid email";
-          formMessage.className = "form-message error";
-          return;
+          document.getElementById("days").textContent = String(days).padStart(
+            2,
+            "0",
+          );
+          document.getElementById("hours").textContent = String(hours).padStart(
+            2,
+            "0",
+          );
+          document.getElementById("minutes").textContent = String(
+            minutes,
+          ).padStart(2, "0");
+          document.getElementById("seconds").textContent = String(
+            seconds,
+          ).padStart(2, "0");
         }
 
-        localStorage.setItem("notifyEmail", email);
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
 
-        formMessage.textContent = "Success! You'll be notified! 🎉";
-        formMessage.className = "form-message success";
+        const savedEmail = localStorage.getItem("notifyEmail");
+        if (savedEmail) {
+          emailInput.value = savedEmail;
+          formMessage.textContent = "You're already subscribed!";
+          formMessage.className = "form-message success";
+        }
 
-        setTimeout(() => {
-          emailInput.value = "";
-        }, 2000);
+        notifyForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const email = emailInput.value.trim();
+
+          if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            formMessage.textContent = "Please enter a valid email";
+            formMessage.className = "form-message error";
+            return;
+          }
+
+          localStorage.setItem("notifyEmail", email);
+          formMessage.textContent = "Success! You'll be notified! 🎉";
+          formMessage.className = "form-message success";
+
+          setTimeout(() => {
+            emailInput.value = "";
+          }, 2000);
+        });
       });
-
-      function isValidEmail(email) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-      }
     </script>
   </body>
 </html>
