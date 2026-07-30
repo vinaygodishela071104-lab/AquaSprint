@@ -1,17 +1,59 @@
+/* ==========================
+   GOOGLE FONTS IMPORT
+========================== */
+@import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap");
+
+/* ==========================
+   TYPOGRAPHY SETTINGS
+========================== */
+:root {
+  /* Fonts */
+  --heading-font: "Oxanium", sans-serif;
+  --body-font: "Poppins", sans-serif;
+
+  /* Font Sizes */
+  --hero-font-size: 3.5rem;
+  --heading-font-size: 2.5rem;
+  --body-font-size: 1rem;
+  --nav-font-size: 1rem;
+  --button-font-size: 1rem;
+  --small-font-size: 0.88rem;
+  --tiny-font-size: 0.72rem;
+
+  /* Font Weights */
+  --hero-font-weight: 700;
+  --heading-font-weight: 600;
+  --body-font-weight: 400;
+  --nav-font-weight: 500;
+  --button-font-weight: 600;
+  --label-font-weight: 600;
+
+  /* Line Heights */
+  --line-height: 1.7;
+  --heading-line-height: 1.05;
+  --hero-line-height: 0.92;
+}
+
+/* ==========================
+   GLOBAL RESET
+========================== */
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-
-  font-family: "Poppins", sans-serif;
+  font-family: var(--body-font);
+  font-size: var(--body-font-size);
+  font-weight: var(--body-font-weight);
+  line-height: var(--line-height);
 }
 
 a {
   text-decoration: none;
   color: inherit;
 }
+
 :root {
   --primary: #0f2740;
   --secondary: #2bb7d6;
@@ -19,6 +61,9 @@ a {
   --bg-dark: #07131d;
 }
 
+/* =========================
+   HERO BANNER SECTION
+========================= */
 .hero-banner {
   position: relative;
   width: 100%;
@@ -61,17 +106,19 @@ a {
   background: rgba(43, 183, 214, 0.16);
   border: 1px solid rgba(43, 183, 214, 0.28);
   color: var(--secondary);
+  font-family: var(--body-font);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: var(--label-font-weight);
   letter-spacing: 1.4px;
   text-transform: uppercase;
 }
 
 .hero-banner__content h1 {
   margin: 0;
-  font-size: 4rem;
-  line-height: 1.05;
-  font-weight: 600;
+  font-family: var(--heading-font);
+  font-size: var(--hero-font-size);
+  line-height: var(--hero-line-height);
+  font-weight: var(--hero-font-weight);
   color: var(--white);
 }
 
@@ -82,8 +129,9 @@ a {
 .hero-banner__text {
   max-width: 760px;
   margin: 20px auto 0;
+  font-family: var(--body-font);
   font-size: 1.08rem;
-  line-height: 1.75;
+  line-height: var(--line-height);
   color: rgba(255, 255, 255, 0.88);
 }
 
@@ -103,7 +151,9 @@ a {
   padding: 14px 26px;
   border-radius: 999px;
   text-decoration: none;
-  font-weight: 700;
+  font-family: var(--body-font);
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
   transition: 0.3s ease;
 }
 
@@ -130,6 +180,10 @@ a {
   background: rgba(255, 255, 255, 0.08);
   border-color: rgba(255, 255, 255, 0.42);
 }
+
+/* =========================
+   SERVICES OVERVIEW SECTION
+========================= */
 .services-overview {
   padding: 100px 24px;
   background: linear-gradient(180deg, #f7fbfd 0%, #ffffff 100%);
@@ -142,8 +196,9 @@ a {
 }
 
 .section-heading {
-  font-size: 3rem;
-  line-height: 1.1;
+  font-family: var(--heading-font);
+  font-size: var(--heading-font-size);
+  line-height: var(--heading-line-height);
   color: var(--primary);
   margin: 0;
 }
@@ -156,9 +211,10 @@ a {
   max-width: 720px;
   margin: 18px auto 0;
   text-align: center;
+  font-family: var(--body-font);
   color: rgba(15, 39, 64, 0.78);
   font-size: 1.05rem;
-  line-height: 1.7;
+  line-height: var(--line-height);
 }
 
 .services-grid {
@@ -213,6 +269,7 @@ a {
 
 .service-card h3 {
   margin: 0;
+  font-family: var(--heading-font);
   font-size: 1.25rem;
   color: var(--primary);
   line-height: 1.3;
@@ -220,8 +277,9 @@ a {
 
 .service-card p {
   margin: 14px 0 22px;
+  font-family: var(--body-font);
   color: rgba(15, 39, 64, 0.74);
-  line-height: 1.7;
+  line-height: var(--line-height);
   font-size: 0.98rem;
   flex-grow: 1;
 }
@@ -231,6 +289,7 @@ a {
   align-items: center;
   gap: 8px;
   color: var(--secondary);
+  font-family: var(--body-font);
   font-weight: 700;
   text-decoration: none;
   transition: 0.3s ease;
@@ -250,6 +309,9 @@ a {
   transform: translateX(3px);
 }
 
+/* =========================
+   CUSTOM SWIMWEAR SECTION
+========================= */
 .custom-swimwear {
   padding: 100px 24px;
   background: #ffffff;
@@ -286,16 +348,18 @@ a {
   background: rgba(43, 183, 214, 0.16);
   border: 1px solid rgba(43, 183, 214, 0.28);
   color: var(--secondary);
+  font-family: var(--body-font);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: var(--label-font-weight);
   letter-spacing: 1.4px;
   text-transform: uppercase;
 }
 
 .section-heading {
   margin: 0;
-  font-size: 3rem;
-  line-height: 1.1;
+  font-family: var(--heading-font);
+  font-size: var(--heading-font-size);
+  line-height: var(--heading-line-height);
   color: var(--primary);
 }
 
@@ -306,9 +370,10 @@ a {
 .custom-swimwear__text {
   margin: 18px 0 0;
   max-width: 560px;
+  font-family: var(--body-font);
   color: rgba(15, 39, 64, 0.78);
   font-size: 1.05rem;
-  line-height: 1.8;
+  line-height: var(--line-height);
 }
 
 .custom-swimwear__features {
@@ -351,14 +416,16 @@ a {
 
 .feature-card h4 {
   margin: 0 0 10px;
+  font-family: var(--heading-font);
   font-size: 1.05rem;
   color: var(--primary);
 }
 
 .feature-card p {
   margin: 0;
+  font-family: var(--body-font);
   font-size: 0.95rem;
-  line-height: 1.65;
+  line-height: var(--line-height);
   color: rgba(15, 39, 64, 0.74);
 }
 
@@ -370,7 +437,9 @@ a {
   background: var(--secondary);
   color: #ffffff;
   text-decoration: none;
-  font-weight: 700;
+  font-family: var(--body-font);
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
   transition: 0.3s ease;
 }
 
@@ -378,6 +447,10 @@ a {
   background: var(--secondary);
   transform: translateY(-2px);
 }
+
+/* =========================
+   SUBLIMATION SHOWCASE SECTION
+========================= */
 .sublimation-showcase {
   position: relative;
   padding: 110px 24px;
@@ -415,16 +488,18 @@ a {
   background: rgba(43, 183, 214, 0.16);
   border: 1px solid rgba(43, 183, 214, 0.28);
   color: var(--secondary);
+  font-family: var(--body-font);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: var(--label-font-weight);
   letter-spacing: 1.4px;
   text-transform: uppercase;
 }
 
 .section-heading {
   margin: 0;
-  font-size: 3rem;
-  line-height: 1.1;
+  font-family: var(--heading-font);
+  font-size: var(--heading-font-size);
+  line-height: var(--heading-line-height);
   color: #ffffff;
 }
 
@@ -474,16 +549,22 @@ a {
 
 .sublimation-card h3 {
   margin: 0 0 10px;
+  font-family: var(--heading-font);
   font-size: 1.08rem;
   color: #ffffff;
 }
 
 .sublimation-card p {
   margin: 0;
+  font-family: var(--body-font);
   color: rgba(255, 255, 255, 0.82);
   font-size: 0.96rem;
-  line-height: 1.65;
+  line-height: var(--line-height);
 }
+
+/* =========================
+   DESIGN PROCESS SECTION
+========================= */
 .design-process {
   padding: 100px 24px;
   background: linear-gradient(180deg, #ffffff 0%, #f7fbfd 100%);
@@ -503,16 +584,18 @@ a {
   background: rgba(43, 183, 214, 0.16);
   border: 1px solid rgba(43, 183, 214, 0.28);
   color: var(--secondary);
+  font-family: var(--body-font);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: var(--label-font-weight);
   letter-spacing: 1.4px;
   text-transform: uppercase;
 }
 
 .section-heading {
   margin: 0;
-  font-size: 3rem;
-  line-height: 1.1;
+  font-family: var(--heading-font);
+  font-size: var(--heading-font-size);
+  line-height: var(--heading-line-height);
   color: var(--primary);
 }
 
@@ -573,18 +656,24 @@ a {
 .process-step__content span {
   display: inline-block;
   margin-bottom: 8px;
+  font-family: var(--body-font);
   font-size: 0.8rem;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.14em;
   color: var(--secondary);
 }
 
 .process-step__content h3 {
   margin: 0;
+  font-family: var(--heading-font);
   font-size: 1rem;
   color: var(--primary);
   line-height: 1.35;
 }
+
+/* =========================
+   BULK ORDERS SECTION
+========================= */
 .bulk-orders {
   padding: 100px 24px;
   background: #ffffff;
@@ -639,6 +728,7 @@ a {
   border-radius: 999px;
   background: rgba(15, 39, 64, 0.05);
   color: var(--primary);
+  font-family: var(--body-font);
   font-weight: 600;
   font-size: 0.94rem;
 }
@@ -651,16 +741,18 @@ a {
   background: rgba(43, 183, 214, 0.16);
   border: 1px solid rgba(43, 183, 214, 0.28);
   color: var(--secondary);
+  font-family: var(--body-font);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: var(--label-font-weight);
   letter-spacing: 1.4px;
   text-transform: uppercase;
 }
 
 .section-heading {
   margin: 0;
-  font-size: 3rem;
-  line-height: 1.1;
+  font-family: var(--heading-font);
+  font-size: var(--heading-font-size);
+  line-height: var(--heading-line-height);
   color: var(--primary);
 }
 
@@ -671,9 +763,10 @@ a {
 .bulk-orders__text {
   margin: 18px 0 0;
   max-width: 560px;
+  font-family: var(--body-font);
   color: rgba(15, 39, 64, 0.78);
   font-size: 1.05rem;
-  line-height: 1.8;
+  line-height: var(--line-height);
 }
 
 .bulk-points {
@@ -709,16 +802,22 @@ a {
 
 .bulk-point h3 {
   margin: 0 0 10px;
+  font-family: var(--heading-font);
   font-size: 1.05rem;
   color: var(--primary);
 }
 
 .bulk-point p {
   margin: 0;
+  font-family: var(--body-font);
   color: rgba(15, 39, 64, 0.74);
   font-size: 0.95rem;
-  line-height: 1.65;
+  line-height: var(--line-height);
 }
+
+/* =========================
+   ACCESSORIES SHOWCASE SECTION
+========================= */
 .accessories-showcase {
   padding: 100px 24px;
   background: linear-gradient(180deg, #f7fbfd 0%, #ffffff 100%);
@@ -739,16 +838,18 @@ a {
   background: rgba(43, 183, 214, 0.16);
   border: 1px solid rgba(43, 183, 214, 0.28);
   color: var(--secondary);
+  font-family: var(--body-font);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: var(--label-font-weight);
   letter-spacing: 1.4px;
   text-transform: uppercase;
 }
 
 .section-heading {
   margin: 0;
-  font-size: 3rem;
-  line-height: 1.1;
+  font-family: var(--heading-font);
+  font-size: var(--heading-font-size);
+  line-height: var(--heading-line-height);
   color: var(--primary);
   text-align: center;
 }
@@ -824,15 +925,17 @@ a {
 
 .accessory-card h3 {
   margin: 0 0 12px;
+  font-family: var(--heading-font);
   font-size: 1.15rem;
   color: var(--primary);
 }
 
 .accessory-card p {
   margin: 0;
+  font-family: var(--body-font);
   color: rgba(15, 39, 64, 0.74);
   font-size: 0.96rem;
-  line-height: 1.7;
+  line-height: var(--line-height);
 }
 
 @keyframes accessories-scroll {
@@ -843,6 +946,10 @@ a {
     transform: translateX(-50%);
   }
 }
+
+/* =========================
+   INDUSTRIES SECTION
+========================= */
 .industries-section {
   padding: 100px 24px;
   background: linear-gradient(180deg, #ffffff 0%, #f7fbfd 100%);
@@ -862,16 +969,18 @@ a {
   background: rgba(43, 183, 214, 0.16);
   border: 1px solid rgba(43, 183, 214, 0.28);
   color: var(--secondary);
+  font-family: var(--body-font);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: var(--label-font-weight);
   letter-spacing: 1.4px;
   text-transform: uppercase;
 }
 
 .section-heading {
   margin: 0;
-  font-size: 3rem;
-  line-height: 1.1;
+  font-family: var(--heading-font);
+  font-size: var(--heading-font-size);
+  line-height: var(--heading-line-height);
   color: var(--primary);
 }
 
@@ -944,6 +1053,7 @@ a {
 
 .industry-block h3 {
   margin: 0;
+  font-family: var(--heading-font);
   color: #ffffff;
   font-size: 1rem;
   line-height: 1.3;
@@ -980,6 +1090,10 @@ a {
 .industry-block--events {
   background-image: url("/images/events.avif");
 }
+
+/* =========================
+   FINAL CTA SECTION
+========================= */
 .final-cta {
   position: relative;
   padding: 110px 24px;
@@ -1017,16 +1131,18 @@ a {
   background: rgba(43, 183, 214, 0.16);
   border: 1px solid rgba(43, 183, 214, 0.28);
   color: var(--secondary);
+  font-family: var(--body-font);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: var(--label-font-weight);
   letter-spacing: 1.4px;
   text-transform: uppercase;
 }
 
 .final-cta h2 {
   margin: 0;
-  font-size: 3rem;
-  line-height: 1.1;
+  font-family: var(--heading-font);
+  font-size: var(--heading-font-size);
+  line-height: var(--heading-line-height);
   color: #ffffff;
 }
 
@@ -1036,6 +1152,7 @@ a {
 
 .final-cta__subtitle {
   margin: 18px 0 0;
+  font-family: var(--body-font);
   font-size: 1.25rem;
   font-weight: 700;
   color: rgba(255, 255, 255, 0.92);
@@ -1044,6 +1161,7 @@ a {
 
 .final-cta__text {
   margin: 10px 0 0;
+  font-family: var(--body-font);
   font-size: 1.05rem;
   color: rgba(255, 255, 255, 0.82);
 }
@@ -1064,7 +1182,9 @@ a {
   padding: 14px 26px;
   border-radius: 999px;
   text-decoration: none;
-  font-weight: 700;
+  font-family: var(--body-font);
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
   transition: 0.3s ease;
 }
 

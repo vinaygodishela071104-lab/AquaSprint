@@ -1,3 +1,42 @@
+/* ==========================
+   GOOGLE FONTS IMPORT
+========================== */
+@import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap");
+
+/* ==========================
+   TYPOGRAPHY SETTINGS
+========================== */
+:root {
+  /* Fonts */
+  --heading-font: "Oxanium", sans-serif;
+  --body-font: "Poppins", sans-serif;
+
+  /* Font Sizes */
+  --hero-font-size: 3.5rem;
+  --heading-font-size: 2.5rem;
+  --body-font-size: 1rem;
+  --paragraph-font-size: 1rem;
+  --nav-font-size: 1rem;
+  --button-font-size: 1rem;
+
+  /* Font Weights */
+  --hero-font-weight: 700;
+  --heading-font-weight: 600;
+  --body-font-weight: 400;
+  --nav-font-weight: 500;
+  --button-font-weight: 500;
+  --tag-font-weight: 500;
+  --label-font-weight: 500;
+
+  /* Line Heights */
+  --line-height: 1.7;
+  --heading-line-height: 1.12;
+  --hero-line-height: 1.05;
+}
+
+/* ==========================
+   GLOBAL RESET & BASE
+========================== */
 :root {
   --primary: #0f2740;
   --secondary: #2bb7d6;
@@ -9,8 +48,10 @@
 
 body {
   margin: 0;
-
-  font-family: "Poppins", sans-serif;
+  font-family: var(--body-font);
+  font-size: var(--body-font-size);
+  font-weight: var(--body-font-weight);
+  line-height: var(--line-height);
 }
 
 a {
@@ -18,6 +59,9 @@ a {
   color: inherit;
 }
 
+/* ==========================
+   HERO SLIDER
+========================== */
 .hero-slider {
   position: relative;
   width: 100%;
@@ -112,8 +156,9 @@ a {
   background: rgba(43, 183, 214, 0.16);
   border: 1px solid rgba(43, 183, 214, 0.28);
   color: var(--secondary);
+  font-family: var(--body-font);
   font-size: 12px;
-  font-weight: 600;
+  font-weight: var(--tag-font-weight);
   letter-spacing: 1.4px;
   text-transform: uppercase;
   backdrop-filter: blur(8px);
@@ -123,11 +168,11 @@ a {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  font-size: 4rem;
-  line-height: 1.05;
-  font-weight: 800;
+  font-family: var(--heading-font);
+  font-size: var(--hero-font-size);
+  line-height: var(--hero-line-height);
+  font-weight: var(--hero-font-weight);
   margin-bottom: 18px;
-  font-family: "Cormorant Garamond", serif;
 }
 
 .hero-content h1 .heading-light {
@@ -139,6 +184,7 @@ a {
 }
 
 .hero-content p {
+  font-family: var(--body-font);
   font-size: clamp(15px, 1.7vw, 18px);
   line-height: 1.8;
   color: rgba(255, 255, 255, 0.9);
@@ -159,8 +205,9 @@ a {
   min-width: 150px;
   padding: 13px 26px;
   border-radius: 999px;
-  font-size: 14px;
-  font-weight: 600;
+  font-family: var(--body-font);
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
   transition:
     transform 0.35s ease,
     background 0.35s ease,
@@ -215,7 +262,9 @@ a {
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.08);
   color: #ffffff;
+  font-family: var(--body-font);
   font-size: 18px;
+  font-weight: var(--body-font-weight);
   cursor: pointer;
   transition:
     background 0.35s ease,
@@ -253,6 +302,10 @@ a {
   border-radius: 999px;
   background: var(--secondary);
 }
+
+/* ==========================
+   SHOP SPORT SECTION
+========================== */
 .shop-sport-section {
   padding: 90px 100px;
   background: linear-gradient(180deg, #ffffff 0%, #f6fbfd 100%);
@@ -280,16 +333,18 @@ a {
   background: rgba(43, 183, 214, 0.12);
   color: var(--secondary);
   border: 1px solid rgba(43, 183, 214, 0.22);
+  font-family: var(--body-font);
   font-size: 13px;
-  font-weight: 600;
+  font-weight: var(--tag-font-weight);
   letter-spacing: 1.2px;
   text-transform: uppercase;
 }
 
 .shop-sport-heading h2 {
-  font-size: clamp(30px, 4.5vw, 52px);
-  line-height: 1.12;
-  font-weight: 700;
+  font-family: var(--heading-font);
+  font-size: var(--heading-font-size);
+  line-height: var(--heading-line-height);
+  font-weight: var(--heading-font-weight);
   color: var(--primary);
   margin-bottom: 18px;
 }
@@ -299,8 +354,9 @@ a {
 }
 
 .shop-sport-heading p {
-  font-size: 16px;
-  line-height: 1.8;
+  font-family: var(--body-font);
+  font-size: var(--paragraph-font-size);
+  line-height: var(--line-height);
   color: rgba(15, 39, 64, 0.78);
   max-width: 620px;
   margin: 0 auto;
@@ -369,8 +425,9 @@ a {
   border-radius: 999px;
   background: var(--primary);
   color: #ffffff;
+  font-family: var(--body-font);
   font-size: 12px;
-  font-weight: 600;
+  font-weight: var(--tag-font-weight);
   letter-spacing: 0.8px;
   text-transform: uppercase;
 }
@@ -380,16 +437,18 @@ a {
 }
 
 .sport-card-content h3 {
+  font-family: var(--heading-font);
   font-size: 18px;
   line-height: 1.2;
+  font-weight: var(--heading-font-weight);
   color: var(--primary);
   margin-bottom: 12px;
-  font-weight: 700;
 }
 
 .sport-card-content p {
+  font-family: var(--body-font);
   font-size: 15px;
-  line-height: 1.75;
+  line-height: var(--line-height);
   color: rgba(15, 39, 64, 0.75);
   margin-bottom: 18px;
 }
@@ -398,9 +457,10 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: var(--secondary);
+  font-family: var(--body-font);
   font-size: 14px;
-  font-weight: 600;
+  font-weight: var(--nav-font-weight);
+  color: var(--secondary);
   transition: letter-spacing 0.3s ease;
 }
 
@@ -412,6 +472,10 @@ a {
 .sport-card:hover .sport-link {
   letter-spacing: 0.3px;
 }
+
+/* ==========================
+   SHOP GENDER SECTION
+========================== */
 .shop-gender-section {
   background: linear-gradient(180deg, #ffffff 0%, #f7fbfd 100%);
   padding: 90px 100px;
@@ -439,16 +503,18 @@ a {
   background: rgba(43, 183, 214, 0.12);
   color: var(--secondary);
   border: 1px solid rgba(43, 183, 214, 0.22);
+  font-family: var(--body-font);
   font-size: 13px;
-  font-weight: 600;
+  font-weight: var(--tag-font-weight);
   letter-spacing: 1.2px;
   text-transform: uppercase;
 }
 
 .shop-gender-heading h2 {
-  font-size: 3rem;
-  line-height: 1.12;
-  font-weight: 700;
+  font-family: var(--heading-font);
+  font-size: var(--heading-font-size);
+  line-height: var(--heading-line-height);
+  font-weight: var(--heading-font-weight);
   color: var(--primary);
   margin-bottom: 16px;
 }
@@ -458,11 +524,12 @@ a {
 }
 
 .shop-gender-heading p {
+  font-family: var(--body-font);
+  font-size: var(--paragraph-font-size);
+  line-height: var(--line-height);
+  color: rgba(15, 39, 64, 0.78);
   max-width: 620px;
   margin: 0 auto;
-  font-size: 16px;
-  line-height: 1.8;
-  color: rgba(15, 39, 64, 0.78);
 }
 
 .gender-layout {
@@ -531,23 +598,26 @@ a {
   background: rgba(43, 183, 214, 0.14);
   color: #ffffff;
   border: 1px solid rgba(43, 183, 214, 0.3);
+  font-family: var(--body-font);
   font-size: 12px;
-  font-weight: 600;
+  font-weight: var(--tag-font-weight);
   letter-spacing: 1px;
   text-transform: uppercase;
 }
 
 .gender-content h3 {
-  font-size: 3rem;
-  line-height: 1.08;
-  font-weight: 700;
+  font-family: var(--heading-font);
+  font-size: var(--heading-font-size);
+  line-height: var(--heading-line-height);
+  font-weight: var(--heading-font-weight);
   margin-bottom: 14px;
   color: #ffffff;
 }
 
 .gender-content p {
+  font-family: var(--body-font);
   font-size: 15px;
-  line-height: 1.8;
+  line-height: var(--line-height);
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: 20px;
 }
@@ -556,9 +626,10 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: var(--secondary);
+  font-family: var(--body-font);
   font-size: 14px;
-  font-weight: 600;
+  font-weight: var(--nav-font-weight);
+  color: var(--secondary);
   transition:
     gap 0.3s ease,
     color 0.3s ease;
@@ -589,6 +660,10 @@ a {
 .gender-strip:hover .gender-link {
   gap: 12px;
 }
+
+/* ==========================
+   FEATURED COLLECTIONS SECTION
+========================== */
 .featured-collections-section {
   background: linear-gradient(180deg, #ffffff 0%, #f4fbfd 100%);
   padding: 90px 100px;
@@ -616,16 +691,18 @@ a {
   background: rgba(43, 183, 214, 0.12);
   color: var(--secondary);
   border: 1px solid rgba(43, 183, 214, 0.22);
+  font-family: var(--body-font);
   font-size: 13px;
-  font-weight: 600;
+  font-weight: var(--tag-font-weight);
   letter-spacing: 1.2px;
   text-transform: uppercase;
 }
 
 .featured-collections-heading h2 {
-  font-size: clamp(30px, 4.4vw, 52px);
-  line-height: 1.12;
-  font-weight: 700;
+  font-family: var(--heading-font);
+  font-size: var(--heading-font-size);
+  line-height: var(--heading-line-height);
+  font-weight: var(--heading-font-weight);
   color: var(--primary);
   margin-bottom: 16px;
 }
@@ -635,11 +712,12 @@ a {
 }
 
 .featured-collections-heading p {
+  font-family: var(--body-font);
+  font-size: var(--paragraph-font-size);
+  line-height: var(--line-height);
+  color: rgba(15, 39, 64, 0.78);
   max-width: 640px;
   margin: 0 auto;
-  font-size: 16px;
-  line-height: 1.8;
-  color: rgba(15, 39, 64, 0.78);
 }
 
 .collection-band {
@@ -700,23 +778,26 @@ a {
   background: rgba(43, 183, 214, 0.12);
   color: var(--secondary);
   border: 1px solid rgba(43, 183, 214, 0.2);
+  font-family: var(--body-font);
   font-size: 12px;
-  font-weight: 600;
+  font-weight: var(--tag-font-weight);
   letter-spacing: 1px;
   text-transform: uppercase;
 }
 
 .collection-band-content h3 {
-  font-size: clamp(26px, 3vw, 40px);
-  line-height: 1.15;
-  font-weight: 700;
+  font-family: var(--heading-font);
+  font-size: var(--heading-font-size);
+  line-height: var(--heading-line-height);
+  font-weight: var(--heading-font-weight);
   color: var(--primary);
   margin-bottom: 16px;
 }
 
 .collection-band-content p {
+  font-family: var(--body-font);
   font-size: 15px;
-  line-height: 1.8;
+  line-height: var(--line-height);
   color: rgba(15, 39, 64, 0.78);
   margin-bottom: 20px;
 }
@@ -725,9 +806,10 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: var(--secondary);
+  font-family: var(--body-font);
   font-size: 14px;
-  font-weight: 600;
+  font-weight: var(--nav-font-weight);
+  color: var(--secondary);
   text-decoration: none;
   transition:
     gap 0.3s ease,
@@ -747,6 +829,10 @@ a {
 .compact-band .collection-band-image img {
   min-height: 280px;
 }
+
+/* ==========================
+   TOGGLE SHOWCASE SECTION
+========================== */
 .toggle-showcase-section {
   background: linear-gradient(180deg, #ffffff 0%, #f5fbfd 100%);
   padding: 90px 100px;
@@ -774,16 +860,18 @@ a {
   background: rgba(43, 183, 214, 0.12);
   color: var(--secondary);
   border: 1px solid rgba(43, 183, 214, 0.22);
+  font-family: var(--body-font);
   font-size: 13px;
-  font-weight: 600;
+  font-weight: var(--tag-font-weight);
   letter-spacing: 1.2px;
   text-transform: uppercase;
 }
 
 .toggle-showcase-heading h2 {
-  font-size: clamp(30px, 4.4vw, 52px);
-  line-height: 1.12;
-  font-weight: 700;
+  font-family: var(--heading-font);
+  font-size: var(--heading-font-size);
+  line-height: var(--heading-line-height);
+  font-weight: var(--heading-font-weight);
   color: var(--primary);
   margin-bottom: 16px;
 }
@@ -793,11 +881,12 @@ a {
 }
 
 .toggle-showcase-heading p {
+  font-family: var(--body-font);
+  font-size: var(--paragraph-font-size);
+  line-height: var(--line-height);
+  color: rgba(15, 39, 64, 0.78);
   max-width: 640px;
   margin: 0 auto;
-  font-size: 16px;
-  line-height: 1.8;
-  color: rgba(15, 39, 64, 0.78);
 }
 
 .showcase-toggle-nav {
@@ -814,8 +903,9 @@ a {
   border: 1px solid rgba(15, 39, 64, 0.1);
   background: #ffffff;
   color: var(--primary);
-  font-size: 14px;
-  font-weight: 600;
+  font-family: var(--body-font);
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -886,23 +976,26 @@ a {
   background: rgba(43, 183, 214, 0.12);
   color: var(--secondary);
   border: 1px solid rgba(43, 183, 214, 0.2);
+  font-family: var(--body-font);
   font-size: 12px;
-  font-weight: 600;
+  font-weight: var(--tag-font-weight);
   letter-spacing: 1px;
   text-transform: uppercase;
 }
 
 .showcase-content h3 {
-  font-size: clamp(28px, 3vw, 42px);
-  line-height: 1.14;
-  font-weight: 700;
+  font-family: var(--heading-font);
+  font-size: var(--heading-font-size);
+  line-height: var(--heading-line-height);
+  font-weight: var(--heading-font-weight);
   color: var(--primary);
   margin-bottom: 16px;
 }
 
 .showcase-content > p {
+  font-family: var(--body-font);
   font-size: 15px;
-  line-height: 1.85;
+  line-height: var(--line-height);
   color: rgba(15, 39, 64, 0.78);
   margin-bottom: 26px;
 }
@@ -925,16 +1018,18 @@ a {
 }
 
 .showcase-point h4 {
+  font-family: var(--heading-font);
   font-size: 18px;
   line-height: 1.3;
-  font-weight: 700;
+  font-weight: var(--heading-font-weight);
   color: var(--primary);
   margin-bottom: 8px;
 }
 
 .showcase-point p {
+  font-family: var(--body-font);
   font-size: 14px;
-  line-height: 1.75;
+  line-height: var(--line-height);
   color: rgba(15, 39, 64, 0.72);
 }
 
@@ -948,8 +1043,9 @@ a {
   background: var(--secondary);
   color: #ffffff;
   text-decoration: none;
-  font-size: 14px;
-  font-weight: 600;
+  font-family: var(--body-font);
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
   transition:
     transform 0.3s ease,
     background 0.3s ease,
@@ -965,6 +1061,10 @@ a {
   transform: translateY(-2px);
   gap: 12px;
 }
+
+/* ==========================
+   TEAM ENQUIRY SECTION
+========================== */
 .team-enquiry-section {
   background:
     linear-gradient(
@@ -1007,16 +1107,18 @@ a {
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.12);
   border: 1px solid rgba(255, 255, 255, 0.16);
+  font-family: var(--body-font);
   font-size: 13px;
-  font-weight: 600;
+  font-weight: var(--tag-font-weight);
   letter-spacing: 1.1px;
   text-transform: uppercase;
 }
 
 .team-enquiry-content h2 {
-  font-size: clamp(30px, 4vw, 50px);
-  line-height: 1.12;
-  font-weight: 700;
+  font-family: var(--heading-font);
+  font-size: var(--heading-font-size);
+  line-height: var(--heading-line-height);
+  font-weight: var(--heading-font-weight);
   margin-bottom: 16px;
 }
 
@@ -1025,8 +1127,9 @@ a {
 }
 
 .team-enquiry-content > p {
-  font-size: 16px;
-  line-height: 1.8;
+  font-family: var(--body-font);
+  font-size: var(--paragraph-font-size);
+  line-height: var(--line-height);
   color: rgba(255, 255, 255, 0.82);
   margin-bottom: 28px;
 }
@@ -1048,14 +1151,16 @@ a {
 }
 
 .team-highlight-item h3 {
+  font-family: var(--heading-font);
   font-size: 20px;
   margin-bottom: 8px;
-  font-weight: 700;
+  font-weight: var(--heading-font-weight);
 }
 
 .team-highlight-item p {
+  font-family: var(--body-font);
   font-size: 14px;
-  line-height: 1.75;
+  line-height: var(--line-height);
   color: rgba(255, 255, 255, 0.76);
 }
 
@@ -1086,8 +1191,9 @@ a {
 }
 
 .form-field label {
+  font-family: var(--body-font);
   font-size: 14px;
-  font-weight: 600;
+  font-weight: var(--label-font-weight);
   color: var(--primary);
 }
 
@@ -1099,6 +1205,7 @@ a {
   border-radius: 16px;
   border: 1px solid rgba(15, 39, 64, 0.12);
   background: #f8fbfc;
+  font-family: var(--body-font);
   font-size: 14px;
   color: var(--primary);
   outline: none;
@@ -1131,8 +1238,9 @@ a {
   border-radius: 999px;
   background: var(--secondary);
   color: #ffffff;
-  font-size: 14px;
-  font-weight: 600;
+  font-family: var(--body-font);
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
   cursor: pointer;
   transition:
     transform 0.3s ease,
@@ -1142,6 +1250,10 @@ a {
 .team-enquiry-submit:hover {
   transform: translateY(-2px);
 }
+
+/* ==========================
+   PREMIUM TESTIMONIALS SECTION
+========================== */
 #premiumTestimonials.premium-testimonials-section {
   background: #ffffff;
   color: #0f2740;
@@ -1171,17 +1283,19 @@ a {
   border-radius: 999px;
   background: rgba(43, 183, 214, 0.1);
   border: 1px solid rgba(43, 183, 214, 0.18);
+  font-family: var(--body-font);
   font-size: 13px;
-  font-weight: 600;
+  font-weight: var(--tag-font-weight);
   letter-spacing: 1.1px;
   text-transform: uppercase;
   color: #2bb7d6;
 }
 
 #premiumTestimonials .premium-testimonials-header h2 {
-  font-size: clamp(32px, 4.8vw, 54px);
-  line-height: 1.1;
-  font-weight: 700;
+  font-family: var(--heading-font);
+  font-size: var(--heading-font-size);
+  line-height: var(--heading-line-height);
+  font-weight: var(--heading-font-weight);
   margin-bottom: 16px;
   color: #0f2740;
 }
@@ -1191,11 +1305,12 @@ a {
 }
 
 #premiumTestimonials .premium-testimonials-header p {
+  font-family: var(--body-font);
+  font-size: var(--paragraph-font-size);
+  line-height: var(--line-height);
+  color: rgba(15, 39, 64, 0.75);
   max-width: 640px;
   margin: 0 auto;
-  font-size: 16px;
-  line-height: 1.8;
-  color: rgba(15, 39, 64, 0.75);
 }
 
 #premiumTestimonials .premium-testimonials-stage {
@@ -1255,22 +1370,25 @@ a {
 }
 
 #premiumTestimonials .testimonial-panel blockquote {
+  font-family: var(--body-font);
   font-size: clamp(18px, 2vw, 26px);
   line-height: 1.55;
-  font-weight: 500;
+  font-weight: 400;
   color: #0f2740;
   max-width: 32ch;
   margin-bottom: 22px;
 }
 
 #premiumTestimonials .testimonial-author h3 {
+  font-family: var(--heading-font);
   font-size: 18px;
-  font-weight: 700;
+  font-weight: var(--heading-font-weight);
   margin-bottom: 4px;
   color: #0f2740;
 }
 
 #premiumTestimonials .testimonial-author p {
+  font-family: var(--body-font);
   font-size: 13px;
   color: rgba(15, 39, 64, 0.68);
 }
@@ -1293,6 +1411,7 @@ a {
   background: #ffffff;
   border: 1px solid rgba(15, 39, 64, 0.08);
   color: #0f2740;
+  font-family: var(--body-font);
   cursor: pointer;
   transition:
     transform 0.3s ease,
@@ -1313,8 +1432,9 @@ a {
 }
 
 #premiumTestimonials .selector-number {
+  font-family: var(--body-font);
   font-size: 14px;
-  font-weight: 700;
+  font-weight: var(--label-font-weight);
   color: #2bb7d6;
   min-width: 28px;
 }
@@ -1326,12 +1446,14 @@ a {
 }
 
 #premiumTestimonials .selector-copy strong {
+  font-family: var(--body-font);
   font-size: 15px;
-  font-weight: 700;
+  font-weight: var(--label-font-weight);
   color: #0f2740;
 }
 
 #premiumTestimonials .selector-copy span {
+  font-family: var(--body-font);
   font-size: 12px;
   color: rgba(15, 39, 64, 0.68);
 }
@@ -1351,17 +1473,23 @@ a {
 }
 
 #premiumTestimonials .trust-highlight-item h3 {
+  font-family: var(--heading-font);
   font-size: 24px;
-  font-weight: 700;
+  font-weight: var(--heading-font-weight);
   color: #2bb7d6;
   margin-bottom: 8px;
 }
 
 #premiumTestimonials .trust-highlight-item p {
+  font-family: var(--body-font);
   font-size: 13px;
-  line-height: 1.65;
+  line-height: var(--line-height);
   color: rgba(15, 39, 64, 0.75);
 }
+
+/* ==========================
+   NEWSLETTER GALLERY SECTION
+========================== */
 .newsletter-gallery-section {
   background: #ffffff;
   padding: 80px 0;
@@ -1395,17 +1523,19 @@ a {
   background: rgba(43, 183, 214, 0.1);
   color: #2bb7d6;
   border: 1px solid rgba(43, 183, 214, 0.16);
+  font-family: var(--body-font);
   font-size: 12px;
-  font-weight: 600;
+  font-weight: var(--tag-font-weight);
   letter-spacing: 1px;
   text-transform: uppercase;
 }
 
 .gallery-heading h2,
 .cta-copy h2 {
-  font-size: clamp(30px, 4vw, 48px);
-  line-height: 1.12;
-  font-weight: 700;
+  font-family: var(--heading-font);
+  font-size: var(--heading-font-size);
+  line-height: var(--heading-line-height);
+  font-weight: var(--heading-font-weight);
   color: #0f2740;
   margin-bottom: 14px;
 }
@@ -1416,11 +1546,12 @@ a {
 
 .gallery-heading p,
 .cta-copy p {
+  font-family: var(--body-font);
+  font-size: var(--paragraph-font-size);
+  line-height: var(--line-height);
+  color: rgba(15, 39, 64, 0.75);
   max-width: 640px;
   margin: 0 auto;
-  font-size: 16px;
-  line-height: 1.8;
-  color: rgba(15, 39, 64, 0.75);
 }
 
 .gallery-grid {
@@ -1473,11 +1604,13 @@ a {
 }
 
 .cta-copy h2 {
+  font-family: var(--heading-font);
   color: #ffffff;
   margin-bottom: 12px;
 }
 
 .cta-copy p {
+  font-family: var(--body-font);
   color: rgba(255, 255, 255, 0.78);
   margin: 0;
 }
@@ -1495,8 +1628,9 @@ a {
   justify-content: center;
   padding: 15px 24px;
   border-radius: 16px;
-  font-size: 14px;
-  font-weight: 600;
+  font-family: var(--body-font);
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
   text-decoration: none;
   transition:
     transform 0.3s ease,
@@ -1524,7 +1658,6 @@ a {
   transform: translateY(-2px);
   border-color: #ffffff;
 }
-
 /*==========================================
 GLOBAL
 ==========================================*/

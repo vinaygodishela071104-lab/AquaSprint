@@ -1,10 +1,52 @@
+/* ==========================
+   GOOGLE FONTS IMPORT
+========================== */
+@import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap");
+
+/* ==========================
+   TYPOGRAPHY SETTINGS
+========================== */
+:root {
+  /* Fonts */
+  --heading-font: "Oxanium", sans-serif;
+  --body-font: "Poppins", sans-serif;
+
+  /* Font Sizes */
+  --hero-font-size: 3.5rem;
+  --heading-font-size: 2.5rem;
+  --body-font-size: 1rem;
+  --nav-font-size: 1rem;
+  --button-font-size: 1rem;
+  --small-font-size: 0.88rem;
+  --tiny-font-size: 0.72rem;
+
+  /* Font Weights */
+  --hero-font-weight: 700;
+  --heading-font-weight: 600;
+  --body-font-weight: 400;
+  --nav-font-weight: 500;
+  --button-font-weight: 600;
+  --label-font-weight: 600;
+
+  /* Line Heights */
+  --line-height: 1.7;
+  --heading-line-height: 1.05;
+  --hero-line-height: 0.92;
+}
+
+/* ==========================
+   GLOBAL RESET
+========================== */
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: var(--body-font);
+  font-size: var(--body-font-size);
+  font-weight: var(--body-font-weight);
+  line-height: var(--line-height);
   overflow-x: hidden;
 }
 
@@ -19,6 +61,9 @@ a {
   --bg: #f5f9fc;
 }
 
+/* =========================
+   COLLECTION PAGE
+========================= */
 .collection-page {
   width: 100%;
   padding: 0px 100px;
@@ -47,7 +92,9 @@ a {
   padding: 8px 14px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.14);
+  font-family: var(--body-font);
   font-size: 0.82rem;
+  font-weight: var(--label-font-weight);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 16px;
@@ -55,16 +102,23 @@ a {
 
 .collection-hero h1 {
   margin: 0 0 12px;
+  font-family: var(--heading-font);
   font-size: clamp(2.3rem, 5vw, 4.4rem);
-  line-height: 1.05;
+  line-height: var(--hero-line-height);
+  font-weight: var(--hero-font-weight);
 }
 
 .collection-hero p {
   margin: 0;
+  font-family: var(--body-font);
   font-size: 1.02rem;
   max-width: 540px;
   color: rgba(255, 255, 255, 0.9);
 }
+
+/* =========================
+   TOP CART BAR
+========================= */
 .top-cart-bar {
   display: flex;
   justify-content: flex-end;
@@ -110,6 +164,7 @@ a {
   border-radius: 999px;
   background: var(--secondary);
   color: #fff;
+  font-family: var(--body-font);
   font-size: 0.78rem;
   font-weight: 700;
   display: flex;
@@ -134,12 +189,14 @@ a {
 
 .cart-panel__head h2 {
   margin: 0;
-  color: var(--primary);
+  font-family: var(--heading-font);
   font-size: 1.25rem;
+  color: var(--primary);
 }
 
 .cart-panel__head p {
   margin: 6px 0 0;
+  font-family: var(--body-font);
   color: #607286;
   font-size: 0.9rem;
 }
@@ -157,6 +214,7 @@ a {
 
 .cart-group__title h3 {
   margin: 0;
+  font-family: var(--heading-font);
   font-size: 0.98rem;
   color: var(--primary);
 }
@@ -170,6 +228,7 @@ a {
   border-radius: 999px;
   background: rgba(43, 183, 214, 0.12);
   color: var(--primary);
+  font-family: var(--body-font);
   font-weight: 700;
   font-size: 0.85rem;
 }
@@ -197,6 +256,7 @@ a {
 
 .cart-item__name {
   margin: 0;
+  font-family: var(--body-font);
   font-size: 0.92rem;
   font-weight: 700;
   color: var(--primary);
@@ -205,6 +265,7 @@ a {
 
 .cart-item__price {
   margin: 4px 0 0;
+  font-family: var(--body-font);
   font-size: 0.86rem;
   color: #5e7184;
 }
@@ -229,6 +290,7 @@ a {
   border-radius: 50%;
   background: var(--primary);
   color: #fff;
+  font-family: var(--body-font);
   font-weight: 700;
 }
 
@@ -240,6 +302,7 @@ a {
 .cart-item__qty {
   min-width: 24px;
   text-align: center;
+  font-family: var(--body-font);
   font-weight: 700;
   color: var(--primary);
 }
@@ -250,6 +313,7 @@ a {
   border-radius: 999px;
   background: rgba(226, 75, 75, 0.12);
   color: #e24b4b;
+  font-family: var(--body-font);
   font-size: 0.8rem;
   font-weight: 700;
 }
@@ -259,11 +323,15 @@ a {
 }
 
 .empty-cart {
+  font-family: var(--body-font);
   font-size: 0.9rem;
   color: #7a8b9c;
   padding: 8px 0;
 }
 
+/* =========================
+   COLLECTION CENTER
+========================= */
 .collection-center {
   display: flex;
   flex-direction: column;
@@ -286,7 +354,9 @@ a {
   border-radius: 999px;
   padding: 12px 20px;
   cursor: pointer;
-  font-weight: 600;
+  font-family: var(--body-font);
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
   transition: 0.25s ease;
 }
 
@@ -469,14 +539,16 @@ a {
 
 .collection-card__body span {
   display: block;
+  font-family: var(--body-font);
   color: var(--secondary);
   font-size: 0.82rem;
-  font-weight: 600;
+  font-weight: var(--label-font-weight);
   margin-bottom: 8px;
 }
 
 .collection-card__body h3 {
   margin: 0 0 8px;
+  font-family: var(--heading-font);
   color: var(--primary);
   font-size: 1.06rem;
   line-height: 1.3;
@@ -485,9 +557,10 @@ a {
 
 .price {
   margin: 0 0 14px;
+  font-family: var(--body-font);
   color: var(--primary);
   font-weight: 700;
-  font-size: 1rem;
+  font-size: var(--body-font-size);
 }
 
 .add-to-cart-btn {
@@ -497,7 +570,9 @@ a {
   color: #fff;
   padding: 12px 14px;
   border-radius: 14px;
-  font-weight: 600;
+  font-family: var(--body-font);
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
   cursor: pointer;
   transition: 0.25s ease;
   margin-top: auto;

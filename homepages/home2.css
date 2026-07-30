@@ -1,3 +1,42 @@
+/* ==========================
+   GOOGLE FONTS IMPORT
+========================== */
+@import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap");
+
+/* ==========================
+   TYPOGRAPHY SETTINGS
+========================== */
+:root {
+  /* Fonts */
+  --heading-font: "Oxanium", sans-serif;
+  --body-font: "Poppins", sans-serif;
+
+  /* Font Sizes */
+  --hero-font-size: 3.5rem;
+  --heading-font-size: 2.5rem;
+  --body-font-size: 1rem;
+  --nav-font-size: 1rem;
+  --button-font-size: 1rem;
+  --small-font-size: 0.88rem;
+  --tiny-font-size: 0.72rem;
+
+  /* Font Weights */
+  --hero-font-weight: 700;
+  --heading-font-weight: 600;
+  --body-font-weight: 400;
+  --nav-font-weight: 500;
+  --button-font-weight: 600;
+  --label-font-weight: 600;
+
+  /* Line Heights */
+  --line-height: 1.7;
+  --heading-line-height: 1.05;
+  --hero-line-height: 0.92;
+}
+
+/* ==========================
+   GLOBAL RESET
+========================== */
 :root {
   --primary: #0f2740;
   --secondary: #2bb7d6;
@@ -9,18 +48,31 @@
 
 body {
   margin: 0;
-
-  font-family: "Poppins", sans-serif;
+  font-family: var(--body-font);
+  font-size: var(--body-font-size);
+  font-weight: var(--body-font-weight);
+  line-height: var(--line-height);
 }
 
 a {
   text-decoration: none;
   color: inherit;
 }
+
 h1,
-h2 {
-  font-family: "Poppins", sans-serif;
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font);
+  font-weight: var(--heading-font-weight);
+  line-height: var(--heading-line-height);
 }
+
+/* =========================
+   HERO SECTION
+========================= */
 .hero {
   position: relative;
   height: 90vh;
@@ -95,8 +147,9 @@ h2 {
   background: rgba(43, 183, 214, 0.16);
   border: 1px solid rgba(43, 183, 214, 0.28);
   color: var(--secondary);
+  font-family: var(--body-font);
   font-size: 12px;
-  font-weight: 600;
+  font-weight: var(--label-font-weight);
   letter-spacing: 1.4px;
   text-transform: uppercase;
   backdrop-filter: blur(8px);
@@ -104,11 +157,12 @@ h2 {
 
 .hero h1 {
   margin: 0;
-  font-size: 4rem;
-  line-height: 0.92;
+  font-family: var(--heading-font);
+  font-size: var(--hero-font-size);
+  line-height: var(--hero-line-height);
   letter-spacing: -0.06em;
   text-transform: uppercase;
-  font-weight: 900;
+  font-weight: var(--hero-font-weight);
   max-width: 10ch;
   background: linear-gradient(
     135deg,
@@ -124,6 +178,7 @@ h2 {
 .hero__text {
   max-width: 520px;
   margin: 22px 0 0;
+  font-family: var(--body-font);
   font-size: 1.05rem;
   line-height: 1.75;
   color: rgba(255, 255, 255, 0.74);
@@ -143,7 +198,9 @@ h2 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 700;
+  font-family: var(--body-font);
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
   letter-spacing: 0.02em;
   border: 1px solid transparent;
   transition: 0.25s ease;
@@ -179,7 +236,8 @@ h2 {
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.12);
   color: rgba(255, 255, 255, 0.84);
-  font-size: 0.88rem;
+  font-family: var(--body-font);
+  font-size: var(--small-font-size);
 }
 
 .hero__right {
@@ -230,12 +288,14 @@ h2 {
   color: var(--secondary);
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  font-size: 0.7rem;
+  font-family: var(--body-font);
+  font-size: var(--tiny-font-size);
   font-weight: 700;
 }
 
 .hero__card strong {
   display: block;
+  font-family: var(--body-font);
   font-size: 1.08rem;
   line-height: 1.4;
   margin-bottom: 10px;
@@ -244,6 +304,7 @@ h2 {
 
 .hero__card p {
   margin: 0;
+  font-family: var(--body-font);
   color: rgba(255, 255, 255, 0.76);
   line-height: 1.7;
   font-size: 0.95rem;
@@ -252,6 +313,7 @@ h2 {
 .metric strong {
   display: block;
   margin: 0;
+  font-family: var(--heading-font);
   font-size: 3rem;
   line-height: 1;
   color: var(--secondary);
@@ -261,7 +323,12 @@ h2 {
   margin-top: 10px;
   max-width: 18ch;
   text-transform: lowercase;
+  font-family: var(--body-font);
 }
+
+/* =========================
+   SPOTLIGHT SECTION
+========================= */
 .spotlight-light {
   padding: 88px 100px;
   background: #f7f9fc;
@@ -309,7 +376,8 @@ h2 {
   backdrop-filter: blur(12px);
   text-transform: uppercase;
   letter-spacing: 0.16em;
-  font-size: 0.72rem;
+  font-family: var(--body-font);
+  font-size: var(--tiny-font-size);
   font-weight: 700;
   color: #0f2740;
 }
@@ -333,8 +401,9 @@ h2 {
   background: rgba(43, 183, 214, 0.16);
   border: 1px solid rgba(43, 183, 214, 0.28);
   color: var(--secondary);
+  font-family: var(--body-font);
   font-size: 12px;
-  font-weight: 600;
+  font-weight: var(--label-font-weight);
   letter-spacing: 1.4px;
   text-transform: uppercase;
   backdrop-filter: blur(8px);
@@ -342,21 +411,25 @@ h2 {
 
 .spotlight-light h2 {
   margin: 0;
-  font-size: 3rem;
-  line-height: 0.98;
+  font-family: var(--heading-font);
+  font-size: var(--heading-font-size);
+  line-height: var(--heading-line-height);
   letter-spacing: -0.05em;
   text-transform: uppercase;
   color: #0f2740;
   max-width: 19ch;
 }
+
 .spotlight-light h2 span {
   color: var(--secondary);
 }
+
 .spotlight-light__text {
   margin: 18px 0 0;
+  font-family: var(--body-font);
   color: #5f6e82;
-  line-height: 1.8;
-  font-size: 1rem;
+  line-height: var(--line-height);
+  font-size: var(--body-font-size);
   max-width: 42ch;
 }
 
@@ -373,7 +446,8 @@ h2 {
   background: #f1f5f9;
   border: 1px solid #e2e8f0;
   color: #3b4a5e;
-  font-size: 0.88rem;
+  font-family: var(--body-font);
+  font-size: var(--small-font-size);
 }
 
 .spotlight-light__btn {
@@ -386,7 +460,9 @@ h2 {
   border-radius: 999px;
   background: #2bb7d6;
   color: #0f2740;
-  font-weight: 700;
+  font-family: var(--body-font);
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
   width: fit-content;
   transition: 0.25s ease;
 }
@@ -395,6 +471,9 @@ h2 {
   transform: translateY(-2px);
 }
 
+/* =========================
+   CRAFT SECTION
+========================= */
 .craft {
   padding: 88px 100px;
   background: #f7f9fc;
@@ -404,6 +483,7 @@ h2 {
   width: min(1240px, 100%);
   margin: 0 auto;
 }
+
 .craft__head {
   max-width: 720px;
   margin: 0 auto 32px;
@@ -419,19 +499,23 @@ h2 {
   background: rgba(43, 183, 214, 0.16);
   border: 1px solid rgba(43, 183, 214, 0.28);
   color: var(--secondary);
+  font-family: var(--body-font);
   font-size: 12px;
-  font-weight: 600;
+  font-weight: var(--label-font-weight);
   letter-spacing: 1.4px;
   text-transform: uppercase;
   backdrop-filter: blur(8px);
 }
+
 .craft__head h2 span {
   color: var(--secondary);
 }
+
 .craft h2 {
   margin: 0;
-  font-size: 3rem;
-  line-height: 1;
+  font-family: var(--heading-font);
+  font-size: var(--heading-font-size);
+  line-height: var(--heading-line-height);
   letter-spacing: -0.05em;
   text-transform: uppercase;
   color: var(--primary);
@@ -440,8 +524,9 @@ h2 {
 .craft__text {
   margin: 16px auto 0;
   max-width: 640px;
+  font-family: var(--body-font);
   color: #5f6e82;
-  line-height: 1.75;
+  line-height: var(--line-height);
   font-size: 1.02rem;
 }
 
@@ -491,6 +576,7 @@ h2 {
 
 .craft__card h3 {
   margin: 0;
+  font-family: var(--heading-font);
   font-size: 1.12rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -499,11 +585,16 @@ h2 {
 
 .craft__card p {
   margin: 12px 0 0;
+  font-family: var(--body-font);
   color: #5f6e82;
-  line-height: 1.7;
+  line-height: var(--line-height);
   font-size: 0.95rem;
   max-width: 26ch;
 }
+
+/* =========================
+   SWIMWEAR SECTION
+========================= */
 .swimwear-section {
   padding: 88px 100px;
   background: #f7f9fc;
@@ -529,8 +620,9 @@ h2 {
   background: rgba(43, 183, 214, 0.16);
   border: 1px solid rgba(43, 183, 214, 0.28);
   color: var(--secondary);
+  font-family: var(--body-font);
   font-size: 12px;
-  font-weight: 600;
+  font-weight: var(--label-font-weight);
   letter-spacing: 1.4px;
   text-transform: uppercase;
   backdrop-filter: blur(8px);
@@ -538,20 +630,24 @@ h2 {
 
 .swimwear-section h2 {
   margin: 0;
-  font-size: 3rem;
-  line-height: 1;
+  font-family: var(--heading-font);
+  font-size: var(--heading-font-size);
+  line-height: var(--heading-line-height);
   letter-spacing: -0.05em;
   text-transform: uppercase;
   color: var(--primary);
 }
+
 .swimwear-section__head h2 span {
   color: var(--secondary);
 }
+
 .swimwear-section__text {
   margin: 16px auto 0;
   max-width: 640px;
+  font-family: var(--body-font);
   color: #5f6e82;
-  line-height: 1.75;
+  line-height: var(--line-height);
   font-size: 1.02rem;
 }
 
@@ -627,7 +723,8 @@ h2 {
   background: #eef8fb;
   color: var(--primary);
   border: 1px solid #d7eef4;
-  font-size: 0.72rem;
+  font-family: var(--body-font);
+  font-size: var(--tiny-font-size);
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -635,6 +732,7 @@ h2 {
 
 .swimwear-card h3 {
   margin: 0;
+  font-family: var(--heading-font);
   font-size: 1.15rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -643,10 +741,15 @@ h2 {
 
 .swimwear-card p {
   margin: 10px 0 0;
+  font-family: var(--body-font);
   color: #5f6e82;
-  line-height: 1.7;
+  line-height: var(--line-height);
   font-size: 0.94rem;
 }
+
+/* =========================
+   BRANDS SECTION
+========================= */
 .brands-section {
   padding: 88px 100px;
   background: #f7f9fc;
@@ -672,8 +775,9 @@ h2 {
   background: rgba(43, 183, 214, 0.16);
   border: 1px solid rgba(43, 183, 214, 0.28);
   color: var(--secondary);
+  font-family: var(--body-font);
   font-size: 12px;
-  font-weight: 600;
+  font-weight: var(--label-font-weight);
   letter-spacing: 1.4px;
   text-transform: uppercase;
   backdrop-filter: blur(8px);
@@ -681,20 +785,24 @@ h2 {
 
 .brands-section h2 {
   margin: 0;
-  font-size: 3rem;
-  line-height: 1;
+  font-family: var(--heading-font);
+  font-size: var(--heading-font-size);
+  line-height: var(--heading-line-height);
   letter-spacing: -0.05em;
   text-transform: uppercase;
   color: var(--primary);
 }
+
 .brands-section h2 span {
   color: var(--secondary);
 }
+
 .brands-section__text {
   margin: 16px auto 0;
   max-width: 640px;
+  font-family: var(--body-font);
   color: #5f6e82;
-  line-height: 1.75;
+  line-height: var(--line-height);
   font-size: 1.02rem;
 }
 
@@ -743,6 +851,10 @@ h2 {
   filter: grayscale(0%);
   opacity: 1;
 }
+
+/* =========================
+   SIZE GUIDE SECTION
+========================= */
 .sizeguide {
   padding: 88px 100px;
   background: #f7f9fc;
@@ -768,8 +880,9 @@ h2 {
   background: rgba(43, 183, 214, 0.16);
   border: 1px solid rgba(43, 183, 214, 0.28);
   color: var(--secondary);
+  font-family: var(--body-font);
   font-size: 12px;
-  font-weight: 600;
+  font-weight: var(--label-font-weight);
   letter-spacing: 1.4px;
   text-transform: uppercase;
   backdrop-filter: blur(8px);
@@ -777,8 +890,9 @@ h2 {
 
 .sizeguide h2 {
   margin: 0;
-  font-size: 3rem;
-  line-height: 1;
+  font-family: var(--heading-font);
+  font-size: var(--heading-font-size);
+  line-height: var(--heading-line-height);
   letter-spacing: -0.05em;
   text-transform: uppercase;
   color: #0f2740;
@@ -791,8 +905,9 @@ h2 {
 .sizeguide__text {
   margin: 16px auto 0;
   max-width: 640px;
+  font-family: var(--body-font);
   color: #5f6e82;
-  line-height: 1.75;
+  line-height: var(--line-height);
   font-size: 1.02rem;
 }
 
@@ -824,6 +939,7 @@ h2 {
   border-radius: 16px;
   border: 1px solid #e4eaf1;
   background: #f9fbfd;
+  font-family: var(--body-font);
   color: #0f2740;
   font-weight: 700;
   text-transform: uppercase;
@@ -854,6 +970,7 @@ h2 {
 
 .sizeguide__brand-info h3 {
   margin: 0 0 8px;
+  font-family: var(--heading-font);
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -862,8 +979,9 @@ h2 {
 
 .sizeguide__brand-info p {
   margin: 0;
+  font-family: var(--body-font);
   color: #5f6e82;
-  line-height: 1.7;
+  line-height: var(--line-height);
   font-size: 0.92rem;
 }
 
@@ -883,7 +1001,8 @@ h2 {
 
 .sizeguide__panel-eyebrow {
   margin: 0 0 8px;
-  font-size: 0.72rem;
+  font-family: var(--body-font);
+  font-size: var(--tiny-font-size);
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: #2bb7d6;
@@ -892,6 +1011,7 @@ h2 {
 
 #brandTitle {
   margin: 0;
+  font-family: var(--heading-font);
   font-size: 1.6rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -905,6 +1025,7 @@ h2 {
   background: #eef8fb;
   border: 1px solid #d7eef4;
   color: #0f2740;
+  font-family: var(--body-font);
   font-size: 0.76rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -913,8 +1034,9 @@ h2 {
 
 .sizeguide__desc {
   margin: 0 0 18px;
+  font-family: var(--body-font);
   color: #5f6e82;
-  line-height: 1.7;
+  line-height: var(--line-height);
   font-size: 0.98rem;
 }
 
@@ -936,11 +1058,13 @@ h2 {
   padding: 14px 12px;
   text-align: left;
   border-bottom: 1px solid #edf2f7;
+  font-family: var(--body-font);
   color: #5f6e82;
   font-size: 0.94rem;
 }
 
 .sizeguide__table th {
+  font-family: var(--body-font);
   color: #0f2740;
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -974,6 +1098,7 @@ h2 {
   border-radius: 12px;
   background: #0f2740;
   color: #fff;
+  font-family: var(--body-font);
   font-size: 0.78rem;
   font-weight: 700;
   margin-bottom: 10px;
@@ -981,10 +1106,12 @@ h2 {
 
 .sizeguide__tip p {
   margin: 0;
+  font-family: var(--body-font);
   color: #5f6e82;
-  line-height: 1.65;
+  line-height: var(--line-height);
   font-size: 0.92rem;
 }
+
 .sizeguide__brand-tip {
   grid-column: 1 / -1;
   padding: 18px;
@@ -995,6 +1122,7 @@ h2 {
 
 .sizeguide__brand-tip h3 {
   margin: 0 0 8px;
+  font-family: var(--heading-font);
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -1003,10 +1131,12 @@ h2 {
 
 .sizeguide__brand-tip p {
   margin: 0;
+  font-family: var(--body-font);
   color: #5f6e82;
-  line-height: 1.7;
+  line-height: var(--line-height);
   font-size: 0.92rem;
 }
+
 .sizeguide__brand-note {
   grid-column: 1 / -1;
   padding: 18px;
@@ -1017,6 +1147,7 @@ h2 {
 
 .sizeguide__brand-note h3 {
   margin: 0 0 8px;
+  font-family: var(--heading-font);
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -1025,10 +1156,15 @@ h2 {
 
 .sizeguide__brand-note p {
   margin: 0;
+  font-family: var(--body-font);
   color: #5f6e82;
-  line-height: 1.7;
+  line-height: var(--line-height);
   font-size: 0.92rem;
 }
+
+/* =========================
+   TEAM KIT SECTION
+========================= */
 .teamkit {
   padding: 88px 100px;
   background: #f7f9fc;
@@ -1054,8 +1190,9 @@ h2 {
   background: rgba(43, 183, 214, 0.16);
   border: 1px solid rgba(43, 183, 214, 0.28);
   color: var(--secondary);
+  font-family: var(--body-font);
   font-size: 12px;
-  font-weight: 600;
+  font-weight: var(--label-font-weight);
   letter-spacing: 1.4px;
   text-transform: uppercase;
   backdrop-filter: blur(8px);
@@ -1063,8 +1200,9 @@ h2 {
 
 .teamkit h2 {
   margin: 0;
-  font-size: 3rem;
-  line-height: 1;
+  font-family: var(--heading-font);
+  font-size: var(--heading-font-size);
+  line-height: var(--heading-line-height);
   letter-spacing: -0.05em;
   text-transform: uppercase;
   color: var(--primary);
@@ -1077,8 +1215,9 @@ h2 {
 .teamkit__text {
   margin: 16px auto 0;
   max-width: 640px;
+  font-family: var(--body-font);
   color: #5f6e82;
-  line-height: 1.75;
+  line-height: var(--line-height);
   font-size: 1.02rem;
 }
 
@@ -1120,7 +1259,8 @@ h2 {
   color: var(--primary);
   border-radius: 18px;
   min-height: 64px;
-  font-weight: 800;
+  font-family: var(--body-font);
+  font-weight: 700;
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -1128,7 +1268,8 @@ h2 {
 
 .teamkit__step span {
   display: block;
-  font-size: 0.72rem;
+  font-family: var(--body-font);
+  font-size: var(--tiny-font-size);
   font-weight: 700;
   letter-spacing: 0.14em;
   color: #5f6e82;
@@ -1177,6 +1318,7 @@ h2 {
 
 .teamkit__card h3 {
   margin: 0 0 14px;
+  font-family: var(--heading-font);
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -1197,6 +1339,7 @@ h2 {
   border: 1px solid #e4eaf1;
   background: #f9fbfd;
   color: var(--primary);
+  font-family: var(--body-font);
   font-weight: 600;
 }
 
@@ -1212,6 +1355,7 @@ h2 {
 }
 
 .teamkit__field label {
+  font-family: var(--body-font);
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -1227,14 +1371,16 @@ h2 {
   color: var(--primary);
   border-radius: 16px;
   padding: 14px 16px;
-  font: inherit;
+  font-family: var(--body-font);
+  font-size: inherit;
 }
 
 .teamkit__summary {
   display: grid;
   gap: 10px;
+  font-family: var(--body-font);
   color: #5f6e82;
-  line-height: 1.7;
+  line-height: var(--line-height);
 }
 
 .teamkit__summary strong {
@@ -1255,7 +1401,9 @@ h2 {
   padding: 0 18px;
   border-radius: 14px;
   border: 0;
-  font-weight: 800;
+  font-family: var(--body-font);
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
   text-transform: uppercase;
   letter-spacing: 0.08em;
   cursor: pointer;
@@ -1271,6 +1419,10 @@ h2 {
   background: #edf2f7;
   color: var(--primary);
 }
+
+/* =========================
+   REVIEWS SECTION
+========================= */
 .reviews {
   padding: 88px 100px;
   background: #f7f9fc;
@@ -1296,8 +1448,9 @@ h2 {
   background: rgba(43, 183, 214, 0.16);
   border: 1px solid rgba(43, 183, 214, 0.28);
   color: var(--secondary);
+  font-family: var(--body-font);
   font-size: 12px;
-  font-weight: 600;
+  font-weight: var(--label-font-weight);
   letter-spacing: 1.4px;
   text-transform: uppercase;
   backdrop-filter: blur(8px);
@@ -1305,8 +1458,9 @@ h2 {
 
 .reviews h2 {
   margin: 0;
-  font-size: 3rem;
-  line-height: 1;
+  font-family: var(--heading-font);
+  font-size: var(--heading-font-size);
+  line-height: var(--heading-line-height);
   letter-spacing: -0.05em;
   text-transform: uppercase;
   color: #0f2740;
@@ -1319,8 +1473,9 @@ h2 {
 .reviews__text {
   margin: 16px auto 0;
   max-width: 620px;
+  font-family: var(--body-font);
   color: #5f6e82;
-  line-height: 1.75;
+  line-height: var(--line-height);
   font-size: 1.02rem;
 }
 
@@ -1399,13 +1554,15 @@ h2 {
   place-items: center;
   background: linear-gradient(135deg, #57d6ef, #2bb7d6);
   color: #fff;
-  font-weight: 800;
+  font-family: var(--body-font);
+  font-weight: 700;
   letter-spacing: 0.08em;
   font-size: 0.88rem;
 }
 
 .review-card__top h3 {
   margin: 0;
+  font-family: var(--heading-font);
   font-size: 0.98rem;
   color: #0f2740;
   text-transform: uppercase;
@@ -1414,6 +1571,7 @@ h2 {
 
 .review-card__top p {
   margin: 3px 0 0;
+  font-family: var(--body-font);
   color: #5f6e82;
   font-size: 0.86rem;
 }
@@ -1431,8 +1589,9 @@ h2 {
 
 .review-card__quote {
   margin: 0;
+  font-family: var(--body-font);
   color: #334155;
-  line-height: 1.75;
+  line-height: var(--line-height);
   font-size: 0.95rem;
 }
 
@@ -1449,7 +1608,8 @@ h2 {
   background: #eef8fb;
   border: 1px solid #d7eef4;
   color: #0f2740;
-  font-size: 0.72rem;
+  font-family: var(--body-font);
+  font-size: var(--tiny-font-size);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -1457,8 +1617,9 @@ h2 {
 
 .review-card__extra {
   margin: 12px 0 0;
+  font-family: var(--body-font);
   color: #5f6e82;
-  line-height: 1.7;
+  line-height: var(--line-height);
   font-size: 0.9rem;
 }
 
@@ -1486,6 +1647,10 @@ h2 {
   width: 30px;
   background: #2bb7d6;
 }
+
+/* =========================
+   CTA SECTION
+========================= */
 .cta {
   padding: 84px 24px;
   background: #f7f9fc;
@@ -1511,8 +1676,9 @@ h2 {
   background: rgba(43, 183, 214, 0.16);
   border: 1px solid rgba(43, 183, 214, 0.28);
   color: var(--secondary);
+  font-family: var(--body-font);
   font-size: 12px;
-  font-weight: 600;
+  font-weight: var(--label-font-weight);
   letter-spacing: 1.4px;
   text-transform: uppercase;
   backdrop-filter: blur(8px);
@@ -1520,8 +1686,9 @@ h2 {
 
 .cta h2 {
   margin: 0;
-  font-size: clamp(2rem, 4vw, 3.4rem);
-  line-height: 1.05;
+  font-family: var(--heading-font);
+  font-size: 2.5rem;
+  line-height: var(--heading-line-height);
   letter-spacing: -0.05em;
   text-transform: uppercase;
   color: #ffffff;
@@ -1530,8 +1697,9 @@ h2 {
 .cta__text {
   max-width: 620px;
   margin: 16px auto 0;
+  font-family: var(--body-font);
   color: rgba(255, 255, 255, 0.75);
-  line-height: 1.8;
+  line-height: var(--line-height);
   font-size: 1.02rem;
 }
 
@@ -1552,7 +1720,9 @@ h2 {
   background: linear-gradient(90deg, #57d6ef, #2bb7d6);
   color: #ffffff;
   text-decoration: none;
-  font-weight: 800;
+  font-family: var(--body-font);
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   box-shadow: 0 16px 34px rgba(43, 183, 214, 0.28);
@@ -1570,9 +1740,10 @@ h2 {
 
 .cta__subtext {
   margin: 0;
+  font-family: var(--body-font);
   color: rgba(255, 255, 255, 0.7);
   font-size: 0.92rem;
-  line-height: 1.6;
+  line-height: var(--line-height);
 }
 /*=========================================
 =            DARK MODE - PART 1           =

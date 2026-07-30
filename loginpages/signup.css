@@ -1,3 +1,27 @@
+/* ==========================
+   GOOGLE FONTS IMPORT
+========================== */
+@import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap");
+
+/* ==========================
+   TYPOGRAPHY SETTINGS
+========================== */
+:root {
+  --heading-font: "Oxanium", sans-serif;
+  --body-font: "Poppins", sans-serif;
+  --hero-font-size: 3.5rem;
+  --heading-font-size: 2.5rem;
+  --body-font-size: 1rem;
+  --hero-font-weight: 700;
+  --heading-font-weight: 600;
+  --body-font-weight: 400;
+  --nav-font-weight: 500;
+  --button-font-weight: 600;
+  --line-height: 1.7;
+  --heading-line-height: 1.05;
+  --hero-line-height: 0.92;
+}
+
 :root {
   --primary: #0f2740;
   --secondary: #2bb7d6;
@@ -31,6 +55,10 @@ input {
   font: inherit;
 }
 
+/* =========================
+   LEFT SIDE - BRAND PANEL
+   (Typography UNCHANGED)
+========================= */
 .auth-shell {
   width: 100vw;
   height: 100vh;
@@ -178,6 +206,10 @@ input {
   color: rgba(255, 255, 255, 0.72);
 }
 
+/* =========================
+   RIGHT SIDE - LOGIN PANEL
+   (Typography UPDATED)
+========================= */
 .login-panel {
   position: relative;
   min-height: 100vh;
@@ -230,6 +262,7 @@ input {
   display: flex;
   flex-direction: column;
 }
+
 .logo {
   display: flex;
   align-items: center;
@@ -262,6 +295,7 @@ input {
 
 .logo-text h1 {
   margin: 0;
+  font-family: var(--heading-font);
   font-size: 24px;
   font-weight: 800;
   letter-spacing: 2px;
@@ -276,6 +310,7 @@ input {
 
 .logo-text p {
   margin-top: 8px;
+  font-family: var(--body-font);
   font-size: 8px;
   font-weight: 600;
   letter-spacing: 2px;
@@ -297,6 +332,7 @@ input {
   opacity: 0.55;
   display: block;
 }
+
 .card-heading {
   text-align: center;
   margin: 0 0 12px;
@@ -304,7 +340,7 @@ input {
 
 .card-heading h3 {
   margin: 0;
-  font-family: "Playfair Display", serif;
+  font-family: var(--heading-font);
   font-size: 1.55rem;
   line-height: 1.02;
   color: var(--primary);
@@ -317,6 +353,7 @@ input {
 
 .card-heading p {
   margin: 6px 0 0;
+  font-family: var(--body-font);
   font-size: 0.84rem;
   line-height: 1.4;
   color: rgba(15, 39, 64, 0.72);
@@ -339,6 +376,7 @@ input {
 }
 
 .field label {
+  font-family: var(--body-font);
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.11em;
@@ -367,6 +405,7 @@ input {
   outline: none;
   padding: 0 48px 0 42px;
   color: var(--primary);
+  font-family: var(--body-font);
   font-size: 14px;
 }
 
@@ -392,6 +431,7 @@ input {
   border-radius: 16px;
   background: linear-gradient(135deg, var(--secondary), #6adbea);
   color: #fff;
+  font-family: var(--body-font);
   font-size: 15px;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -414,6 +454,7 @@ input {
 
 .divider p {
   margin: 0;
+  font-family: var(--body-font);
   font-size: 0.64rem;
   letter-spacing: 0.16em;
   font-weight: 700;
@@ -440,6 +481,7 @@ input {
   gap: 10px;
   cursor: pointer;
   box-shadow: 0 10px 24px rgba(15, 39, 64, 0.06);
+  font-family: var(--body-font);
 }
 
 .google i {
@@ -457,12 +499,14 @@ input {
 
 .auth-switch p {
   margin: 0;
+  font-family: var(--body-font);
   font-size: 0.88rem;
   color: rgba(15, 39, 64, 0.72);
 }
 
 .create-link {
   color: var(--secondary);
+  font-family: var(--body-font);
   font-weight: 600;
 }
 
@@ -482,6 +526,7 @@ input {
     opacity: 0;
   }
 }
+
 /*=========================================
         DARK MODE - LOGIN / SIGNUP
 =========================================*/
@@ -490,18 +535,15 @@ body.dark-mode .brand-panel {
     linear-gradient(180deg, rgba(15, 39, 64, 0.86), rgba(15, 39, 64, 0.88)),
     url("/images/hero6.png") center center / cover no-repeat;
 }
+
 body.dark-mode {
   background: #07131d;
   color: #dbe7f1;
 }
 
-/* Background */
-
 body.dark-mode .login-panel {
   background: linear-gradient(180deg, #07131d 0%, #0b1d2d 100%);
 }
-
-/* Utility Buttons */
 
 body.dark-mode .utility-btn {
   background: #132434;
@@ -515,15 +557,11 @@ body.dark-mode .utility-btn:hover {
   color: var(--secondary);
 }
 
-/* Login Card */
-
 body.dark-mode .login-card {
   background: #132434;
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
 }
-
-/* Logo */
 
 body.dark-mode .logo-text h1 {
   color: #ffffff;
@@ -537,8 +575,6 @@ body.dark-mode .logo-text p {
   color: rgba(255, 255, 255, 0.72);
 }
 
-/* Heading */
-
 body.dark-mode .card-heading h3 {
   color: #ffffff;
 }
@@ -547,13 +583,9 @@ body.dark-mode .card-heading p {
   color: rgba(255, 255, 255, 0.72);
 }
 
-/* Labels */
-
 body.dark-mode .field label {
   color: rgba(255, 255, 255, 0.85);
 }
-
-/* Inputs */
 
 body.dark-mode .input-wrap input {
   background: #1a2c3d;
@@ -570,8 +602,6 @@ body.dark-mode .input-wrap input:focus {
   box-shadow: 0 0 0 4px rgba(43, 183, 214, 0.16);
 }
 
-/* Icons */
-
 body.dark-mode .input-wrap i:first-child,
 body.dark-mode .eye-btn {
   color: rgba(255, 255, 255, 0.6);
@@ -580,8 +610,6 @@ body.dark-mode .eye-btn {
 body.dark-mode .eye-btn:hover {
   color: var(--secondary);
 }
-
-/* Login Button */
 
 body.dark-mode .signin-btn {
   background: linear-gradient(135deg, var(--secondary), #59d0e8);
@@ -592,8 +620,6 @@ body.dark-mode .signin-btn:hover {
   box-shadow: 0 18px 35px rgba(43, 183, 214, 0.35);
 }
 
-/* Divider */
-
 body.dark-mode .divider span {
   background: rgba(255, 255, 255, 0.08);
 }
@@ -601,8 +627,6 @@ body.dark-mode .divider span {
 body.dark-mode .divider p {
   color: rgba(255, 255, 255, 0.55);
 }
-
-/* Social Buttons */
 
 body.dark-mode .social-btn {
   background: #1a2c3d;
@@ -621,8 +645,6 @@ body.dark-mode .apple i {
   color: #ffffff;
 }
 
-/* Bottom Text */
-
 body.dark-mode .auth-switch p {
   color: rgba(255, 255, 255, 0.72);
 }
@@ -634,8 +656,6 @@ body.dark-mode .create-link {
 body.dark-mode .create-link:hover {
   color: #ffffff;
 }
-
-/* Brand Panel */
 
 body.dark-mode .location {
   color: rgba(255, 255, 255, 0.7);
@@ -649,19 +669,16 @@ body.dark-mode .stat span {
   color: rgba(255, 255, 255, 0.68);
 }
 
-/* Selection */
-
 body.dark-mode ::selection {
   background: var(--secondary);
   color: #ffffff;
 }
 
-/* Autofill */
-
 body.dark-mode input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 1000px #1a2c3d inset;
   -webkit-text-fill-color: #ffffff;
 }
+
 /* Samsung Galaxy S8+ */
 @media screen and (max-width: 480px) {
   body {

@@ -1,10 +1,42 @@
+/* ==========================
+   GOOGLE FONTS IMPORT
+========================== */
+@import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap");
+
+/* ==========================
+   TYPOGRAPHY SETTINGS
+========================== */
+:root {
+  --heading-font: "Oxanium", sans-serif;
+  --body-font: "Poppins", sans-serif;
+
+  --hero-font-size: 3.5rem;
+  --heading-font-size: 1rem;
+  --body-font-size: 1rem;
+  --nav-font-size: 1rem;
+  --button-font-size: 1rem;
+
+  --hero-font-weight: 700;
+  --heading-font-weight: 600;
+  --body-font-weight: 400;
+  --nav-font-weight: 500;
+  --button-font-weight: 600;
+
+  --line-height: 1.7;
+  --heading-line-height: 1.05;
+  --hero-line-height: 0.92;
+}
+
+/* ==========================
+   RESET & BASE
+========================== */
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: var(--body-font);
   background: #ffffff;
   color: #0f2740;
 }
@@ -23,6 +55,9 @@ a {
   --muted: #607286;
 }
 
+/* ==========================
+   PAGE STRUCTURE
+========================== */
 .terms-page {
   min-height: 100vh;
   padding: 24px;
@@ -42,6 +77,9 @@ a {
   margin-top: 6px;
 }
 
+/* ==========================
+   HERO SECTION
+========================== */
 .terms-hero {
   background:
     linear-gradient(135deg, rgba(8, 19, 34, 0.96), rgba(15, 39, 64, 0.92)),
@@ -57,11 +95,14 @@ a {
   color: #fff;
 }
 
+/* ==========================
+   LOGO
+========================== */
 .logo,
 .footer-logo {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 10px; /* slightly increased for better balance */
 }
 
 .logo {
@@ -86,13 +127,15 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  line-height: 1.1; /* tighter vertical rhythm */
 }
 
 .logo-text h1 {
   margin: 0;
-  font-size: 24px;
-  font-weight: 800;
-  letter-spacing: 2px;
+  font-family: var(--heading-font);
+  font-size: 28px; /* slightly smaller for better proportion */
+  font-weight: var(--hero-font-weight);
+  letter-spacing: 1.5px;
   line-height: 1;
   color: #ffffff;
   text-transform: uppercase;
@@ -102,23 +145,29 @@ a {
   color: var(--secondary);
 }
 
+/* This is the "BORN FOR EVERY STROKE." line */
 .logo-text p {
-  margin-top: 8px;
-  font-size: 8px;
+  margin: 0;
+  font-family: var(--body-font);
+  font-size: 9px; /* easy to adjust from one place */
   font-weight: 600;
-  letter-spacing: 2px;
+  letter-spacing: 1.2px;
   color: rgba(255, 255, 255, 0.76);
   text-transform: uppercase;
   display: flex;
   white-space: nowrap;
   align-items: center;
-  margin-left: -10px;
+}
+
+/* Remove the old left offset that was breaking alignment */
+.logo-text p {
+  margin-left: 0;
 }
 
 .logo-text p::before,
 .logo-text p::after {
   content: "";
-  width: 24px;
+  width: 20px; /* slightly shorter lines for balance */
   height: 1px;
   margin-right: 3px;
   background: var(--secondary);
@@ -126,14 +175,18 @@ a {
   display: block;
 }
 
+/* ==========================
+   HERO COPY
+========================== */
 .legal-badge {
   display: inline-flex;
   padding: 8px 14px;
   border-radius: 999px;
   background: rgba(43, 183, 214, 0.14);
   color: #baf3ff;
+  font-family: var(--body-font);
   font-size: 0.78rem;
-  font-weight: 700;
+  font-weight: var(--button-font-weight);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 14px;
@@ -141,19 +194,24 @@ a {
 
 .terms-brand h2 {
   margin: 0 0 12px;
-  font-size: clamp(2.2rem, 4.8vw, 3.8rem);
-  line-height: 1.06;
+  font-family: var(--heading-font);
+  font-size: 3rem;
+  line-height: var(--hero-line-height);
   color: #fff;
 }
 
 .terms-brand p {
   margin: 0;
   max-width: 820px;
-  line-height: 1.8;
+  line-height: var(--line-height);
   color: rgba(255, 255, 255, 0.9);
-  font-size: 1rem;
+  /* font-size: var(--body-font-size); */
+  font-family: var(--body-font);
 }
 
+/* ==========================
+   META & NAV
+========================== */
 .terms-meta {
   display: flex;
   flex-wrap: wrap;
@@ -170,6 +228,7 @@ a {
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.12);
   color: rgba(255, 255, 255, 0.86);
+  font-family: var(--body-font);
   font-size: 0.9rem;
 }
 
@@ -187,8 +246,9 @@ a {
   background: #ffffff;
   border: 1px solid rgba(15, 39, 64, 0.08);
   color: var(--primary);
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-family: var(--body-font);
+  font-size: var(--nav-font-size);
+  font-weight: var(--nav-font-weight);
   box-shadow: 0 8px 18px rgba(15, 39, 64, 0.04);
   transition: 0.25s ease;
 }
@@ -200,6 +260,9 @@ a {
   border-color: var(--primary);
 }
 
+/* ==========================
+   MAIN CONTENT
+========================== */
 .terms-main {
   display: grid;
   gap: 16px;
@@ -216,20 +279,26 @@ a {
 
 .terms-card h3 {
   margin: 0 0 10px;
-  font-size: 1.08rem;
+  font-family: var(--heading-font);
+  font-size: var(--heading-font-size);
   color: var(--primary);
 }
 
 .terms-card p {
   margin: 0 0 10px;
   color: #55697b;
-  line-height: 1.85;
+  line-height: var(--line-height);
+  font-family: var(--body-font);
+  font-size: var(--body-font-size);
 }
 
 .terms-card p:last-child {
   margin-bottom: 0;
 }
 
+/* ==========================
+   TERMS NOTE
+========================== */
 .terms-note {
   margin-top: 18px;
   background: linear-gradient(135deg, #ffffff, #eef8fc);
@@ -241,17 +310,23 @@ a {
 
 .terms-note h4 {
   margin: 0 0 10px;
+  font-family: var(--heading-font);
+  font-size: var(--heading-font-size);
   color: var(--primary);
-  font-size: 1rem;
 }
 
 .terms-note ul {
   margin: 0;
   padding-left: 20px;
   color: #546879;
-  line-height: 1.8;
+  line-height: var(--line-height);
+  font-family: var(--body-font);
+  font-size: var(--body-font-size);
 }
 
+/* ==========================
+   FOOTER
+========================== */
 .terms-footer {
   margin-top: 18px;
   padding: 18px 4px 8px;
@@ -266,9 +341,13 @@ a {
 
 .terms-footer p {
   margin: 0;
+  font-family: var(--body-font);
   font-size: 0.92rem;
 }
 
+/* ==========================
+   RESPONSIVE
+========================== */
 @media screen and (max-width: 480px) {
   .terms-page {
     padding: 14px;
@@ -281,7 +360,7 @@ a {
 
   .logo,
   .footer-logo {
-    gap: 4px;
+    gap: 8px;
   }
 
   .logo img,
@@ -291,13 +370,12 @@ a {
   }
 
   .logo-text h1 {
-    font-size: 20px;
+    font-size: 18px;
     letter-spacing: 1px;
   }
 
   .logo-text p {
-    font-size: 7px;
-    margin-left: -8px;
+    font-size: 8px;
   }
 
   .terms-nav {

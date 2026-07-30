@@ -1,26 +1,72 @@
+/* ==========================
+   GOOGLE FONTS IMPORT
+========================== */
+@import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap");
+
+/* ==========================
+   TYPOGRAPHY SETTINGS
+========================== */
+:root {
+  /* Fonts */
+  --heading-font: "Oxanium", sans-serif;
+  --body-font: "Poppins", sans-serif;
+
+  /* Font Sizes */
+  --hero-font-size: 3.5rem;
+  --heading-font-size: 2.5rem;
+  --body-font-size: 1rem;
+  --nav-font-size: 1rem;
+  --button-font-size: 1rem;
+  --small-font-size: 0.88rem;
+  --tiny-font-size: 0.72rem;
+
+  /* Font Weights */
+  --hero-font-weight: 700;
+  --heading-font-weight: 600;
+  --body-font-weight: 400;
+  --nav-font-weight: 500;
+  --button-font-weight: 600;
+  --label-font-weight: 600;
+
+  /* Line Heights */
+  --line-height: 1.7;
+  --heading-line-height: 1.05;
+  --hero-line-height: 0.92;
+}
+
+/* ==========================
+   GLOBAL RESET
+========================== */
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-
-  font-family: "Poppins", sans-serif;
+  font-family: var(--body-font);
+  font-size: var(--body-font-size);
+  font-weight: var(--body-font-weight);
+  line-height: var(--line-height);
 }
 
 a {
   text-decoration: none;
   color: inherit;
 }
+
 :root {
   --primary: #0f2740;
   --secondary: #2bb7d6;
   --text: #ffffff;
 }
+
 section {
   padding: 0px 100px;
 }
 
+/* =========================
+   CONTACT HERO SECTION
+========================= */
 .contact-hero {
   position: relative;
   height: 90vh;
@@ -71,17 +117,19 @@ section {
   background: rgba(43, 183, 214, 0.16);
   border: 1px solid rgba(43, 183, 214, 0.28);
   color: var(--secondary);
+  font-family: var(--body-font);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: var(--label-font-weight);
   letter-spacing: 1.4px;
   text-transform: uppercase;
 }
 
 .contact-hero__content h1 {
   margin: 0;
-  font-size: 4rem;
-  line-height: 1.05;
-  font-weight: 800;
+  font-family: var(--heading-font);
+  font-size: var(--hero-font-size);
+  line-height: var(--hero-line-height);
+  font-weight: var(--hero-font-weight);
   color: #ffffff;
 }
 
@@ -92,8 +140,9 @@ section {
 .contact-hero__text {
   margin: 22px 0 0;
   max-width: 620px;
+  font-family: var(--body-font);
   font-size: 1.15rem;
-  line-height: 1.7;
+  line-height: var(--line-height);
   color: rgba(255, 255, 255, 0.82);
 }
 
@@ -111,7 +160,9 @@ section {
   padding: 14px 22px;
   border-radius: 999px;
   text-decoration: none;
-  font-weight: 700;
+  font-family: var(--body-font);
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
   transition: 0.3s ease;
 }
 
@@ -144,6 +195,9 @@ section {
   color: var(--secondary);
 }
 
+/* =========================
+   CONTACT INFO SECTION
+========================= */
 .contact-info {
   padding: 100px 24px;
   background: #f7fbfd;
@@ -162,10 +216,10 @@ section {
 
 .section-header h2 {
   margin: 0;
-  font-size: 3rem;
-  line-height: 1.1;
+  font-family: var(--heading-font);
+  font-size: var(--heading-font-size);
+  line-height: var(--heading-line-height);
   color: var(--primary);
-  font-weight: 800;
 }
 
 .section-header h2 span {
@@ -174,8 +228,9 @@ section {
 
 .section-header p {
   margin: 18px 0 0;
+  font-family: var(--body-font);
   font-size: 1.05rem;
-  line-height: 1.7;
+  line-height: var(--line-height);
   color: rgba(15, 39, 64, 0.72);
 }
 
@@ -187,8 +242,9 @@ section {
   background: rgba(43, 183, 214, 0.16);
   border: 1px solid rgba(43, 183, 214, 0.28);
   color: var(--secondary);
+  font-family: var(--body-font);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: var(--label-font-weight);
   letter-spacing: 1.4px;
   text-transform: uppercase;
 }
@@ -233,27 +289,34 @@ section {
 
 .contact-card h3 {
   margin: 0;
+  font-family: var(--heading-font);
   font-size: 1.35rem;
-  line-height: 1.2;
+  line-height: var(--heading-line-height);
   color: var(--primary);
 }
 
 .contact-card p {
   margin: 12px 0 18px;
+  font-family: var(--body-font);
   font-size: 0.98rem;
-  line-height: 1.7;
+  line-height: var(--line-height);
   color: rgba(15, 39, 64, 0.72);
 }
 
 .contact-card a {
   color: var(--secondary);
   text-decoration: none;
+  font-family: var(--body-font);
   font-weight: 700;
 }
 
 .contact-card a:hover {
   color: var(--primary);
 }
+
+/* =========================
+   CONTACT FORM SECTION
+========================= */
 .contact-form-section {
   padding: 100px 24px;
   background: #ffffff;
@@ -290,8 +353,9 @@ section {
 }
 
 .form-group label {
+  font-family: var(--body-font);
   font-size: 0.95rem;
-  font-weight: 700;
+  font-weight: var(--label-font-weight);
   color: var(--primary);
 }
 
@@ -301,7 +365,8 @@ section {
   border: 1px solid rgba(15, 39, 64, 0.12);
   border-radius: 16px;
   padding: 15px 18px;
-  font-size: 1rem;
+  font-family: var(--body-font);
+  font-size: var(--body-font-size);
   background: #ffffff;
   color: var(--primary);
   outline: none;
@@ -330,8 +395,9 @@ section {
   border-radius: 999px;
   background: var(--secondary);
   color: var(--primary);
-  font-size: 1rem;
-  font-weight: 800;
+  font-family: var(--body-font);
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
   cursor: pointer;
   transition: 0.3s ease;
 }
@@ -348,6 +414,7 @@ section {
 
 .form-note {
   margin: 2px 0 0;
+  font-family: var(--body-font);
   font-size: 0.95rem;
   color: rgba(15, 39, 64, 0.68);
 }
@@ -388,16 +455,23 @@ section {
 
 .contact-form-info-card h3 {
   margin: 0;
+  font-family: var(--heading-font);
   font-size: 1.35rem;
+  line-height: var(--heading-line-height);
   color: #ffffff;
 }
 
 .contact-form-info-card p {
   margin: 12px 0 0;
+  font-family: var(--body-font);
   font-size: 0.98rem;
-  line-height: 1.7;
+  line-height: var(--line-height);
   color: rgba(255, 255, 255, 0.78);
 }
+
+/* =========================
+   LOCATION & HOURS SECTION
+========================= */
 .location-hours {
   padding: 100px 24px;
   background: #f7fbfd;
@@ -447,14 +521,17 @@ section {
 
 .location-hours__card h3 {
   margin: 0;
+  font-family: var(--heading-font);
   font-size: 1.35rem;
+  line-height: var(--heading-line-height);
   color: var(--primary);
 }
 
 .location-hours__card p {
   margin: 12px 0 0;
+  font-family: var(--body-font);
   font-size: 0.98rem;
-  line-height: 1.7;
+  line-height: var(--line-height);
   color: rgba(15, 39, 64, 0.72);
 }
 
@@ -472,6 +549,10 @@ section {
   width: 100%;
   min-height: 100%;
 }
+
+/* =========================
+   FINAL CTA SECTION
+========================= */
 .final-cta {
   max-width: 980px;
   margin: 0 auto;
@@ -483,8 +564,9 @@ section {
 
 .final-cta__content h3 {
   margin: 0;
+  font-family: var(--heading-font);
   font-size: 2rem;
-  line-height: 1.15;
+  line-height: var(--heading-line-height);
   color: #ffffff;
 }
 
@@ -495,8 +577,9 @@ section {
 .final-cta__content p {
   margin: 14px 0 0;
   max-width: 620px;
+  font-family: var(--body-font);
   color: rgba(255, 255, 255, 0.8);
-  line-height: 1.7;
+  line-height: var(--line-height);
 }
 
 .final-cta__actions {
@@ -513,7 +596,9 @@ section {
   padding: 14px 22px;
   border-radius: 999px;
   text-decoration: none;
-  font-weight: 800;
+  font-family: var(--body-font);
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
   transition: 0.3s ease;
 }
 

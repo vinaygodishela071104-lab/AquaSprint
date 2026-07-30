@@ -1,3 +1,42 @@
+/* ==========================
+   GOOGLE FONTS IMPORT
+========================== */
+@import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap");
+
+/* ==========================
+   TYPOGRAPHY SETTINGS
+========================== */
+:root {
+  /* Fonts */
+  --heading-font: "Oxanium", sans-serif;
+  --body-font: "Poppins", sans-serif;
+
+  /* Font Sizes */
+  --hero-font-size: 3.5rem;
+  --heading-font-size: 2.5rem;
+  --body-font-size: 1rem;
+  --nav-font-size: 1rem;
+  --button-font-size: 1rem;
+  --small-font-size: 0.88rem;
+  --tiny-font-size: 0.72rem;
+
+  /* Font Weights */
+  --hero-font-weight: 700;
+  --heading-font-weight: 600;
+  --body-font-weight: 400;
+  --nav-font-weight: 500;
+  --button-font-weight: 600;
+  --label-font-weight: 600;
+
+  /* Line Heights */
+  --line-height: 1.7;
+  --heading-line-height: 1.05;
+  --hero-line-height: 0.92;
+}
+
+/* ==========================
+   GLOBAL RESET
+========================== */
 :root {
   --primary: #0f2740;
   --secondary: #2bb7d6;
@@ -9,14 +48,31 @@
 
 body {
   margin: 0;
-
-  font-family: "Poppins", sans-serif;
+  font-family: var(--body-font);
+  font-size: var(--body-font-size);
+  font-weight: var(--body-font-weight);
+  line-height: var(--line-height);
 }
 
 a {
   text-decoration: none;
   color: inherit;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font);
+  font-weight: var(--heading-font-weight);
+  line-height: var(--heading-line-height);
+}
+
+/* =========================
+   ABOUT HERO SECTION
+========================= */
 .about-hero {
   position: relative;
   padding: 72px 100px;
@@ -56,8 +112,9 @@ a {
   background: rgba(43, 183, 214, 0.16);
   border: 1px solid rgba(43, 183, 214, 0.28);
   color: var(--secondary);
+  font-family: var(--body-font);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: var(--label-font-weight);
   letter-spacing: 1.4px;
   text-transform: uppercase;
 }
@@ -65,10 +122,12 @@ a {
 .about-hero h1 {
   margin: 0;
   max-width: 18ch;
-  font-size: 3.5rem;
-  line-height: 1;
+  font-family: var(--heading-font);
+  font-size: var(--hero-font-size);
+  line-height: var(--hero-line-height);
   letter-spacing: -0.06em;
   text-transform: uppercase;
+  font-weight: var(--hero-font-weight);
   color: #ffffff;
 }
 
@@ -79,8 +138,9 @@ a {
 .about-hero p {
   margin: 18px 0 0;
   max-width: 540px;
-  font-size: 1rem;
-  line-height: 1.7;
+  font-family: var(--body-font);
+  font-size: var(--body-font-size);
+  line-height: var(--line-height);
   color: rgba(255, 255, 255, 0.78);
 }
 
@@ -98,7 +158,9 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 700;
+  font-family: var(--body-font);
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
   transition: 0.25s ease;
 }
 
@@ -142,6 +204,10 @@ a {
   right: 0;
   bottom: 0;
 }
+
+/* =========================
+   ABOUT STORY SECTION
+========================= */
 .about-story {
   padding: 84px 100px;
   background: #ffffff;
@@ -191,7 +257,8 @@ a {
 
 .about-story__badge span {
   color: var(--secondary);
-  font-size: 0.74rem;
+  font-family: var(--body-font);
+  font-size: var(--tiny-font-size);
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -209,16 +276,18 @@ a {
   background: rgba(43, 183, 214, 0.16);
   border: 1px solid rgba(43, 183, 214, 0.28);
   color: var(--secondary);
+  font-family: var(--body-font);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: var(--label-font-weight);
   letter-spacing: 1.4px;
   text-transform: uppercase;
 }
 
 .about-story h2 {
   margin: 0;
-  font-size: 3rem;
-  line-height: 1;
+  font-family: var(--heading-font);
+  font-size: var(--heading-font-size);
+  line-height: var(--heading-line-height);
   letter-spacing: -0.05em;
   text-transform: uppercase;
   color: var(--primary);
@@ -231,10 +300,15 @@ a {
 .about-story p {
   margin: 18px 0 0;
   max-width: 560px;
+  font-family: var(--body-font);
   font-size: 1.03rem;
-  line-height: 1.8;
+  line-height: var(--line-height);
   color: #5f6e82;
 }
+
+/* =========================
+   ABOUT VALUES SECTION
+========================= */
 .about-values {
   padding: 84px 100px;
   background: #ffffff;
@@ -244,6 +318,7 @@ a {
   width: min(1240px, 100%);
   margin: 0 auto;
 }
+
 .about-values__header {
   max-width: 760px;
   margin: 0 auto 34px;
@@ -258,16 +333,18 @@ a {
   background: rgba(43, 183, 214, 0.16);
   border: 1px solid rgba(43, 183, 214, 0.28);
   color: var(--secondary);
+  font-family: var(--body-font);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: var(--label-font-weight);
   letter-spacing: 1.4px;
   text-transform: uppercase;
 }
 
 .about-values h2 {
   margin: 0;
-  font-size: 3rem;
-  line-height: 1;
+  font-family: var(--heading-font);
+  font-size: var(--heading-font-size);
+  line-height: var(--heading-line-height);
   letter-spacing: -0.05em;
   text-transform: uppercase;
   color: var(--primary);
@@ -280,16 +357,20 @@ a {
 .about-values__header > p {
   max-width: 680px;
   margin: 18px auto 0;
+  font-family: var(--body-font);
   font-size: 1.03rem;
 }
+
 .about-values p {
+  font-family: var(--body-font);
   color: #5f6e82;
-  line-height: 1.8;
+  line-height: var(--line-height);
 }
 
 .about-values__header > p {
   max-width: 680px;
   margin: 18px 0 0;
+  font-family: var(--body-font);
   font-size: 1.03rem;
 }
 
@@ -333,12 +414,14 @@ a {
   background: rgba(43, 183, 214, 0.16);
   border: 1px solid rgba(43, 183, 214, 0.28);
   color: var(--secondary);
-  font-weight: 800;
+  font-family: var(--body-font);
+  font-weight: 700;
   margin-bottom: 18px;
 }
 
 .value-card h3 {
   margin: 0;
+  font-family: var(--heading-font);
   font-size: 1.35rem;
   letter-spacing: -0.03em;
   color: var(--primary);
@@ -346,6 +429,7 @@ a {
 
 .value-card p {
   margin: 12px 0 0;
+  font-family: var(--body-font);
   font-size: 0.98rem;
 }
 
@@ -355,6 +439,7 @@ a {
   border: 0;
   background: transparent;
   color: var(--secondary);
+  font-family: var(--body-font);
   font-weight: 700;
   cursor: pointer;
 }
@@ -372,6 +457,10 @@ a {
 .value-card.is-open {
   border-color: rgba(43, 183, 214, 0.42);
 }
+
+/* =========================
+   ABOUT COLLECTION SECTION
+========================= */
 .about-collection {
   padding: 84px 100px;
   background: #ffffff;
@@ -429,16 +518,18 @@ a {
   background: rgba(43, 183, 214, 0.16);
   border: 1px solid rgba(43, 183, 214, 0.28);
   color: var(--secondary);
+  font-family: var(--body-font);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: var(--label-font-weight);
   letter-spacing: 1.4px;
   text-transform: uppercase;
 }
 
 .about-collection h2 {
   margin: 0;
-  font-size: 3rem;
-  line-height: 1;
+  font-family: var(--heading-font);
+  font-size: var(--heading-font-size);
+  line-height: var(--heading-line-height);
   letter-spacing: -0.05em;
   text-transform: uppercase;
   color: var(--primary);
@@ -451,8 +542,9 @@ a {
 .about-collection__lead {
   margin: 18px 0 0;
   max-width: 560px;
+  font-family: var(--body-font);
   font-size: 1.03rem;
-  line-height: 1.8;
+  line-height: var(--line-height);
   color: #5f6e82;
 }
 
@@ -486,20 +578,27 @@ a {
   background: rgba(43, 183, 214, 0.16);
   border: 1px solid rgba(43, 183, 214, 0.28);
   color: var(--secondary);
-  font-weight: 800;
+  font-family: var(--body-font);
+  font-weight: 700;
 }
 
 .collection-item h3 {
   margin: 0;
+  font-family: var(--heading-font);
   font-size: 1.2rem;
   color: var(--primary);
 }
 
 .collection-item p {
   margin: 8px 0 0;
+  font-family: var(--body-font);
   color: #5f6e82;
-  line-height: 1.7;
+  line-height: var(--line-height);
 }
+
+/* =========================
+   ABOUT WHY SECTION
+========================= */
 .about-why {
   padding: 84px 100px;
   background: #ffffff;
@@ -547,16 +646,18 @@ a {
   background: rgba(43, 183, 214, 0.16);
   border: 1px solid rgba(43, 183, 214, 0.28);
   color: var(--secondary);
+  font-family: var(--body-font);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: var(--label-font-weight);
   letter-spacing: 1.4px;
   text-transform: uppercase;
 }
 
 .about-why h2 {
   margin: 0;
-  font-size: 3rem;
-  line-height: 1;
+  font-family: var(--heading-font);
+  font-size: var(--heading-font-size);
+  line-height: var(--heading-line-height);
   letter-spacing: -0.05em;
   text-transform: uppercase;
   color: var(--primary);
@@ -568,8 +669,9 @@ a {
 
 .about-why p {
   margin: 18px 0 0;
+  font-family: var(--body-font);
   font-size: 1.03rem;
-  line-height: 1.8;
+  line-height: var(--line-height);
   color: #5f6e82;
 }
 
@@ -608,20 +710,23 @@ a {
   display: inline-block;
   margin-bottom: 10px;
   color: var(--secondary);
-  font-weight: 800;
+  font-family: var(--body-font);
+  font-weight: 700;
   letter-spacing: 0.14em;
 }
 
 .about-why__card h3 {
   margin: 0;
+  font-family: var(--heading-font);
   font-size: 1.1rem;
   color: var(--primary);
 }
 
 .about-why__card p {
   margin: 8px 0 0;
+  font-family: var(--body-font);
   font-size: 0.95rem;
-  line-height: 1.7;
+  line-height: var(--line-height);
 }
 
 .about-why__more {
@@ -629,8 +734,9 @@ a {
   overflow: hidden;
   opacity: 0;
   margin-top: 0;
+  font-family: var(--body-font);
   color: #5f6e82;
-  line-height: 1.7;
+  line-height: var(--line-height);
   transition:
     max-height 0.35s ease,
     opacity 0.25s ease,
@@ -642,6 +748,10 @@ a {
   opacity: 1;
   margin-top: 10px;
 }
+
+/* =========================
+   ABOUT VALUES MOTION SECTION
+========================= */
 .about-values-motion {
   padding: 84px 100px;
   background: #ffffff;
@@ -666,16 +776,18 @@ a {
   background: rgba(43, 183, 214, 0.16);
   border: 1px solid rgba(43, 183, 214, 0.28);
   color: var(--secondary);
+  font-family: var(--body-font);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: var(--label-font-weight);
   letter-spacing: 1.4px;
   text-transform: uppercase;
 }
 
 .about-values-motion h2 {
   margin: 0;
-  font-size: 3rem;
-  line-height: 1;
+  font-family: var(--heading-font);
+  font-size: var(--heading-font-size);
+  line-height: var(--heading-line-height);
   letter-spacing: -0.05em;
   text-transform: uppercase;
   color: var(--primary);
@@ -688,8 +800,9 @@ a {
 .about-values-motion p {
   margin: 18px auto 0;
   max-width: 700px;
+  font-family: var(--body-font);
   font-size: 1.03rem;
-  line-height: 1.8;
+  line-height: var(--line-height);
   color: #5f6e82;
 }
 
@@ -760,20 +873,23 @@ a {
   display: inline-block;
   margin-bottom: 10px;
   color: var(--secondary);
-  font-weight: 800;
+  font-family: var(--body-font);
+  font-weight: 700;
   letter-spacing: 0.14em;
 }
 
 .mosaic-card__overlay h3 {
   margin: 0;
+  font-family: var(--heading-font);
   font-size: 1.35rem;
   letter-spacing: -0.03em;
 }
 
 .mosaic-card__overlay p {
   margin: 10px 0 0;
+  font-family: var(--body-font);
   color: rgba(255, 255, 255, 0.86);
-  line-height: 1.7;
+  line-height: var(--line-height);
   font-size: 0.98rem;
 }
 
@@ -790,6 +906,10 @@ a {
   transform: translateY(0);
   opacity: 1;
 }
+
+/* =========================
+   QUALITY SECTION
+========================= */
 .quality-section {
   position: relative;
   padding: 100px 100px;
@@ -880,8 +1000,9 @@ a {
   position: absolute;
   top: 14px;
   left: 18px;
+  font-family: var(--heading-font);
   font-size: clamp(4rem, 12vw, 8rem);
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1;
   letter-spacing: -0.08em;
   color: rgba(43, 183, 214, 0.12);
@@ -896,16 +1017,18 @@ a {
   background: rgba(43, 183, 214, 0.16);
   border: 1px solid rgba(43, 183, 214, 0.28);
   color: var(--secondary);
+  font-family: var(--body-font);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: var(--label-font-weight);
   letter-spacing: 1.4px;
   text-transform: uppercase;
 }
 
 .quality-section h2 {
   margin: 0;
-  font-size: 3rem;
-  line-height: 1;
+  font-family: var(--heading-font);
+  font-size: var(--heading-font-size);
+  line-height: var(--heading-line-height);
   letter-spacing: -0.05em;
   text-transform: uppercase;
   color: var(--primary);
@@ -919,8 +1042,9 @@ a {
 .quality-section__details {
   max-width: 720px;
   margin: 18px auto 0;
+  font-family: var(--body-font);
   font-size: 1.06rem;
-  line-height: 1.85;
+  line-height: var(--line-height);
   color: #5f6e82;
 }
 
@@ -935,6 +1059,10 @@ a {
     transparent
   );
 }
+
+/* =========================
+   FINAL CTA SECTION
+========================= */
 .final-cta {
   position: relative;
   padding: 110px 24px;
@@ -1001,16 +1129,18 @@ a {
   background: rgba(43, 183, 214, 0.16);
   border: 1px solid rgba(43, 183, 214, 0.28);
   color: var(--secondary);
+  font-family: var(--body-font);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: var(--label-font-weight);
   letter-spacing: 1.4px;
   text-transform: uppercase;
 }
 
 .final-cta h2 {
   margin: 0;
-  font-size: clamp(2.3rem, 4vw, 3.8rem);
-  line-height: 1;
+  font-family: var(--heading-font);
+  font-size: 2.5rem;
+  line-height: var(--heading-line-height);
   letter-spacing: -0.06em;
   text-transform: uppercase;
   color: var(--primary);
@@ -1023,8 +1153,9 @@ a {
 .final-cta p {
   max-width: 720px;
   margin: 18px auto 0;
+  font-family: var(--body-font);
   font-size: 1.06rem;
-  line-height: 1.85;
+  line-height: var(--line-height);
   color: #5f6e82;
 }
 
@@ -1044,7 +1175,9 @@ a {
   padding: 14px 24px;
   border-radius: 999px;
   text-decoration: none;
-  font-weight: 700;
+  font-family: var(--body-font);
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
   letter-spacing: 0.03em;
   transition:
     transform 0.25s ease,
@@ -1077,7 +1210,6 @@ a {
   border-color: var(--secondary);
   color: var(--secondary);
 }
-
 /*=====================================
         ABOUT STORY
 =====================================*/

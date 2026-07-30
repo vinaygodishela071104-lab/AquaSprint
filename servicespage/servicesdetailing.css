@@ -1,10 +1,52 @@
+/* ==========================
+   GOOGLE FONTS IMPORT
+========================== */
+@import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap");
+
+/* ==========================
+   TYPOGRAPHY SETTINGS
+========================== */
+:root {
+  /* Fonts */
+  --heading-font: "Oxanium", sans-serif;
+  --body-font: "Poppins", sans-serif;
+
+  /* Font Sizes */
+  --hero-font-size: 3.5rem;
+  --heading-font-size: 2.5rem;
+  --body-font-size: 1rem;
+  --nav-font-size: 1rem;
+  --button-font-size: 1rem;
+  --small-font-size: 0.88rem;
+  --tiny-font-size: 0.72rem;
+
+  /* Font Weights */
+  --hero-font-weight: 700;
+  --heading-font-weight: 600;
+  --body-font-weight: 400;
+  --nav-font-weight: 500;
+  --button-font-weight: 600;
+  --label-font-weight: 600;
+
+  /* Line Heights */
+  --line-height: 1.7;
+  --heading-line-height: 1.05;
+  --hero-line-height: 0.92;
+}
+
+/* ==========================
+   GLOBAL RESET
+========================== */
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: var(--body-font);
+  font-size: var(--body-font-size);
+  font-weight: var(--body-font-weight);
+  line-height: var(--line-height);
 }
 
 a {
@@ -18,9 +60,14 @@ a {
   --white: #ffffff;
   --bg-dark: #07131d;
 }
+
 section {
   padding: 0px 100px;
 }
+
+/* =========================
+   SERVICES DETAIL PAGE
+========================= */
 .services-detail-page {
   background: linear-gradient(180deg, #f7fbfd 0%, #ffffff 100%);
 }
@@ -69,27 +116,34 @@ section {
   background: rgba(43, 183, 214, 0.16);
   border: 1px solid rgba(43, 183, 214, 0.28);
   color: var(--secondary);
+  font-family: var(--body-font);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: var(--label-font-weight);
   letter-spacing: 1.4px;
   text-transform: uppercase;
 }
 
 .services-hero__title {
   margin: 0;
-  font-size: 3.4rem;
-  line-height: 1.08;
+  font-family: var(--heading-font);
+  font-size: var(--hero-font-size);
+  line-height: var(--hero-line-height);
+  font-weight: var(--hero-font-weight);
   color: #ffffff;
 }
 
 .services-hero__text {
   max-width: 760px;
   margin: 20px auto 0;
+  font-family: var(--body-font);
   color: rgba(255, 255, 255, 0.86);
   font-size: 1.05rem;
-  line-height: 1.75;
+  line-height: var(--line-height);
 }
 
+/* =========================
+   SERVICE DETAIL SECTION
+========================= */
 .service-detail {
   padding: 42px 24px;
 }
@@ -125,24 +179,27 @@ section {
 .service-detail__number {
   display: inline-block;
   margin-bottom: 18px;
+  font-family: var(--heading-font);
   font-size: 4rem;
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1;
   color: rgba(43, 183, 214, 0.16);
 }
 
 .service-detail__content h2 {
   margin: 0;
-  font-size: 2.35rem;
-  line-height: 1.15;
+  font-family: var(--heading-font);
+  font-size: var(--heading-font-size);
+  line-height: var(--heading-line-height);
   color: var(--primary);
 }
 
 .service-detail__content p {
   margin: 16px 0 0;
+  font-family: var(--body-font);
   color: rgba(15, 39, 64, 0.78);
-  font-size: 1rem;
-  line-height: 1.8;
+  font-size: var(--body-font-size);
+  line-height: var(--line-height);
 }
 
 .service-detail__list {
@@ -154,8 +211,9 @@ section {
 .service-detail__list li {
   position: relative;
   padding-left: 28px;
+  font-family: var(--body-font);
   color: rgba(15, 39, 64, 0.82);
-  line-height: 1.75;
+  line-height: var(--line-height);
 }
 
 .service-detail__list li + li {
@@ -173,6 +231,9 @@ section {
   background: var(--secondary);
 }
 
+/* =========================
+   SERVICE EXTRA SECTION
+========================= */
 .service-extra {
   padding: 18px 24px 58px;
 }
@@ -198,23 +259,26 @@ section {
   background: rgba(43, 183, 214, 0.16);
   border: 1px solid rgba(43, 183, 214, 0.28);
   color: var(--secondary);
+  font-family: var(--body-font);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: var(--label-font-weight);
   letter-spacing: 1.4px;
   text-transform: uppercase;
 }
 
 .service-extra__intro h3 {
   margin: 0;
-  font-size: 2rem;
-  line-height: 1.2;
+  font-family: var(--heading-font);
+  font-size: var(--heading-font-size);
+  line-height: var(--heading-line-height);
   color: var(--primary);
 }
 
 .service-extra__intro p {
   margin: 14px 0 0;
+  font-family: var(--body-font);
   color: rgba(15, 39, 64, 0.76);
-  line-height: 1.75;
+  line-height: var(--line-height);
 }
 
 .service-extra__cards {
@@ -232,17 +296,22 @@ section {
 
 .extra-card h4 {
   margin: 0;
+  font-family: var(--heading-font);
   font-size: 1.15rem;
   color: var(--primary);
 }
 
 .extra-card p {
   margin: 12px 0 0;
+  font-family: var(--body-font);
   color: rgba(15, 39, 64, 0.74);
-  line-height: 1.7;
+  line-height: var(--line-height);
   font-size: 0.97rem;
 }
 
+/* =========================
+   SERVICES CTA SECTION
+========================= */
 .services-cta {
   padding: 40px 24px 100px;
 }
@@ -257,16 +326,18 @@ section {
 
 .services-cta__inner h2 {
   margin: 0;
-  font-size: 2.3rem;
-  line-height: 1.2;
+  font-family: var(--heading-font);
+  font-size: var(--heading-font-size);
+  line-height: var(--heading-line-height);
   color: #ffffff;
 }
 
 .services-cta__inner p {
   max-width: 700px;
   margin: 16px auto 0;
+  font-family: var(--body-font);
   color: rgba(255, 255, 255, 0.82);
-  line-height: 1.75;
+  line-height: var(--line-height);
 }
 
 .services-cta__button {
@@ -278,7 +349,9 @@ section {
   border-radius: 999px;
   background: var(--secondary);
   color: #ffffff;
-  font-weight: 700;
+  font-family: var(--body-font);
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
   text-decoration: none;
   transition: 0.3s ease;
 }
@@ -288,6 +361,9 @@ section {
   box-shadow: 0 12px 24px rgba(43, 183, 214, 0.28);
 }
 
+/* =========================
+   SERVICES FAQ SECTION
+========================= */
 .services-faq {
   padding: 40px 24px 100px;
 }
@@ -305,16 +381,18 @@ section {
 
 .services-faq__intro h2 {
   margin: 0;
-  font-size: 2.4rem;
-  line-height: 1.15;
+  font-family: var(--heading-font);
+  font-size: var(--heading-font-size);
+  line-height: var(--heading-line-height);
   color: var(--primary);
 }
 
 .services-faq__intro p {
   margin: 16px auto 0;
+  font-family: var(--body-font);
   color: rgba(15, 39, 64, 0.76);
-  line-height: 1.75;
-  font-size: 1rem;
+  line-height: var(--line-height);
+  font-size: var(--body-font-size);
 }
 
 .services-faq__list {
@@ -341,6 +419,7 @@ section {
   position: relative;
   cursor: pointer;
   padding: 22px 64px 22px 24px;
+  font-family: var(--body-font);
   font-size: 1.05rem;
   font-weight: 700;
   line-height: 1.5;
@@ -364,6 +443,7 @@ section {
   place-items: center;
   background: rgba(43, 183, 214, 0.12);
   color: var(--secondary);
+  font-family: var(--body-font);
   font-size: 1.3rem;
   font-weight: 700;
   transition: 0.3s ease;
@@ -380,8 +460,9 @@ section {
 
 .faq-item__content p {
   margin: 0;
+  font-family: var(--body-font);
   color: rgba(15, 39, 64, 0.76);
-  line-height: 1.8;
+  line-height: var(--line-height);
   font-size: 0.98rem;
 }
 /* =====================================

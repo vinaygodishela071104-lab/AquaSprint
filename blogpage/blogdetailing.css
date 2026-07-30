@@ -1,3 +1,39 @@
+/* ==========================
+   GOOGLE FONTS IMPORT
+========================== */
+@import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap");
+
+/* ==========================
+   TYPOGRAPHY SETTINGS
+========================== */
+:root {
+  /* Fonts */
+  --heading-font: "Oxanium", sans-serif;
+  --body-font: "Poppins", sans-serif;
+
+  /* Font Sizes */
+  --hero-font-size: 3.5rem;
+  --heading-font-size: 2.5rem;
+  --body-font-size: 1rem;
+  --nav-font-size: 1rem;
+  --button-font-size: 1rem;
+  --small-font-size: 0.88rem;
+  --tiny-font-size: 0.72rem;
+
+  /* Font Weights */
+  --hero-font-weight: 700;
+  --heading-font-weight: 600;
+  --body-font-weight: 400;
+  --nav-font-weight: 500;
+  --button-font-weight: 600;
+  --label-font-weight: 600;
+
+  /* Line Heights */
+  --line-height: 1.7;
+  --heading-line-height: 1.05;
+  --hero-line-height: 0.92;
+}
+
 :root {
   --primary: #0f2740;
   --secondary: #2bb7d6;
@@ -13,9 +49,10 @@ html {
 
 body {
   margin: 0;
-  font-family: "Poppins", sans-serif;
-
-  line-height: 1.7;
+  font-family: var(--body-font);
+  font-size: var(--body-font-size);
+  font-weight: var(--body-font-weight);
+  line-height: var(--line-height);
 }
 
 a {
@@ -33,13 +70,14 @@ main {
   width: 100%;
   overflow: hidden;
 }
+
 section {
   padding: 0px 100px;
 }
-/* =========================
-   HERO
-========================= */
 
+/* =========================
+   HERO SECTION
+========================= */
 .blog-hero {
   position: relative;
   height: 90vh;
@@ -92,8 +130,9 @@ section {
   background: rgba(43, 183, 214, 0.16);
   border: 1px solid rgba(43, 183, 214, 0.28);
   color: var(--secondary);
+  font-family: var(--body-font);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: var(--label-font-weight);
   letter-spacing: 1.4px;
   text-transform: uppercase;
 }
@@ -108,16 +147,18 @@ section {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+  font-family: var(--body-font);
   font-size: 0.92rem;
   color: rgba(255, 255, 255, 0.8);
 }
 
 .blog-hero h1 {
   margin: 18px 0 14px;
-  font-family: "Playfair Display", serif;
-  font-size: clamp(2.8rem, 6vw, 4.5rem);
-  line-height: 0.98;
+  font-family: var(--heading-font);
+  font-size: 2.5rem;
+  line-height: var(--hero-line-height);
   max-width: 29ch;
+  font-weight: var(--hero-font-weight);
 }
 
 .head {
@@ -126,14 +167,14 @@ section {
 
 .blog-hero__lead {
   max-width: 620px;
+  font-family: var(--body-font);
   font-size: clamp(1rem, 1.3vw, 1.14rem);
   color: rgba(255, 255, 255, 0.9);
 }
 
 /* =========================
-   FEATURED IMAGE
+   FEATURED IMAGE SECTION
 ========================= */
-
 .blog-featured-visual {
   position: relative;
   margin-top: -86px;
@@ -157,9 +198,8 @@ section {
 }
 
 /* =========================
-   STORY COPY
+   STORY COPY SECTION
 ========================= */
-
 .blog-story-copy {
   padding: 12px 24px 110px;
 }
@@ -167,6 +207,7 @@ section {
 .blog-reading-wrap {
   max-width: 780px;
   margin: 0 auto;
+  font-family: var(--body-font);
   font-size: 1.03rem;
 }
 
@@ -177,18 +218,18 @@ section {
 
 .blog-reading-wrap p:first-child::first-letter {
   float: left;
-  font-family: "Playfair Display", serif;
+  font-family: var(--heading-font);
   font-size: 4.2rem;
   line-height: 0.9;
   padding-right: 10px;
   padding-top: 6px;
   color: var(--primary);
+  font-weight: var(--heading-font-weight);
 }
 
 /* =========================
-   DETAIL FLOW
+   DETAIL FLOW SECTION
 ========================= */
-
 .detail-flow {
   padding: 0 40px 120px;
 }
@@ -202,9 +243,9 @@ section {
 .detail-flow__intro h2,
 .similar-articles__head h2 {
   margin: 0 0 18px;
-  font-family: "Playfair Display", serif;
+  font-family: var(--heading-font);
   font-size: clamp(2rem, 3vw, 3.2rem);
-  line-height: 1.1;
+  line-height: var(--heading-line-height);
   color: var(--primary);
 }
 
@@ -213,7 +254,7 @@ section {
   margin: 0 auto;
   max-width: 68ch;
   color: #5f7487;
-  line-height: 1.8;
+  line-height: var(--line-height);
 }
 
 .detail-flow__grid {
@@ -270,24 +311,24 @@ section {
 
 .detail-step__body h3 {
   margin: 0 0 18px;
-  font-family: "Playfair Display", serif;
+  font-family: var(--heading-font);
   font-size: clamp(2rem, 2.8vw, 3rem);
-  line-height: 1.12;
+  line-height: var(--heading-line-height);
   color: var(--primary);
 }
 
 .detail-step__body p {
   margin: 0;
+  font-family: var(--body-font);
   color: #5f7487;
   font-size: 1.05rem;
-  line-height: 1.9;
+  line-height: var(--line-height);
   max-width: 95%;
 }
 
 /* =========================
-   SIMILAR ARTICLES
+   SIMILAR ARTICLES SECTION
 ========================= */
-
 .similar-articles {
   padding: 0 24px 110px;
 }
@@ -347,8 +388,9 @@ section {
   display: inline-flex;
   width: fit-content;
   margin-bottom: 14px;
+  font-family: var(--body-font);
   font-size: 0.78rem;
-  font-weight: 600;
+  font-weight: var(--label-font-weight);
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--secondary);
@@ -356,16 +398,17 @@ section {
 
 .similar-card__content h3 {
   margin: 0 0 12px;
-  font-family: "Playfair Display", serif;
+  font-family: var(--heading-font);
   font-size: 1.32rem;
-  line-height: 1.18;
+  line-height: var(--heading-line-height);
   color: var(--primary);
 }
 
 .similar-card__content p {
   margin: 0 0 18px;
+  font-family: var(--body-font);
   color: #5f7487;
-  line-height: 1.75;
+  line-height: var(--line-height);
 }
 
 .similar-card__meta {
@@ -374,6 +417,7 @@ section {
   gap: 12px;
   flex-wrap: wrap;
   margin-top: auto;
+  font-family: var(--body-font);
   font-size: 0.82rem;
   color: #6e8191;
 }
@@ -389,14 +433,14 @@ section {
   align-items: center;
   gap: 8px;
   margin-top: 18px;
-  font-weight: 600;
+  font-family: var(--body-font);
+  font-weight: var(--label-font-weight);
   color: var(--secondary);
 }
 
 /* =========================
    DARK MODE
 ========================= */
-
 body.dark-mode {
   background: #08131f;
   color: #eef7ff;
@@ -505,6 +549,10 @@ body.dark-mode ::selection {
   background: var(--secondary);
   color: #ffffff;
 }
+
+/* =========================
+   BLOG FAQ SECTION
+========================= */
 .blog-faq {
   width: min(100%, 1240px);
   margin: 0 auto;
@@ -519,17 +567,18 @@ body.dark-mode ::selection {
 
 .blog-faq__head h2 {
   margin: 0 0 16px;
-  font-family: "Playfair Display", serif;
+  font-family: var(--heading-font);
   font-size: clamp(2rem, 3vw, 3.1rem);
-  line-height: 1.1;
+  line-height: var(--heading-line-height);
   color: var(--primary);
 }
 
 .blog-faq__head p {
   margin: 0 auto;
   max-width: 66ch;
+  font-family: var(--body-font);
   color: #5f7487;
-  line-height: 1.8;
+  line-height: var(--line-height);
 }
 
 .blog-faq__list {
@@ -552,6 +601,7 @@ body.dark-mode ::selection {
   cursor: pointer;
   position: relative;
   padding: 22px 60px 22px 22px;
+  font-family: var(--body-font);
   font-size: 1.02rem;
   font-weight: 600;
   line-height: 1.5;
@@ -568,6 +618,7 @@ body.dark-mode ::selection {
   right: 22px;
   top: 50%;
   transform: translateY(-50%);
+  font-family: var(--body-font);
   font-size: 1.5rem;
   font-weight: 500;
   color: var(--secondary);
@@ -581,10 +632,10 @@ body.dark-mode ::selection {
 .blog-faq__item p {
   margin: 0;
   padding: 0 22px 22px;
+  font-family: var(--body-font);
   color: #5f7487;
-  line-height: 1.8;
+  line-height: var(--line-height);
 }
-
 body.dark-mode .blog-faq {
   background: #08131f;
 }
