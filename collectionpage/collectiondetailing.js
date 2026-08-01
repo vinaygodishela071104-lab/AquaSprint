@@ -16,6 +16,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const womenCount = document.getElementById("womenCount");
   const kidsCount = document.getElementById("kidsCount");
 
+  const billItems = document.getElementById("billItems");
+  const billSubtotal = document.getElementById("billSubtotal");
+  const billDelivery = document.getElementById("billDelivery");
+  const billTotal = document.getElementById("billTotal");
+  const cartOrderBtn = document.getElementById("cartOrderBtn");
+
   let currentCategory = "all";
   let currentAge = "all";
   let cart = [];
@@ -79,6 +85,20 @@ document.addEventListener("DOMContentLoaded", () => {
     cartBadge.textContent = totalQty;
   }
 
+  function updateBill() {
+    const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+    const subtotal = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+    const deliveryCharge = totalItems > 0 ? 99 : 0;
+    const total = subtotal + deliveryCharge;
+
+    billItems.textContent = totalItems;
+    billSubtotal.textContent = formatPrice(subtotal);
+    billDelivery.textContent = formatPrice(deliveryCharge);
+    billTotal.textContent = formatPrice(total);
+
+    cartOrderBtn.disabled = totalItems === 0;
+  }
+
   function renderCart() {
     cartMen.innerHTML = "";
     cartWomen.innerHTML = "";
@@ -107,7 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="cart-item__top">
             <div>
               <p class="cart-item__name">${item.name}</p>
-              <p class="cart-item__price">${formatPrice(item.price)} x ${item.qty}</p>
+              <p class="cart-item__price">${formatPrice(item.price)} x ${item.qty} = ${formatPrice(item.price * item.qty)}</p>
             </div>
           </div>
 
@@ -123,6 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     updateCounts();
+    updateBill();
 
     document.querySelectorAll(".qty-plus").forEach((btn) => {
       btn.addEventListener("click", () => {
@@ -204,6 +225,17 @@ document.addEventListener("DOMContentLoaded", () => {
       currentAge = tab.dataset.age;
       applyFilters();
     });
+  });
+
+  cartOrderBtn.addEventListener("click", () => {
+    const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+
+    if (!totalItems) {
+      alert("Your cart is empty.");
+      return;
+    }
+
+    alert(`Order placed successfully! Total bill: ${billTotal.textContent}`);
   });
 
   toggleAgeFilter();

@@ -28,6 +28,7 @@
           </p>
         </div>
       </div>
+
       <div class="top-cart-bar">
         <div class="cart-wrapper">
           <button
@@ -71,6 +72,29 @@
                 <span id="kidsCount">0</span>
               </div>
               <div class="cart-items" id="cartKids"></div>
+            </div>
+
+            <div class="cart-summary">
+              <div class="cart-summary__row">
+                <span>Total Items</span>
+                <strong id="billItems">0</strong>
+              </div>
+              <div class="cart-summary__row">
+                <span>Subtotal</span>
+                <strong id="billSubtotal">₹0</strong>
+              </div>
+              <div class="cart-summary__row">
+                <span>Delivery</span>
+                <strong id="billDelivery">₹99</strong>
+              </div>
+              <div class="cart-summary__row cart-summary__row--total">
+                <span>Total</span>
+                <strong id="billTotal">₹0</strong>
+              </div>
+
+              <button class="cart-order-btn" id="cartOrderBtn" type="button">
+                Order Now
+              </button>
             </div>
           </div>
         </div>
