@@ -1590,12 +1590,13 @@ a {
 .gallery-item:hover img {
   transform: scale(1.06);
 }
-
 .cta-block {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 24px;
+  text-align: center;
   border-radius: 30px;
   background: linear-gradient(135deg, #0f2740 0%, #173b59 100%);
   border: 1px solid rgba(15, 39, 64, 0.08);
@@ -1603,20 +1604,29 @@ a {
   padding: 34px;
 }
 
+.cta-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .cta-copy h2 {
   font-family: var(--heading-font);
   color: #ffffff;
-  margin-bottom: 12px;
+  margin: 0 0 12px;
 }
 
 .cta-copy p {
   font-family: var(--body-font);
   color: rgba(255, 255, 255, 0.78);
   margin: 0;
+  max-width: 620px;
 }
 
 .cta-actions {
   display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 12px;
   flex-wrap: wrap;
 }
@@ -1626,16 +1636,20 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  min-height: 50px;
   padding: 15px 24px;
   border-radius: 16px;
   font-family: var(--body-font);
   font-size: var(--button-font-size);
   font-weight: var(--button-font-weight);
+  line-height: 1;
   text-decoration: none;
+  border: 1px solid transparent;
   transition:
     transform 0.3s ease,
     background 0.3s ease,
-    border-color 0.3s ease;
+    border-color 0.3s ease,
+    color 0.3s ease;
 }
 
 .primary-cta {
@@ -1651,7 +1665,7 @@ a {
 .secondary-cta {
   background: transparent;
   color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.22);
 }
 
 .secondary-cta:hover {
