@@ -1213,7 +1213,63 @@ h6 {
 /*=====================================
         ABOUT STORY
 =====================================*/
+/* ===========================
+   ABOUT HERO - DARK MODE
+=========================== */
 
+body.dark-mode .about-hero {
+  background: #07131d;
+}
+
+body.dark-mode .about-hero::before {
+  background: linear-gradient(135deg, #07131d 0%, #0d2235 55%, #154d66 100%);
+}
+
+body.dark-mode .about-hero__eyebrow {
+  background: rgba(43, 183, 214, 0.12);
+  border: 1px solid rgba(43, 183, 214, 0.25);
+  color: var(--secondary);
+}
+
+body.dark-mode .about-hero h1 {
+  color: #ffffff;
+}
+
+body.dark-mode .about-hero h1 span {
+  color: var(--secondary);
+}
+
+body.dark-mode .about-hero p {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+body.dark-mode .about-hero__btn--primary {
+  background: var(--secondary);
+  color: #07131d;
+}
+
+body.dark-mode .about-hero__btn--primary:hover {
+  background: #39c6e4;
+}
+
+body.dark-mode .about-hero__btn--ghost {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+body.dark-mode .about-hero__btn--ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(43, 183, 214, 0.4);
+}
+
+body.dark-mode .about-hero__image {
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.45);
+}
+
+body.dark-mode .about-hero__image img {
+  filter: brightness(0.9) contrast(1.05);
+}
 body.dark-mode .about-story {
   background: #111827;
 }
