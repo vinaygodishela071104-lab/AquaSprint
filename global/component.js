@@ -5,6 +5,7 @@ fetch("../components/navbar.html")
   .then((response) => response.text())
   .then((data) => {
     document.getElementById("navbar").innerHTML = data;
+    applySavedPreferences();
     lucide.createIcons();
     initializeNavbar();
   })
@@ -17,11 +18,46 @@ fetch("../components/footer.html")
   .then((response) => response.text())
   .then((data) => {
     document.getElementById("footer").innerHTML = data;
+    applySavedPreferences();
     lucide.createIcons();
     initializeBackToTop();
     updateLogo();
   })
   .catch((error) => console.error("Footer failed to load:", error));
+
+// ==============================
+// Apply Saved Preferences
+// ==============================
+function applySavedPreferences() {
+  const savedTheme = localStorage.getItem("theme");
+  const savedDir = localStorage.getItem("dir");
+
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark-mode");
+  } else {
+    document.body.classList.remove("dark-mode");
+  }
+
+  document.documentElement.dir = savedDir === "rtl" ? "rtl" : "ltr";
+
+  updateLogo();
+  updateToggleIcons();
+}
+
+// ==============================
+// Update Toggle Icons
+// ==============================
+function updateToggleIcons() {
+  const darkToggle = document.getElementById("darkToggle");
+
+  if (darkToggle) {
+    darkToggle.innerHTML = document.body.classList.contains("dark-mode")
+      ? '<i data-lucide="sun"></i>'
+      : '<i data-lucide="moon"></i>';
+  }
+
+  lucide.createIcons();
+}
 
 // ==============================
 // Navbar Functions
@@ -70,9 +106,7 @@ function setActiveNavLink() {
 }
 
 // ==============================
-// Logo Switch for Header + Footer
-// Light mode  -> /images/logo-white.png
-// Dark mode   -> /images/logo-dark.png
+// Logo Switch
 // ==============================
 function updateLogo() {
   const logos = document.querySelectorAll("[data-theme-logo]");
@@ -89,14 +123,12 @@ function updateLogo() {
 // ==============================
 function setupDarkMode(darkToggle) {
   darkToggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
+    const isDark = document.body.classList.toggle("dark-mode");
+
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+
     updateLogo();
-
-    darkToggle.innerHTML = document.body.classList.contains("dark-mode")
-      ? '<i data-lucide="sun"></i>'
-      : '<i data-lucide="moon"></i>';
-
-    lucide.createIcons();
+    updateToggleIcons();
   });
 }
 
@@ -105,8 +137,10 @@ function setupDarkMode(darkToggle) {
 // ==============================
 function setupRTL(rtlToggle) {
   rtlToggle.addEventListener("click", () => {
-    document.documentElement.dir =
-      document.documentElement.dir === "rtl" ? "ltr" : "rtl";
+    const newDir = document.documentElement.dir === "rtl" ? "ltr" : "rtl";
+
+    document.documentElement.dir = newDir;
+    localStorage.setItem("dir", newDir);
   });
 }
 
