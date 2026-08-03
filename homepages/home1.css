@@ -542,7 +542,7 @@ a {
 .gender-strip {
   position: relative;
   overflow: hidden;
-  border-radius: 28px;
+  border-radius: 38px;
   min-height: 460px;
   display: flex;
   align-items: flex-end;

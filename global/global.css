@@ -611,23 +611,45 @@ body.dark-mode .dropdown-menu li a:hover {
   background: #1a2e41;
   color: var(--secondary);
 }
+/* ===========================
+   Dark Mode - Login & Icon Buttons
+=========================== */
 
-body.dark-mode .icon-btn,
-body.dark-mode .social a {
-  background: #132130;
-  border-color: rgba(255, 255, 255, 0.08);
+body.dark-mode .login-btn,
+body.dark-mode .icon-btn {
+  background: #0d1721;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 6px 18px rgba(13, 23, 33, 0.25);
+}
+
+body.dark-mode .login-btn svg,
+body.dark-mode .icon-btn svg {
+  color: #ffffff;
+  stroke: currentColor;
+}
+
+body.dark-mode .login-btn span {
   color: #ffffff;
 }
 
-body.dark-mode .mobile-login {
-  background: #0d1721;
+body.dark-mode .login-btn:hover,
+body.dark-mode .icon-btn:hover {
+  background: #162433;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(13, 23, 33, 0.4);
 }
 
-body.dark-mode .top-btn {
-  background: var(--secondary);
-  color: #0d1721;
+body.dark-mode .login-btn:hover svg,
+body.dark-mode .icon-btn:hover svg {
+  color: #ffffff;
+  stroke: currentColor;
 }
 
+body.dark-mode .login-btn:hover span {
+  color: #ffffff;
+}
 /* =========================
    DESKTOP
 ========================= */
