@@ -7,8 +7,12 @@ if (togglePassword && passwordInput) {
   togglePassword.addEventListener("click", () => {
     const isHidden = passwordInput.type === "password";
     passwordInput.type = isHidden ? "text" : "password";
-    icon.classList.toggle("fa-eye");
-    icon.classList.toggle("fa-eye-slash");
+
+    if (icon) {
+      icon.classList.toggle("fa-eye");
+      icon.classList.toggle("fa-eye-slash");
+    }
+
     togglePassword.setAttribute(
       "aria-label",
       isHidden ? "Hide password" : "Show password",
@@ -44,9 +48,11 @@ function createParticles() {
   if (!layer) return;
 
   const count = 18;
+
   for (let i = 0; i < count; i++) {
     const particle = document.createElement("span");
     particle.className = "particle";
+
     if (i % 4 === 0) particle.classList.add("glow");
 
     const size = `${8 + Math.random() * 14}px`;
@@ -55,6 +61,7 @@ function createParticles() {
     particle.style.setProperty("--o", (0.18 + Math.random() * 0.35).toFixed(2));
     particle.style.setProperty("--d", `${10 + Math.random() * 10}s`);
     particle.style.setProperty("--delay", `${Math.random() * -12}s`);
+
     layer.appendChild(particle);
   }
 }
@@ -73,10 +80,15 @@ function updateLogo() {
 const themeBtn = document.getElementById("themeToggle");
 const themeIcon = themeBtn ? themeBtn.querySelector("i") : null;
 
+if (localStorage.getItem("theme") === "dark") {
+  document.body.classList.add("dark-mode");
+}
+
+document.documentElement.dir =
+  localStorage.getItem("dir") === "rtl" ? "rtl" : "ltr";
+
 if (themeBtn && themeIcon) {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
-    document.body.classList.add("dark-mode");
+  if (document.body.classList.contains("dark-mode")) {
     themeIcon.classList.replace("fa-moon", "fa-sun");
   }
 
@@ -101,22 +113,14 @@ if (themeBtn && themeIcon) {
 const rtlBtn = document.getElementById("rtlToggle");
 
 if (rtlBtn) {
-  if (localStorage.getItem("direction") === "rtl") {
-    document.documentElement.setAttribute("dir", "rtl");
-    rtlBtn.textContent = "LTR";
-  }
+  rtlBtn.textContent = document.documentElement.dir === "rtl" ? "LTR" : "RTL";
 
   rtlBtn.addEventListener("click", () => {
-    const rtl = document.documentElement.getAttribute("dir") === "rtl";
+    const isRtl = document.documentElement.dir === "rtl";
+    const newDir = isRtl ? "ltr" : "rtl";
 
-    if (rtl) {
-      document.documentElement.setAttribute("dir", "ltr");
-      rtlBtn.textContent = "RTL";
-      localStorage.setItem("direction", "ltr");
-    } else {
-      document.documentElement.setAttribute("dir", "rtl");
-      rtlBtn.textContent = "LTR";
-      localStorage.setItem("direction", "rtl");
-    }
+    document.documentElement.dir = newDir;
+    rtlBtn.textContent = newDir === "rtl" ? "LTR" : "RTL";
+    localStorage.setItem("dir", newDir);
   });
 }
