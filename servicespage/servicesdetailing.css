@@ -583,7 +583,7 @@ body.dark-mode .services-cta__inner p {
 
 body.dark-mode .services-cta__button {
   background: var(--secondary);
-  color: var(--primary);
+  color: white;
 }
 
 body.dark-mode .services-cta__button:hover {

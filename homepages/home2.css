@@ -212,7 +212,7 @@ h6 {
 
 .btn--primary {
   background: var(--secondary);
-  color: var(--primary);
+  color: white;
   box-shadow: 0 14px 30px rgba(43, 183, 214, 0.28);
 }
 
@@ -459,7 +459,7 @@ h6 {
   margin-top: 30px;
   border-radius: 999px;
   background: #2bb7d6;
-  color: #0f2740;
+  color: #ffffff;
   font-family: var(--body-font);
   font-size: var(--button-font-size);
   font-weight: var(--button-font-weight);
@@ -1797,7 +1797,7 @@ body.dark-mode .hero__text {
 
 body.dark-mode .btn--primary {
   background: #2bb7d6;
-  color: #08131d;
+  color: #f3f9ff;
   box-shadow: 0 15px 35px rgba(43, 183, 214, 0.35);
 }
 
@@ -1910,7 +1910,7 @@ body.dark-mode .spotlight-light__meta span {
 
 body.dark-mode .spotlight-light__btn {
   background: #2bb7d6;
-  color: #08131d;
+  color: #ffffff;
 }
 
 body.dark-mode .spotlight-light__btn:hover {

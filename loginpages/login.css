@@ -719,7 +719,7 @@ body.dark-mode .forgot-link:hover {
 
 body.dark-mode .signin-btn {
   background: linear-gradient(135deg, var(--secondary), #5dd3ea);
-  color: var(--primary);
+  color: white;
 }
 
 body.dark-mode .signin-btn:hover {

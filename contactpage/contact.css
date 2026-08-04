@@ -173,7 +173,7 @@ section {
 
 .hero-btn--primary {
   background: var(--secondary);
-  color: var(--primary);
+  color: white;
   border: 1px solid var(--secondary);
 }
 
@@ -400,6 +400,7 @@ section {
   font-weight: var(--button-font-weight);
   cursor: pointer;
   transition: 0.3s ease;
+  color: white;
 }
 
 .form-submit:hover {
@@ -619,7 +620,7 @@ section {
 
 .cta-btn--primary {
   background: var(--secondary);
-  color: var(--primary);
+  color: white;
 }
 
 .cta-btn--primary:hover {
@@ -774,7 +775,7 @@ body.dark-mode .cta-btn--secondary {
 body.dark-mode .hero-btn--secondary:hover,
 body.dark-mode .cta-btn--secondary:hover {
   border-color: var(--secondary);
-  color: var(--secondary);
+  color: white;
 }
 
 /* Primary Buttons */
@@ -782,7 +783,7 @@ body.dark-mode .hero-btn--primary,
 body.dark-mode .cta-btn--primary,
 body.dark-mode .form-submit {
   background: var(--secondary);
-  color: var(--primary);
+  color: white;
 }
 
 body.dark-mode .hero-btn--primary:hover,

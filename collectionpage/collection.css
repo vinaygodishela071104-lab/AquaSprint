@@ -166,7 +166,7 @@ section {
 
 .btn--primary {
   background: var(--secondary);
-  color: var(--primary);
+  color: white;
 }
 
 .btn--secondary {

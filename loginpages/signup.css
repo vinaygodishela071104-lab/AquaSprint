@@ -613,7 +613,7 @@ body.dark-mode .eye-btn:hover {
 
 body.dark-mode .signin-btn {
   background: linear-gradient(135deg, var(--secondary), #59d0e8);
-  color: var(--primary);
+  color: white;
 }
 
 body.dark-mode .signin-btn:hover {

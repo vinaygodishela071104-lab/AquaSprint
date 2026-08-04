@@ -224,6 +224,7 @@ a {
 .primary-btn:hover {
   background: #24a6c3;
   border-color: #24a6c3;
+  color: white;
   transform: translateY(-2px);
 }
 
@@ -237,6 +238,7 @@ a {
 .secondary-btn:hover {
   background: rgba(255, 255, 255, 0.18);
   transform: translateY(-2px);
+  color: white;
 }
 
 .hero-controls {
@@ -1732,6 +1734,7 @@ body.dark-mode .primary-btn {
 
 body.dark-mode .primary-btn:hover {
   background: #24a6c3;
+  color: white;
 }
 
 body.dark-mode .secondary-btn {
@@ -2011,6 +2014,7 @@ body.dark-mode .showcase-toggle-btn {
 body.dark-mode .showcase-toggle-btn:hover {
   border-color: var(--secondary);
   color: var(--secondary);
+  color: white;
 }
 
 body.dark-mode .showcase-toggle-btn.active {
@@ -2060,6 +2064,7 @@ body.dark-mode .showcase-cta {
 
 body.dark-mode .showcase-cta:hover {
   background: #24a6c3;
+  color: white;
 }
 
 /*==========================================
@@ -2336,6 +2341,7 @@ body.dark-mode .primary-cta {
 
 body.dark-mode .primary-cta:hover {
   background: #24a6c3;
+  color: white;
 }
 
 body.dark-mode .secondary-cta {

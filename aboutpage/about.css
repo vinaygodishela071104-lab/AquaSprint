@@ -166,7 +166,7 @@ h6 {
 
 .about-hero__btn--primary {
   background: var(--secondary);
-  color: var(--primary);
+  color: white;
 }
 
 .about-hero__btn--ghost {

@@ -215,70 +215,39 @@
 
     <!-- Scripts -->
     <script>
-      // Initialize Lucide Icons
       lucide.createIcons();
 
-      // =========================
-      // Logo Swap for Dark Mode
-      // =========================
       const logoImg = document.querySelector("img[data-theme-logo]");
       const lightLogo = "/images/logo-white.png";
       const darkLogo = "/images/logo-dark.png";
 
-      // =========================
-      // Dark Mode Toggle
-      // =========================
       const darkModeToggle = document.getElementById("darkModeToggle");
-      const darkModeIcon = darkModeToggle.querySelector("i");
-
-      // Check saved preference and apply
-      if (localStorage.getItem("darkMode") === "enabled") {
-        document.body.classList.add("dark-mode");
-        darkModeIcon.setAttribute("data-lucide", "sun");
-        if (logoImg) {
-          logoImg.src = darkLogo;
-        }
-        lucide.createIcons();
-      }
-
-      darkModeToggle.addEventListener("click", () => {
-        const isDark = document.body.classList.toggle("dark-mode");
-
-        if (isDark) {
-          localStorage.setItem("darkMode", "enabled");
-          darkModeIcon.setAttribute("data-lucide", "sun");
-          if (logoImg) {
-            logoImg.src = darkLogo;
-          }
-        } else {
-          localStorage.setItem("darkMode", "disabled");
-          darkModeIcon.setAttribute("data-lucide", "moon");
-          if (logoImg) {
-            logoImg.src = lightLogo;
-          }
-        }
-
-        lucide.createIcons();
-      });
-
-      // =========================
-      // RTL Toggle
-      // =========================
       const rtlToggle = document.getElementById("rtlToggle");
 
-      if (localStorage.getItem("rtl") === "enabled") {
-        document.body.classList.add("rtl");
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+        if (logoImg) logoImg.src = darkLogo;
       }
 
-      rtlToggle.addEventListener("click", () => {
-        document.body.classList.toggle("rtl");
+      document.documentElement.dir =
+        localStorage.getItem("dir") === "rtl" ? "rtl" : "ltr";
 
-        if (document.body.classList.contains("rtl")) {
-          localStorage.setItem("rtl", "enabled");
-        } else {
-          localStorage.setItem("rtl", "disabled");
-        }
-      });
+      if (darkModeToggle) {
+        darkModeToggle.addEventListener("click", () => {
+          const isDark = document.body.classList.toggle("dark-mode");
+          localStorage.setItem("theme", isDark ? "dark" : "light");
+          if (logoImg) logoImg.src = isDark ? darkLogo : lightLogo;
+          lucide.createIcons();
+        });
+      }
+
+      if (rtlToggle) {
+        rtlToggle.addEventListener("click", () => {
+          const newDir = document.documentElement.dir === "rtl" ? "ltr" : "rtl";
+          document.documentElement.dir = newDir;
+          localStorage.setItem("dir", newDir);
+        });
+      }
     </script>
   </body>
 </html>

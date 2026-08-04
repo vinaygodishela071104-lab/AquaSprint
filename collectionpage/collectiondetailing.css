@@ -627,6 +627,7 @@ body.dark-mode .cart-summary__row span {
   font-size: var(--button-font-size);
   font-weight: var(--button-font-weight);
   cursor: pointer;
+  color: white;
   transition: 0.25s ease;
   margin-top: auto;
 }
@@ -694,7 +695,7 @@ body.dark-mode .collection-card__body span {
 
 body.dark-mode .add-to-cart-btn {
   background: linear-gradient(135deg, var(--secondary), #39d3ef);
-  color: #07131d;
+  color: #ffffff;
 }
 
 body.dark-mode .add-to-cart-btn:hover {

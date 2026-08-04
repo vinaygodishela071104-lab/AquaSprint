@@ -555,7 +555,14 @@ body.dark-mode {
   background: #101820;
   color: #ffffff;
 }
-
+body.dark-mode .social a {
+  background-color: var(--primary);
+  color: white;
+}
+body.dark-mode .top-btn {
+  background-color: #1287a8;
+  color: white;
+}
 body.dark-mode header,
 body.dark-mode footer {
   background: #0d1721;
