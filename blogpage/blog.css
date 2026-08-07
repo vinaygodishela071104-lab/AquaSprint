@@ -85,7 +85,6 @@ section {
   letter-spacing: 1.4px;
   text-transform: uppercase;
 }
-
 /* =========================
    BLOG HERO SECTION
 ========================= */
@@ -95,7 +94,8 @@ section {
   min-height: 92vh;
   display: flex;
   align-items: center;
-  padding: 0px 100px;
+  justify-content: center;
+  padding: 0 100px;
   background:
     linear-gradient(135deg, rgba(15, 39, 64, 0.72), rgba(7, 19, 29, 0.78)),
     url("/images/hero9.png") center/cover no-repeat;
@@ -127,10 +127,14 @@ section {
   margin: 0 auto;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .blog-hero__content {
-  max-width: 680px;
+  width: 680px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .blog-hero__content h1 {
@@ -153,11 +157,13 @@ section {
   line-height: var(--line-height);
   color: rgba(219, 231, 241, 0.9);
   max-width: 58ch;
-  margin-bottom: 32px;
+  margin: 0 auto 32px;
 }
 
 .blog-hero__actions {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 14px;
   flex-wrap: wrap;
   margin-bottom: 30px;
@@ -175,6 +181,7 @@ section {
   font-size: var(--button-font-size);
   font-weight: var(--button-font-weight);
   transition: 0.3s ease;
+  text-decoration: none;
 }
 
 .btn i {
@@ -208,12 +215,15 @@ section {
 
 .blog-hero__meta {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 28px;
   flex-wrap: wrap;
 }
 
 .blog-hero__meta-item {
   min-width: 100px;
+  text-align: center;
 }
 
 .blog-hero__meta-item strong {
@@ -232,6 +242,91 @@ section {
   color: rgba(219, 231, 241, 0.75);
 }
 
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 991px) {
+  .blog-hero {
+    padding: 0 48px;
+    min-height: 85vh;
+  }
+
+  .blog-hero__content {
+    max-width: 100%;
+  }
+
+  .blog-hero__content h1 {
+    margin-bottom: 18px;
+  }
+
+  .blog-hero__content p {
+    margin-bottom: 28px;
+  }
+
+  .blog-hero__meta {
+    gap: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .blog-hero {
+    min-height: auto;
+    padding: 120px 24px 100px;
+  }
+
+  .blog-hero__content h1 {
+    letter-spacing: -0.03em;
+  }
+
+  .blog-hero__content p {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .blog-hero__actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .blog-hero__meta {
+    gap: 18px;
+  }
+
+  .blog-hero__meta-item {
+    min-width: 88px;
+  }
+
+  .blog-hero__meta-item strong {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-hero {
+    padding: 110px 18px 80px;
+  }
+
+  .blog-hero__content h1 {
+    margin-bottom: 16px;
+  }
+
+  .blog-hero__content p {
+    margin-bottom: 24px;
+  }
+
+  .blog-hero__meta {
+    gap: 14px;
+  }
+
+  .blog-hero__meta-item {
+    min-width: 78px;
+  }
+}
 /* =========================
    FEATURED ARTICLES SECTION
 ========================= */

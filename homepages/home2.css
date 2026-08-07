@@ -659,12 +659,15 @@ h6 {
 
 .swimwear-card {
   grid-column: span 3;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   border-radius: 24px;
   overflow: hidden;
   background: #fff;
   border: 1px solid #e4eaf1;
   box-shadow: 0 16px 40px rgba(15, 39, 64, 0.08);
+  text-decoration: none;
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease,
@@ -677,14 +680,11 @@ h6 {
   box-shadow: 0 24px 55px rgba(15, 39, 64, 0.12);
 }
 
-.swimwear-card--wide {
-  grid-column: span 6;
-}
-
 .swimwear-card__media {
   min-height: 220px;
   background-size: cover;
   background-position: center;
+  flex-shrink: 0;
 }
 
 .swimwear-card__media--onepiece {
@@ -713,10 +713,14 @@ h6 {
 
 .swimwear-card__body {
   padding: 22px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .swimwear-card__tag {
   display: inline-block;
+  align-self: flex-start;
   margin-bottom: 12px;
   padding: 8px 12px;
   border-radius: 999px;
@@ -747,6 +751,64 @@ h6 {
   font-size: 0.94rem;
 }
 
+.swimwear-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 18px;
+  font-family: var(--body-font);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 0.02em;
+  transition: color 0.25s ease;
+}
+.swimwear-card__link span {
+  color: var(--secondary);
+}
+.swimwear-card__link svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 2.2;
+  transition: transform 0.25s ease;
+}
+
+.swimwear-card:hover .swimwear-card__link {
+  color: var(--secondary);
+}
+
+.swimwear-card:hover .swimwear-card__link svg {
+  transform: translateX(4px);
+}
+
+@media (max-width: 1200px) {
+  .swimwear-section {
+    padding: 72px 60px;
+  }
+
+  .swimwear-card {
+    grid-column: span 6;
+  }
+}
+
+@media (max-width: 768px) {
+  .swimwear-section {
+    padding: 64px 24px;
+  }
+
+  .swimwear-section__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .swimwear-card {
+    grid-column: span 1;
+  }
+
+  .swimwear-card__media {
+    min-height: 240px;
+  }
+}
 /* =========================
    BRANDS SECTION
 ========================= */

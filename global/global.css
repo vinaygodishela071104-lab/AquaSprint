@@ -647,7 +647,9 @@ body.dark-mode .icon-btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 28px rgba(13, 23, 33, 0.4);
 }
-
+body.dark-mode .mobile-login {
+  background-color: #0d1721;
+}
 body.dark-mode .login-btn:hover svg,
 body.dark-mode .icon-btn:hover svg {
   color: #ffffff;
