@@ -59,7 +59,18 @@
       const darkModeToggle = document.getElementById("darkModeToggle");
       const rtlToggle = document.getElementById("rtlToggle");
 
-      // Apply saved state using shared logic
+      function setButtonIcon(button, iconName) {
+        const oldIcon = button.querySelector("svg, [data-lucide]");
+        if (!oldIcon) return;
+
+        const newIcon = document.createElement("i");
+        newIcon.setAttribute("data-lucide", iconName);
+        oldIcon.replaceWith(newIcon);
+
+        lucide.createIcons({ root: button });
+      }
+
+      // Apply saved state
       if (localStorage.getItem("theme") === "dark") {
         document.body.classList.add("dark-mode");
       }
@@ -67,12 +78,16 @@
       document.documentElement.dir =
         localStorage.getItem("dir") === "rtl" ? "rtl" : "ltr";
 
-      // Dark mode toggle
+      // Set initial icon
       if (darkModeToggle) {
+        const isDark = document.body.classList.contains("dark-mode");
+        setButtonIcon(darkModeToggle, isDark ? "sun" : "moon");
+
         darkModeToggle.addEventListener("click", () => {
-          const isDark = document.body.classList.toggle("dark-mode");
-          localStorage.setItem("theme", isDark ? "dark" : "light");
-          lucide.createIcons();
+          const isDarkNow = document.body.classList.toggle("dark-mode");
+          localStorage.setItem("theme", isDarkNow ? "dark" : "light");
+
+          setButtonIcon(darkModeToggle, isDarkNow ? "sun" : "moon");
         });
       }
 

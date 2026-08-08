@@ -6,7 +6,7 @@ fetch("../components/navbar.html")
   .then((data) => {
     document.getElementById("navbar").innerHTML = data;
     applySavedPreferences();
-    lucide.createIcons();
+    lucide.createIcons({ root: document.getElementById("navbar") });
     initializeNavbar();
   })
   .catch((error) => console.error("Navbar failed to load:", error));
@@ -19,11 +19,20 @@ fetch("../components/footer.html")
   .then((data) => {
     document.getElementById("footer").innerHTML = data;
     applySavedPreferences();
-    lucide.createIcons();
+    lucide.createIcons({ root: document.getElementById("footer") });
     initializeBackToTop();
     updateLogo();
   })
   .catch((error) => console.error("Footer failed to load:", error));
+
+// ==============================
+// Helpers
+// ==============================
+function setLucideIcon(element, iconName) {
+  if (!element) return;
+  element.innerHTML = `<i data-lucide="${iconName}"></i>`;
+  lucide.createIcons({ root: element });
+}
 
 // ==============================
 // Apply Saved Preferences
@@ -49,14 +58,20 @@ function applySavedPreferences() {
 // ==============================
 function updateToggleIcons() {
   const darkToggle = document.getElementById("darkToggle");
+  const menuToggle = document.getElementById("menuToggle");
+  const navLinks = document.querySelector(".nav-links");
 
   if (darkToggle) {
-    darkToggle.innerHTML = document.body.classList.contains("dark-mode")
-      ? '<i data-lucide="sun"></i>'
-      : '<i data-lucide="moon"></i>';
+    setLucideIcon(
+      darkToggle,
+      document.body.classList.contains("dark-mode") ? "sun" : "moon",
+    );
   }
 
-  lucide.createIcons();
+  if (menuToggle) {
+    const isActive = navLinks ? navLinks.classList.contains("active") : false;
+    setLucideIcon(menuToggle, isActive ? "x" : "menu");
+  }
 }
 
 // ==============================
@@ -77,6 +92,7 @@ function initializeNavbar() {
 
   setActiveNavLink();
   updateLogo();
+  updateToggleIcons();
   setupDarkMode(darkToggle);
   setupRTL(rtlToggle);
   setupMobileMenu(menuToggle, navLinks, mobileLogin, dropdowns);
@@ -88,8 +104,26 @@ function initializeNavbar() {
 // ==============================
 function setActiveNavLink() {
   const currentPath = window.location.pathname.replace(/\/$/, "");
+  const allLinks = document.querySelectorAll(".nav-links a");
 
-  document.querySelectorAll(".nav-links > li > a").forEach((link) => {
+  allLinks.forEach((link) => {
+    link.classList.remove("active");
+    link.removeAttribute("aria-current");
+
+    const parentLi = link.closest("li");
+    if (parentLi) parentLi.classList.remove("active");
+  });
+
+  document.querySelectorAll(".dropdown").forEach((dropdown) => {
+    dropdown.classList.remove("active");
+    const trigger = dropdown.querySelector(":scope > a");
+    if (trigger) {
+      trigger.classList.remove("active");
+      trigger.removeAttribute("aria-current");
+    }
+  });
+
+  allLinks.forEach((link) => {
     const linkPath = new URL(
       link.href,
       window.location.origin,
@@ -98,9 +132,21 @@ function setActiveNavLink() {
     if (currentPath === linkPath) {
       link.classList.add("active");
       link.setAttribute("aria-current", "page");
-    } else {
-      link.classList.remove("active");
-      link.removeAttribute("aria-current");
+
+      const parentDropdown = link.closest(".dropdown");
+
+      if (parentDropdown) {
+        parentDropdown.classList.add("active");
+
+        const parentTrigger = parentDropdown.querySelector(":scope > a");
+        if (parentTrigger) {
+          parentTrigger.classList.add("active");
+          parentTrigger.setAttribute("aria-current", "page");
+        }
+      } else {
+        const parentLi = link.closest("li");
+        if (parentLi) parentLi.classList.add("active");
+      }
     }
   });
 }
@@ -110,11 +156,12 @@ function setActiveNavLink() {
 // ==============================
 function updateLogo() {
   const logos = document.querySelectorAll("[data-theme-logo]");
+  const isDark = document.body.classList.contains("dark-mode");
 
   logos.forEach((logo) => {
-    logo.src = document.body.classList.contains("dark-mode")
-      ? "/images/logo-dark.png"
-      : "/images/logo-white.png";
+    const darkSrc = logo.dataset.logoDark || "/images/logo-dark.png";
+    const lightSrc = logo.dataset.logoLight || "/images/logo-white.png";
+    logo.src = isDark ? darkSrc : lightSrc;
   });
 }
 
@@ -124,7 +171,6 @@ function updateLogo() {
 function setupDarkMode(darkToggle) {
   darkToggle.addEventListener("click", () => {
     const isDark = document.body.classList.toggle("dark-mode");
-
     localStorage.setItem("theme", isDark ? "dark" : "light");
 
     updateLogo();
@@ -138,7 +184,6 @@ function setupDarkMode(darkToggle) {
 function setupRTL(rtlToggle) {
   rtlToggle.addEventListener("click", () => {
     const newDir = document.documentElement.dir === "rtl" ? "ltr" : "rtl";
-
     document.documentElement.dir = newDir;
     localStorage.setItem("dir", newDir);
   });
@@ -155,11 +200,7 @@ function setupMobileMenu(menuToggle, navLinks, mobileLogin, dropdowns) {
       mobileLogin.classList.toggle("active", isActive);
     }
 
-    menuToggle.innerHTML = isActive
-      ? '<i data-lucide="x"></i>'
-      : '<i data-lucide="menu"></i>';
-
-    lucide.createIcons();
+    setLucideIcon(menuToggle, isActive ? "x" : "menu");
   });
 
   window.addEventListener("resize", () => {
@@ -174,8 +215,7 @@ function setupMobileMenu(menuToggle, navLinks, mobileLogin, dropdowns) {
         dropdown.classList.remove("active");
       });
 
-      menuToggle.innerHTML = '<i data-lucide="menu"></i>';
-      lucide.createIcons();
+      setLucideIcon(menuToggle, "menu");
     }
   });
 }
@@ -186,7 +226,6 @@ function setupMobileMenu(menuToggle, navLinks, mobileLogin, dropdowns) {
 function setupMobileDropdowns(dropdowns) {
   dropdowns.forEach((dropdown) => {
     const topLink = dropdown.querySelector(":scope > a");
-
     if (!topLink) return;
 
     topLink.addEventListener("click", (e) => {
@@ -210,7 +249,6 @@ function setupMobileDropdowns(dropdowns) {
 // ==============================
 function initializeBackToTop() {
   const topBtn = document.querySelector(".top-btn");
-
   if (!topBtn) return;
 
   topBtn.addEventListener("click", (e) => {
